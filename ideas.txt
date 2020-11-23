@@ -1,0 +1,65 @@
+1. Absztrakt/Abstract 
+	- modellezes a mai vilagban //
+	- marketing szoveg gondolom
+	- modellezesi eszkozok -- gamma
+2. Bevezeto
+	- ismetelni az absztraktban leirtakat (modellezes -> tipusok -> reactiv rendszerek -> statechart -> gamma ) 
+			https://cs.ccsu.edu/~stan/classes/CS410/Notes16/05-SystemModeling.html
+	- gamma frameworkrol par szot 
+			https://inf.mit.bme.hu/node/6028
+	- felvazalni a feladatot (nagyon absztrakt legyen)
+	- miert van igeny ra (skalazhatosag, felhasznalo baratsag) 
+			https://www.salesforce.com/uk/blog/2015/11/why-move-to-the-cloud-10-benefits-of-cloud-computing.html 
+			https://www.ibm.com/cloud/learn/benefits-of-cloud-computing
+	- abrat es rovid leirast arrol hogy milyen megoldast javasoltam  
+		-- attekintes a igeny-kovetelmeny,use-casek,architektura 
+	- pontositani a dolgozat melyik pontjan mit irok le 
+3. Hatterismeretek
+	3.1 Modern technologiak 
+		- osgi -par szot ? (minden technologiarol esetleg?)
+				https://www.osgi.org/developer/what-is-osgi/
+				https://www.eclipse.org/equinox/				
+		- eclipse rcp szerintem mindenkepp megeri beszelni (os com.)
+				
+		- openapi es swagger (itt a rest apirol kicsit beszelni)
+				https://restfulapi.net/
+				https://swagger.io/docs/specification/about/
+				https://vertx.io/ miert ez? mert tud openapi specko alapjan webszervert generalni
+		- kontenereziacio ?
+				https://www.citrix.com/glossary/what-is-containerization.html
+				https://www.monitis.com/blog/top-5-benefits-of-containerization/
+			
+	3.2 Gamma
+		- gamma , reszeltesen leirni mi a gamma (motivacio) // mit nem tamogat a gamma resz zaraskent
+				-- funkcio lista es hianyossagok
+4. Specifikacio es implementacio (nem tudom szetbontani) (barmit amit itt leirok ertheto kell legyen a hatterismeretek alapjan)
+	4.1 Specifikacio
+		-stakeholderektol elindulva (kinek fontos kire figyeljunk)
+		-kovetelmenyek (pl skalazhatosag, projekt kezeles), activityk, use-case diagrammok
+		-tervezesi folyamatok
+		-mindenre egy ok, hogy miert lett csinalva (pl miert kell tobb workspace, miert kell tobb projekt, miert kell docker, miert kell headless stb..)
+		//////// END OF ///////
+		
+	Architektura
+		- a 2 pontban emlitett abrat kibontanam, tobb kicsi abrara , kommunikaciot leiro abrat is csinalnek
+		- munkafolyamat
+		- libraryk
+		- tervezesi mintak
+	
+	- a mar konkret technologiai implementalasokat mondanam el (nem tudom mennyire kell technikai legyen)
+	- kodot masolni esetleg ? csak ahol nagyon fontos, pl az xtext validator injector
+	- esetleg keszitenek egy UI-t is a meglevo funkcionalitashoz es ahhoz irnek egy rovid rendszertervet
+	(szetbontani ket reszre backend es frontend-re ezt a szekciot ?)
+	-implementacio soran kiemelkedo hibak reszletezese, abrakkal egyutt pl: fuggosegi fa paradoxon
+	
+5. Tesztelesi utmutato ?
+	- egy peldan keresztul vegigvezetnem az olvasot, hogy hogyan lehet hasznalni a fejlesztest
+	- itt bemutathatnam a gamma tutorial-t is (par sorban)
+	- esetleg mas teszthalmazt is (need help)
+	
+6. 	Tovabbfejlesztesi lehetosegek
+	- ha nem sikerul a ggen-es megoldast implementalni akkor errol irnek kicsit 
+	- kliens integraciok, pl magicdraw 
+
+
+Ne legyenek nagyon hosszu mondatok!!!!
