@@ -10,6 +10,7 @@
 	- felvazalni a feladatot (nagyon absztrakt legyen)
 	- miert van igeny ra (skalazhatosag, felhasznalo baratsag) 
 			https://www.salesforce.com/uk/blog/2015/11/why-move-to-the-cloud-10-benefits-of-cloud-computing.html 
+			https://www.tutorialspoint.com/webservices/why_web_services.htm
 			https://www.ibm.com/cloud/learn/benefits-of-cloud-computing
 	- abrat es rovid leirast arrol hogy milyen megoldast javasoltam  
 		-- attekintes a igeny-kovetelmeny,use-casek,architektura 
