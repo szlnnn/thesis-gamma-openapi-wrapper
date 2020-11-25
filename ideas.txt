@@ -21,11 +21,20 @@
 				https://www.osgi.org/developer/what-is-osgi/
 				https://www.eclipse.org/equinox/				
 		- eclipse rcp szerintem mindenkepp megeri beszelni (os com.)
-				
-		- openapi es swagger (itt a rest apirol kicsit beszelni)
+				https://www.vogella.com/tutorials/EclipsePlugin/article.html
+https://www.vogella.com/tutorials/EclipseProductDeployment/article.html
+https://www.vogella.com/tutorials/EclipseExtensionPoint/article.html
+		- openapi es swagger (itt a rest apirol sokat beszelni mert masrol nem tudok)
+				https://chelseatroy.com/2018/08/01/api-design-part-1-before-there-was-rest/
 				https://restfulapi.net/
+				https://medium.com/@ahmetozlu93/mastering-rest-architecture-rest-architecture-details-e47ec659f6bc
+				https://www.codecademy.com/articles/what-is-rest
+				https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582
 				https://swagger.io/docs/specification/about/
-				https://vertx.io/ miert ez? mert tud openapi specko alapjan webszervert generalni
+				
+		- java alapu technologiak
+			https://vertx.io/ miert ez? mert tud openapi specko alapjan webszervert generalni
+			ide meg jon a process builder
 		- kontenereziacio ?
 				https://www.citrix.com/glossary/what-is-containerization.html
 				https://www.monitis.com/blog/top-5-benefits-of-containerization/
