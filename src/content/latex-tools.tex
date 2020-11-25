@@ -75,15 +75,46 @@ Ahhoz, hogy egy szolgáltatást RESTful-nak nevezzünk meg kell felelni egy szab
 	\item \textbf{Állapot nélküliség} - Ez az alapelv annyit von magában, hogy a szerver semmilyen információval nem rendelkezhet a kliens állapotáról ennek a kijelentésnek viszont fordítva is teljesülnie kell, azaz a kliens se ismerheti a szerver állapotát. Minden küldött/kapott üzenet egységként lehet kezelni, független attól, hogy a múltban milyen jellegű üzenet váltások történtek. Ennek eredménye az, hogy a csak kliens tárolja a saját adatainak az állapotát (nem a szerver adatait).
 	\item \textbf{Egységes interfész} - Ez az alapelv négy szabályt határoz meg:
 	\begin{enumerate}
-		\item első 
-		\item második
-		\item harmadik
-		\item negyedik
+		\item A kliens által kezdeményezett kérésnek tartalmaznia kell a fent definiált erőforrásnak az azonosítóját. Az erőforrást (egyed/objektum) hívhatjuk a webes kontextus alanyának is.
+		\item A szerver válasza elegendő információt kell tartalmazzon az erőforrásról, pontosabban annyit, hogy a kliens tudja majd módosítani ezt.
+		\item Minden egyes hívás az API felé részletes és tartalmilag teljes kell legyen. Továbbá a szerver válaszának is tartalmaznia kell elegendő információt, úgy, hogy a kliens értelmezni tudja ezt.
+		\item Az utolsó szabálytól gyakran eltekintenek a fejlesztők, ez azt mondja, hogy a válasz, ami a szervertől érkezik tartalmazhat, olyan útmutatókat a kliens számára amivel az alkalmazás állapotát módosítani tudja. Például, ha egy objektumot lekér a kliens az API-tól, akkor a szerver a válaszba becsomagolhat olyan mellékes információkat amelyek azt írják le, hogy milyen módon módosítható a visszaadott objektum.
 	\end{enumerate}
-	\item \textbf{Cache lehetőség} -
-	\item \textbf{Rétegelt architektúra} - 
-	\item \textbf{Igény szerinti kód (opcionális)} - 
+	Az egységes interfész lehetővé teszi, hogy a kliens típusától (böngésző, alkalmazás) eltudjunk tekinteni a szerver oldalon.
+	\item \textbf{Cache lehetőség} - Cache támogatást úgy lehet elérni, hogy az adatokat verziózzuk, ha a kliens lekér egy adatot akkor valamilyen metaadatban tároljuk azt is, hogy ez milyen verziójú, így ha ugyanazt az objektumot szeretné lekérni, előtte tudja ellenőrizni lokálisan, hogy már a legfrissebb adattal rendelkezik és nem kell a szervert megint megszólítania. Ezzel terheléscsökkentést tudunk elérni.
+	\item \textbf{Rétegelt architektúra} - A szerver és az erőforrást lekérő kliens között számos más rendszer helyezkedhet el, ezek többfajták lehetnek de legtöbbször a biztonsági, cache, terhelés egyensúlyozó rétegekkel találkozhatunk.
+	\item \textbf{Igény szerinti kód (opcionális)} - Az egyedüli elv ami opcionális, annyit von magában, hogy a kliens bármikor kérhet kódrészleteket a szervertől és ez a válaszban valamilyen HTML vagy szkript formátumba becsomagolja és elküldi ennek , amit majd a kliens futtatni tud. Az alapelv teljesülése nélkül is tud egy rendszer RESTful lenni.
 \end{itemize}
+
+A fentebb többször említett kérés/válasz fogalmakat a REST világban HTTP kérésekbe csomagoljuk, ezek tipikusan a következőket kell tartalmazzák :
+\begin{enumerate}
+	\item egy HTTP ige, ami leírja a művelet típusát, jelenleg használt igék:
+	\begin{enumerate}
+		\item \textbf{GET} erőforrást tudunk lekérni, nagyon fontos, hogy nem módosíthat állapotot a szerveren
+		\item \textbf{POST} erőforrás létrehozásra használják, többszörös hívás esetén különböző erőforrásokat fog létrehozni
+		\item \textbf{PUT} már létező erőforrások állapot frissítésére használják, többszörös hívás ugyanazt kell, hogy eredményezze
+		\item \textbf{DELETE} mint ahogy a neve is sugallja, erőforrás törlésre használják 
+		\item \textbf{PATCH} parciális frissítési műveletekre tudjuk használni
+		\item a maradék HTTP igéket nem szokták gyakran implementálni a REST világban
+	\end{enumerate} 
+	\item fejléc, ami metaadatokat tartalmaz az üzenetről, többek közt olyan jellegű információkat, mint az üzenet hossza, a tartalom típusa, a válasz HTTP kód száma és üzenete.
+	\item az erőforrás elérési útja
+	\item opcionális üzenettörzs, ami további adatot tartalmazhat
+\end{enumerate}
+
+
+%----------------------------------------------------------------------------
+\subsection{OpenAPI}
+%----------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------
+\subsection{Fontosabb Java könyvtárak}
+%----------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------
+\section{Gamma}
+%----------------------------------------------------------------------------
+
 
 
 
