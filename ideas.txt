@@ -22,14 +22,16 @@
 				https://www.eclipse.org/equinox/				
 		- eclipse rcp szerintem mindenkepp megeri beszelni (os com.)
 				https://www.vogella.com/tutorials/EclipsePlugin/article.html
-https://www.vogella.com/tutorials/EclipseProductDeployment/article.html
-https://www.vogella.com/tutorials/EclipseExtensionPoint/article.html
-		- openapi es swagger (itt a rest apirol sokat beszelni mert masrol nem tudok)
+				https://www.vogella.com/tutorials/EclipseProductDeployment/article.html
+				https://www.vogella.com/tutorials/EclipseExtensionPoint/article.html
+		- REST 
 				https://chelseatroy.com/2018/08/01/api-design-part-1-before-there-was-rest/
 				https://restfulapi.net/
 				https://medium.com/@ahmetozlu93/mastering-rest-architecture-rest-architecture-details-e47ec659f6bc
 				https://www.codecademy.com/articles/what-is-rest
 				https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582
+		- OPENAPI es swaggerhub
+				https://swagger.io/blog/api-strategy/difference-between-swagger-and-openapi/
 				https://swagger.io/docs/specification/about/
 				
 		- java alapu technologiak
@@ -48,24 +50,21 @@ https://www.vogella.com/tutorials/EclipseExtensionPoint/article.html
 		-kovetelmenyek (pl skalazhatosag, projekt kezeles), activityk, use-case diagrammok
 		-tervezesi folyamatok
 		-mindenre egy ok, hogy miert lett csinalva (pl miert kell tobb workspace, miert kell tobb projekt, miert kell docker, miert kell headless stb..)
-		//////// END OF ///////
-		
-	Architektura
-		- a 2 pontban emlitett abrat kibontanam, tobb kicsi abrara , kommunikaciot leiro abrat is csinalnek
-		- munkafolyamat
-		- libraryk
-		- tervezesi mintak
+	4.2 Architektura
+		- abran mutatott modulokon vegigmenni es leirni miert jo miert rossz mibol all (logikai)
+		- activity diagramm /szekvencia 
+		- ahol elegedtlen vagyok ott improvement jellegu megjegyzest teszek (fejlesztesi folytato munkat konnyiteni) 
+		- itt nem fontos hogy 3 kulonallo szoftver
+	4.3 Implementacio	
+		- a mar konkret technologiai implementalasokat mondanam el (nem tudom mennyire kell technikai legyen) szarazabb infok, nehezsegek, fuggosegekkel valo szivas, mintha forum valasz lennne
+		- kodot masolni esetleg ? csak ahol nagyon fontos, pl az xtext validator injector (minimalis kodreszlet)
+		- abran mutatott modulokon vegigmenni (pl gamma - tobb modulok ebbol 1 headless ez a kontribucio + sajat headless + webszerver) (fizikai)
+		- itt fontos hogy 3 kulonallo szoftver
 	
-	- a mar konkret technologiai implementalasokat mondanam el (nem tudom mennyire kell technikai legyen)
-	- kodot masolni esetleg ? csak ahol nagyon fontos, pl az xtext validator injector
-	- esetleg keszitenek egy UI-t is a meglevo funkcionalitashoz es ahhoz irnek egy rovid rendszertervet
-	(szetbontani ket reszre backend es frontend-re ezt a szekciot ?)
-	-implementacio soran kiemelkedo hibak reszletezese, abrakkal egyutt pl: fuggosegi fa paradoxon
-	
-5. Tesztelesi utmutato ?
+5. Hasznalati utmutato 
+	- endpoinok hasznalata
 	- egy peldan keresztul vegigvezetnem az olvasot, hogy hogyan lehet hasznalni a fejlesztest
-	- itt bemutathatnam a gamma tutorial-t is (par sorban)
-	- esetleg mas teszthalmazt is (need help)
+	- tests osszes publikus esettanulamyt tartalmaz
 	
 6. 	Tovabbfejlesztesi lehetosegek
 	- ha nem sikerul a ggen-es megoldast implementalni akkor errol irnek kicsit 
