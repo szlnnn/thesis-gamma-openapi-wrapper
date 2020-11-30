@@ -35,7 +35,7 @@ Eclipse egy nyílt forráskódú, platform független fejlesztői környezet (ID
 
 Az Eclipse IDE egy speciális Eclipse alkalmazás ami lehetővé teszi a fejlesztőknek, hogy egyedi alkalmazásokat tudjanak fejleszteni. Egy Eclipse alkalmazás egy vagy több szoftver komponensből tevődik össze ezeket nevezünk plug-in-eknek. Ezek a modulok bővíthetőek vagy felhasználhatóak más komponensek létrehozására. Összefoglalva, az Eclipse IDE egy több plug-in-ekből (JDT) álló Eclipse alkalmazás.
 
-Lehetőségünk van az így létrehozott alkalmazásainkat összecsomagolni és az Eclipse IDE- től függetlenül futtatni és tesztelni.
+Lehetőségünk van az így létrehozott alkalmazásainkat összecsomagolni és az Eclipse IDE- től függetlenül futtatni és tesztelni (\textbf{headless Eclipse}).
 Ehhez definiálnunk kell egy termék leírást (product configuration), aminek tartalmaznia kell az alkalmazásunk plug-in-jét, minden felhasznált függőséget és minden más olyan konfigurációt ami szükséges ahhoz, hogy egy külön komponenseként tudjuk hordozni a szoftverünket. Ilyen konfigurációk, az alkalmazás belépési pontja (extension point), komponensek indulási sorrendje, esetleges ikonok és függőségi fa, ami meghatározza, hogy milyen komponens mitől és hogyan (kötelező, opcionális) függ valamilyen más modultól.
 
 A termékleírásunk egy alkalmazás osztályra kell mutasson ami alapértelmezetten két fajta lehet:
@@ -104,16 +104,73 @@ A fentebb többször említett kérés/válasz fogalmakat a REST világban HTTP 
 
 
 %----------------------------------------------------------------------------
-\subsection{OpenAPI}
+\subsection{OpenAPI és Swagger}
 %----------------------------------------------------------------------------
-\cite{swagger}
+\textbf{OpenAPI Specifikáció} egy API leíró szintaktika REST API-k számára. A specifikáció YAML és JSON formátumban is írható, az így létrehozott fájl a teljes API-t meghatározza, jellemzően a következőket tartalmazza:
+\begin{itemize}
+	\item Endpointok halmazát és az ezeken meghatározott műveletek leírását, mint például GET /api/students, ami a tanulók listáját adja vissza vagy a POST /api/students, ami a kliens oldalról felküldött adatok alapján létrehoz egy tanulót a szerver oldalon.
+	\item Műveletek bemeneti és kimeneti paraméterét
+	\item Autentikációs metódusokat
+	\item Licenc, felhasználói feltételek vagy bármilyen adminisztratív információ ami az API-hoz tartozik
+\end{itemize}
+
+Az OpenAPI specifikációt korábban Swagger specifikációnak hívták, amíg a SmartBear Software felajánlotta az OpenAPI iniciatívának. Azóta az OpenAPI 3.0 verziónál tartunk, az új verzió részletes dokumentációjáról és az OpenAPI-ról itt lehet részletesebben információkat olvasni: \textbf{\href{https://www.openapis.org/blog/2017/07/26/the-oai-announces-the-openapi-specification-3-0-0}{OpenAPI 3.0 Documentation}}
+
+\begin{figure}[!ht]
+	\includegraphics[width=150mm, keepaspectratio]{figures/swagerr_UI.png}
+	\caption{Gamma OpenAPI Specification}
+	\label{fig:openAPI_swagger}
+\end{figure}
+
+A Swagger egy olyan eszköztár ami az OpenAPI köré épült, hogy segítse a REST API tervezést, implementálást, tesztelést. Számos ilyen eszköz tartozik ide, ezek közül a legfontosabbak:
+\begin{itemize}
+	\item \textbf{\href{https://editor.swagger.io/?_ga=2.32011518.1535494714.1606415394-1420243541.1606415394}{Swagger Editor}} Egy böngészőből elérhető felhasználó barát felületet biztosít, ahol lehetőségünk van megírni a specifikációnkat. Számos előnyt kínál egy hagyományos szerkesztőhöz képest, ilyenek a szintaktikai ellenőrzések, bizonyos REST API szabályok betartását is megköveteli, pl: egy GET metódusnak nem lehet törzse.
+	\item  \textbf{\href{https://swagger.io/swagger-ui/}{Swagger UI}} Egy olvasható, részletes és vizuálisan látványos dokumentációt generál az Editorban elkészített API specifikációnkhoz, \aref{fig:openAPI_swagger} ábrán egy ilyent lehet megtekinteni.
+	\item  \textbf{\href{https://github.com/swagger-api/swagger-codegen}{Swagger Codegen}} Kliens oldali könyvtárakat és szerver oldali keretet tud generálni.
+\end{itemize}
+
+A specifikációnak tehát rengeteg előnye van, többek közt az egységes API leírás, ami platform független, a kódgenerálás miatt több erőforrás marad az üzleti logika implementálásra vagy  az automatizált dokumentáció készítés.
 %----------------------------------------------------------------------------
 \subsection{Fontosabb Java könyvtárak}
 %----------------------------------------------------------------------------
+A Vert.x egy eszköztár, amelynek segítségével JVM alapú alkalmazásokat tudunk készíteni. Nagyon flexibilis, azaz nagyon széles az alkalmazás típus spektrum, ahol használni lehet. HTTP/REST mikroszolgáltatások, komplex webes alkalmazások vagy eseményvezérelt back-end fejlesztése során is használható.
 
+Flexibilitása miatt a piac számos területén használjak, például valós idejű játékokban vagy banki rendszerekben.
+
+JVM alapú programozási nyelvek bármelyikében használható (Java, Kotlin, JavaScript, Groovy, Ruby, Scala).
+
+OpenAPI specifikáció integrálását is támogatja. Nagyon egyszerűen lehetőségünk van behivatkozni az API-t leíró fájlunkat, ami alapján a Vert.x legenerál egy interfész réteget, amely mögé nagyon egyszerűen letudjuk implementálni az üzleti logikánkat.
 %----------------------------------------------------------------------------
 \section{Gamma}
 %----------------------------------------------------------------------------
+
+A Gamma egy tanszéken fejlesztett eszköz, amely segítségével komponens alapú reaktív rendszereket tudunk modellezni. Több funkcióval rendelkezik, ezek kerülnek rövid bemutatásra ebben a fejezetben, részletes dokumentációt számos publikáció tartalmaz ezekről itt lehet olvasni: \textbf{\href{https://inf.mit.bme.hu/node/6028}{Gamma Keretrendszer}}
+%----------------------------------------------------------------------------
+\subsection{Gamma funkciók}
+%----------------------------------------------------------------------------
+Támogatott mérnöki modellek integrációja \textbf{modell transzformáció}  segítségével történik. Ez a funkció egy létező mérnöki modellt fordít le a Gamma állapotgép nyelvére, ezzel a felhasználót segíti, mivel automatizálva történik a forrás nyelv és a gamma közti leképezés. Jelenleg a Yakindu és UPAAL modellezési nyelveket képes a Gamma transzformálni, viszont a plug-in koncepció további nyelvek leképezését is lehetővé teszi.
+
+A \textbf{validáció} egy statikus analízis technika, mely visszajelzést ad a létrehozott modellek szintaktikai helyességéről. A Gamma az önálló modelleken és a kompozit állapotgép komponenseken is végez validációt.
+
+A Gamma képes Java programozási nyelvre \textbf{automatizáltan kódot generálni}. Interfész definíciókat a Gamma interfészekből generálja a funkció, a komponens implementációkat pedig a kompozit állapotgép modellezés során definiáltak alapján készíti el.
+
+Két \textbf{verifikáció} funkcionalitást támogat a Gamma :
+\begin{itemize}
+	\item formális verifikáció, amely formális modellezési nyelvek integrációjával valósul meg. Jelenleg a Gamma keretrendszerbe az UPAAL van integrálva.
+	\item back-annotation, amely felhasználja a formális verifikáció eredményét és ezt felhasználva  generál egy végrehajtási láncot amely alátámasztja vagy megcáfolja az egyes rendszer követelményt.
+\end{itemize}
+
+A Gamma az UPAAL modell ellenőrzőt felhasználva képes \textbf{teszteket generálni}, ehhez létrehoz egy absztrakt Gamma modellt, amely alapján legenerálja a teszt eseteket.
+
+%----------------------------------------------------------------------------
+\subsection{Gamma hiányosságok} \label{gamma_missing}
+%----------------------------------------------------------------------------
+
+A Gamma egy Eclipse IDE-ben létező keretrendszer, így jelentős kihívást jelent, hogy egy felhasználó kipróbálja esetleg használja. Kezdve az Eclipse világ rejtelmeitől a különböző függőségi nehézségekig számos hibalehetőség lép föl, ha használni szeretnénk az alkalmazást. Továbbá, vannak olyan modellek amelyek több ezer akár millió nagyságrendű állapottal rendelkeznek, ilyen modelleken a fentebb leírt műveletek futtatása igenis erőforrásigényes. Sajnos az IDE-hez kötöttség nem segít ezen problémák megoldásában, nehéz a skálázhatóság és a disztribúció kérdésekre választ kapni jelen kontextusban.
+
+
+
+
 
 
 

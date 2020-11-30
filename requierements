@@ -1,0 +1,45 @@
+funkcuioinalitas
+requieremnts:
+-rendszer kepes kell legyen interneten kereszulti kereseket feldolgozni
+	- rendszernek kepes kell lennie eclipse projekteket kezelesere, ezek tartalmazzak majd a modelleket amiketn dologzni akarunk
+		- torles
+		- letrehozas
+	- gamma muveletek futtatasara 
+		- transzformacio
+		- kogeneralas
+		- verifikacio
+		- tesztgeneralas
+	- gamma muveletek futasi eredmenyek lekeresenek a lehetoseget felkinalni
+		- teljes projekt artifact
+		- bizonyos fileok/mappak a projekten belul
+	
+- rendszer kepes kell legyen felhasznaloi identitas tamogatasara
+	- kepes kell legyen felhasznalo- projekt osszeredenelesek eltarolasara
+	- 
+- rendszer kepes kell legyen inaktiv projektek torlesere
+			- lehetoseget felkinalni, hogy egy projekt leajrati idejet meghosszabitjuk
+			- ertesitse a projekt tulajdonosat ha lejar a projekt bizonyos idon belul
+		
+		
+Reliability:
+A rendszer kepes kell legyen tobb gamma muvelet feldolgozasara kulonbozo projekteken egyidoben
+	- egy futas alatt levo pojekten nem futtathat mas gamma muveletet
+
+Security:
+- csak olyan projekthez adhat hozzaferest ami a felhasznalohoz tartozik
+
+Performance:
+	-a rendszer skalazhato kell legyen
+	
+Usability:
+	- megfelelo valaszokat kell adjon az egyes iternetes  keresekre
+		- megfelelo HTTP statusz kodokat 
+	- ertesiteni a projekt tulajdonosat a muvelet elvegzesrol
+
+	
+	
+Stakeholders:
+	Uzemelteto 
+	Felhasznalo - Gamma user
+				- mas integralt rendszer user 
+	
