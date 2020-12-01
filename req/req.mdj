@@ -1,0 +1,5156 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "Untitled",
+	"ownedElements": [
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFF+qBtyKM79qY=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Main",
+					"defaultDiagram": true
+				}
+			]
+		},
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAF2FErRDwvfFaM=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model1",
+			"ownedElements": [
+				{
+					"_type": "SysMLRequirementDiagram",
+					"_id": "AAAAAAF2FErREAvgcSQ=",
+					"_parent": {
+						"$ref": "AAAAAAF2FErRDwvfFaM="
+					},
+					"name": "Funkcionális követelmények 1",
+					"ownedViews": [
+						{
+							"_type": "UMLFrameView",
+							"_id": "AAAAAAF2FErREAvhu2k=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF2FErREQviHaU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FErREAvhu2k="
+									},
+									"font": "Arial;13;0",
+									"left": 125.7890625,
+									"top": 109,
+									"width": 174.41796875,
+									"height": 13,
+									"text": "Funkcionális követelmények 1"
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF2FErREQvjiKo=",
+									"_parent": {
+										"$ref": "AAAAAAF2FErREAvhu2k="
+									},
+									"font": "Arial;13;1",
+									"left": 101,
+									"top": 109,
+									"width": 19.7890625,
+									"height": 13,
+									"text": "req"
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 96,
+							"top": 104,
+							"width": 953,
+							"height": 809,
+							"nameLabel": {
+								"$ref": "AAAAAAF2FErREQviHaU="
+							},
+							"frameTypeLabel": {
+								"$ref": "AAAAAAF2FErREQvjiKo="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FEr6XgvvkEU=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FEr6XgvtiSg="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FEr6XwvwWHA=",
+									"_parent": {
+										"$ref": "AAAAAAF2FEr6XgvvkEU="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FEr6XgvtiSg="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FEr6XwvxAkA=",
+											"_parent": {
+												"$ref": "AAAAAAF2FEr6XwvwWHA="
+											},
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 133,
+											"width": 215,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FEr6XwvyDWs=",
+											"_parent": {
+												"$ref": "AAAAAAF2FEr6XwvwWHA="
+											},
+											"font": "Arial;13;1",
+											"left": 469,
+											"top": 148,
+											"width": 215,
+											"height": 13,
+											"text": "Internetes kommunikáció",
+											"wordWrap": true
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FEr6XwvzR3c=",
+											"_parent": {
+												"$ref": "AAAAAAF2FEr6XwvwWHA="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 640,
+											"top": 64,
+											"width": 80.9072265625,
+											"height": 13,
+											"text": "(from Model1)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FEr6Xwv0Idw=",
+											"_parent": {
+												"$ref": "AAAAAAF2FEr6XwvwWHA="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 640,
+											"top": 64,
+											"horizontalAlignment": 1,
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 128,
+									"width": 225,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FEr6XwvxAkA="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FEr6XwvyDWs="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FEr6XwvzR3c="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FEr6Xwv0Idw="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FEr6Xwv1d0o=",
+									"_parent": {
+										"$ref": "AAAAAAF2FEr6XgvvkEU="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FEr6XgvtiSg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 320,
+									"top": 32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FEr6YAv2YpI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FEr6XgvvkEU="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FEr6XgvtiSg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 320,
+									"top": 32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FEr6YAv3dTw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FEr6XgvvkEU="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FEr6XgvtiSg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 320,
+									"top": 32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FEr6YAv48po=",
+									"_parent": {
+										"$ref": "AAAAAAF2FEr6XgvvkEU="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FEr6XgvtiSg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 320,
+									"top": 32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FEr6YAv5cCQ=",
+									"_parent": {
+										"$ref": "AAAAAAF2FEr6XgvvkEU="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FEr6XgvtiSg="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FQtErQwe0Aw=",
+											"_parent": {
+												"$ref": "AAAAAAF2FEr6YAv5cCQ="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FEr6XgvtiSg="
+											},
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 171,
+											"width": 215,
+											"height": 13,
+											"text": "id = \"R1\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FQxg8wwv5pk=",
+											"_parent": {
+												"$ref": "AAAAAAF2FEr6YAv5cCQ="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FEr6XgvtiSg="
+											},
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 186,
+											"width": 215,
+											"height": 39,
+											"text": "text = \"A rendszer képes kell legyen  interneten keresztüli kérések feldolgozására\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer képes kell legyen  interneten keresztüli kérések feldolgozására\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 166,
+									"width": 225,
+									"height": 64
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 464,
+							"top": 128,
+							"width": 225,
+							"height": 105,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FEr6XwvwWHA="
+							},
+							"wordWrap": true,
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FEr6Xwv1d0o="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FEr6YAv2YpI="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FEr6YAv3dTw="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FEr6YAv48po="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FEr6YAv5cCQ="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRHH1Qyr4n8=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRHH1Ayp+XY="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRHH1Qys8lU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Qyr4n8="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRHH1Qyt4cc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHH1Qys8lU="
+											},
+											"font": "Arial;13;0",
+											"left": 501,
+											"top": 557,
+											"width": 192.943359375,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRHH1QyuMOw=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHH1Qys8lU="
+											},
+											"font": "Arial;13;1",
+											"left": 501,
+											"top": 572,
+											"width": 192.943359375,
+											"height": 13,
+											"text": "Gamma műveletek értelmezése"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRHH1QyvyAs=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHH1Qys8lU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 576,
+											"top": 832,
+											"width": 182.78076171875,
+											"height": 13,
+											"text": "(from Internetes kommunikáció)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRHH1Qyw3Qo=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHH1Qys8lU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 576,
+											"top": 832,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": 552,
+									"width": 202.943359375,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRHH1Qyt4cc="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRHH1QyuMOw="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRHH1QyvyAs="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRHH1Qyw3Qo="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRHH1Qyxknw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Qyr4n8="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 288,
+									"top": 416,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRHH1QyygX4=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Qyr4n8="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 288,
+									"top": 416,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRHH1gyzdkc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Qyr4n8="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 288,
+									"top": 416,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRHH1gy0Ty0=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Qyr4n8="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 288,
+									"top": 416,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRHH1gy1xu8=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Qyr4n8="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRMQsQ0aNgg=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHH1gy1xu8="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRHH1Ayp+XY="
+											},
+											"font": "Arial;13;0",
+											"left": 501,
+											"top": 595,
+											"width": 192.943359375,
+											"height": 13,
+											"text": "id = \"R1.2\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.2\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FROj+Q0ewFY=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHH1gy1xu8="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRHH1Ayp+XY="
+											},
+											"font": "Arial;13;0",
+											"left": 501,
+											"top": 610,
+											"width": 192.943359375,
+											"height": 52,
+											"text": "text = \"A felhasználónak lehetősége van a saját felküldött projektjein gamma műveleteket futtatni\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A felhasználónak lehetősége van a saját felküldött projektjein gamma műveleteket futtatni\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": 590,
+									"width": 202.943359375,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 496,
+							"top": 552,
+							"width": 202.943359375,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRHH1Qys8lU="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRHH1Qyxknw="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRHH1QyygX4="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRHH1gyzdkc="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRHH1gy0Ty0="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRHH1gy1xu8="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRHagwzYNyo=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRHagwzWAUA="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRHagwzZsA4=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHagwzYNyo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHagwzWAUA="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRHagwzad7I=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHagwzZsA4="
+											},
+											"font": "Arial;13;0",
+											"left": 221,
+											"top": 285,
+											"width": 239,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRHagwzbG1E=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHagwzZsA4="
+											},
+											"font": "Arial;13;1",
+											"left": 221,
+											"top": 300,
+											"width": 239,
+											"height": 13,
+											"text": "Eclipse projekt feldolgozás"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRHagwzcNJo=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHagwzZsA4="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 192,
+											"top": 416,
+											"width": 182.78076171875,
+											"height": 13,
+											"text": "(from Internetes kommunikáció)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRHagwzdM14=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHagwzZsA4="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 192,
+											"top": 416,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 216,
+									"top": 280,
+									"width": 249,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRHagwzad7I="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRHagwzbG1E="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRHagwzcNJo="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRHagwzdM14="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRHagwze9ok=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHagwzYNyo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHagwzWAUA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 96,
+									"top": 208,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRHagwzfyUw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHagwzYNyo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHagwzWAUA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 96,
+									"top": 208,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRHagwzgYpA=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHagwzYNyo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHagwzWAUA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 96,
+									"top": 208,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRHagwzhzVU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHagwzYNyo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHagwzWAUA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 96,
+									"top": 208,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRHahAzifP0=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHagwzYNyo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRHagwzWAUA="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRI0Cw0JpWo=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHahAzifP0="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRHagwzWAUA="
+											},
+											"font": "Arial;13;0",
+											"left": 221,
+											"top": 323,
+											"width": 239,
+											"height": 13,
+											"text": "id = \"R1.1\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.1\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRJ9SA0NNhU=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRHahAzifP0="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRHagwzWAUA="
+											},
+											"font": "Arial;13;0",
+											"left": 221,
+											"top": 338,
+											"width": 239,
+											"height": 52,
+											"text": "text = \" A rendszer képes kell legyen a gamma modelleket és a hozzá tartozó adatokat tartalmazó eclipse projektek kezelésére\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\" A rendszer képes kell legyen a gamma modelleket és a hozzá tartozó adatokat tartalmazó eclipse projektek kezelésére\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 216,
+									"top": 318,
+									"width": 249,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 216,
+							"top": 280,
+							"width": 249,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRHagwzZsA4="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRHagwze9ok="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRHagwzfyUw="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRHagwzgYpA="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRHagwzhzVU="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRHahAzifP0="
+							}
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FRPLkQ0k4jU=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FEr6XgvvkEU="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRHagwzYNyo="
+							},
+							"lineStyle": 1,
+							"points": "427:279;496:233"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FRPWQA0oDwc=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FEr6XgvvkEU="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRHH1Qyr4n8="
+							},
+							"lineStyle": 1,
+							"points": "593:551;578:233"
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRQcCA1aB5E=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRQcCA1YSXo="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRQcCA1bYBE=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQcCA1aB5E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQcCA1YSXo="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRQcCQ1chIE=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQcCA1bYBE="
+											},
+											"font": "Arial;13;0",
+											"left": 685,
+											"top": 285,
+											"width": 175,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRQcCQ1dB9k=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQcCA1bYBE="
+											},
+											"font": "Arial;13;1",
+											"left": 685,
+											"top": 300,
+											"width": 175,
+											"height": 13,
+											"text": "Eredmény visszaküldés"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRQcCQ1eZzQ=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQcCA1bYBE="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -176,
+											"top": -112,
+											"width": 182.78076171875,
+											"height": 13,
+											"text": "(from Internetes kommunikáció)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRQcCQ1ffI0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQcCA1bYBE="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -176,
+											"top": -112,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 680,
+									"top": 280,
+									"width": 185,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRQcCQ1chIE="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRQcCQ1dB9k="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRQcCQ1eZzQ="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRQcCQ1ffI0="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRQcCQ1gDN0=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQcCA1aB5E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQcCA1YSXo="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -88,
+									"top": -56,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRQcCQ1hyVw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQcCA1aB5E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQcCA1YSXo="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -88,
+									"top": -56,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRQcCQ1i4u8=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQcCA1aB5E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQcCA1YSXo="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -88,
+									"top": -56,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRQcCQ1jhU0=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQcCA1aB5E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQcCA1YSXo="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -88,
+									"top": -56,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRQcCQ1kkQc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQcCA1aB5E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQcCA1YSXo="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRWT5g3Olp0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQcCQ1kkQc="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRQcCA1YSXo="
+											},
+											"font": "Arial;13;0",
+											"left": 685,
+											"top": 323,
+											"width": 175,
+											"height": 13,
+											"text": "id = \"R1.3\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.3\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRWr1g3S7sU=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQcCQ1kkQc="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRQcCA1YSXo="
+											},
+											"font": "Arial;13;0",
+											"left": 685,
+											"top": 338,
+											"width": 175,
+											"height": 52,
+											"text": "text = \"A felhasználónak lehetősége kell legyen  a gamma művelet eredményeit lekérni a rendszertől\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A felhasználónak lehetősége kell legyen  a gamma művelet eredményeit lekérni a rendszertől\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 680,
+									"top": 318,
+									"width": 185,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 680,
+							"top": 280,
+							"width": 185,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRQcCA1bYBE="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRQcCQ1gDN0="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRQcCQ1hyVw="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRQcCQ1i4u8="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRQcCQ1jhU0="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRQcCQ1kkQc="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRQhGg2HxOQ=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRQhGQ2FfYY="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRQhGg2IuKc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQhGg2HxOQ="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQhGQ2FfYY="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRQhGg2JaUM=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQhGg2IuKc="
+											},
+											"font": "Arial;13;0",
+											"left": 117,
+											"top": 437,
+											"width": 159,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRQhGg2K7Xo=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQhGg2IuKc="
+											},
+											"font": "Arial;13;1",
+											"left": 117,
+											"top": 452,
+											"width": 159,
+											"height": 13,
+											"text": "Projekt törlés",
+											"wordWrap": true
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRQhGg2LcYI=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQhGg2IuKc="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -1360,
+											"top": 208,
+											"width": 192.18798828125,
+											"height": 13,
+											"text": "(from Eclipse projekt feldolgozás)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRQhGg2MWqc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQhGg2IuKc="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -1360,
+											"top": 208,
+											"horizontalAlignment": 1,
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 112,
+									"top": 432,
+									"width": 169,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRQhGg2JaUM="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRQhGg2K7Xo="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRQhGg2LcYI="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRQhGg2MWqc="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRQhGg2NANo=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQhGg2HxOQ="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQhGQ2FfYY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -680,
+									"top": 104,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRQhGg2O/2s=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQhGg2HxOQ="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQhGQ2FfYY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -680,
+									"top": 104,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRQhGg2Pjp4=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQhGg2HxOQ="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQhGQ2FfYY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -680,
+									"top": 104,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRQhGg2Qljc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQhGg2HxOQ="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQhGQ2FfYY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -680,
+									"top": 104,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRQhGg2RrXI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQhGg2HxOQ="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRQhGQ2FfYY="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRfN8w3rKF0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQhGg2RrXI="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRQhGQ2FfYY="
+											},
+											"font": "Arial;13;0",
+											"left": 117,
+											"top": 475,
+											"width": 159,
+											"height": 13,
+											"text": "id = \"R1.1.1\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.1.1\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRjA1Q3vtuA=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRQhGg2RrXI="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRQhGQ2FfYY="
+											},
+											"font": "Arial;13;0",
+											"left": 117,
+											"top": 490,
+											"width": 159,
+											"height": 39,
+											"text": "text = \"A rendszer képes egy mér létező eclipse projekt törlésére\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer képes egy mér létező eclipse projekt törlésére\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 112,
+									"top": 470,
+									"width": 169,
+									"height": 64
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 112,
+							"top": 432,
+							"width": 169,
+							"height": 102,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRQhGg2IuKc="
+							},
+							"wordWrap": true,
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRQhGg2NANo="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRQhGg2O/2s="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRQhGg2Pjp4="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRQhGg2Qljc="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRQhGg2RrXI="
+							}
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FRXyIg3fxY0=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FEr6XgvvkEU="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRQcCA1aB5E="
+							},
+							"lineStyle": 1,
+							"points": "700:279;642:233"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FRjq0w33X+0=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRHagwzYNyo="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRQhGg2HxOQ="
+							},
+							"lineStyle": 1,
+							"points": "247:431;282:395"
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRkkjQ3/SYo=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRkkjA39Apk="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRkkjQ4Arks=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRkkjQ3/SYo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRkkjA39Apk="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRkkjQ4BMSA=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRkkjQ4Arks="
+											},
+											"font": "Arial;13;0",
+											"left": 317,
+											"top": 437,
+											"width": 167,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRkkjQ4CGUk=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRkkjQ4Arks="
+											},
+											"font": "Arial;13;1",
+											"left": 317,
+											"top": 452,
+											"width": 167,
+											"height": 13,
+											"text": "Projekt létrehozás"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRkkjg4DxpQ=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRkkjQ4Arks="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 240,
+											"top": -560,
+											"width": 192.18798828125,
+											"height": 13,
+											"text": "(from Eclipse projekt feldolgozás)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRkkjg4E+No=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRkkjQ4Arks="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 240,
+											"top": -560,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 312,
+									"top": 432,
+									"width": 177,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRkkjQ4BMSA="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRkkjQ4CGUk="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRkkjg4DxpQ="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRkkjg4E+No="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRkkjg4FJgg=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRkkjQ3/SYo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRkkjA39Apk="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 120,
+									"top": -280,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRkkjg4G6tk=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRkkjQ3/SYo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRkkjA39Apk="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 120,
+									"top": -280,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRkkjg4HNBg=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRkkjQ3/SYo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRkkjA39Apk="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 120,
+									"top": -280,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRkkjg4IO/o=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRkkjQ3/SYo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRkkjA39Apk="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 120,
+									"top": -280,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRkkjg4JF4A=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRkkjQ3/SYo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRkkjA39Apk="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRlaGQ4sKOc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRkkjg4JF4A="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRkkjA39Apk="
+											},
+											"font": "Arial;13;0",
+											"left": 317,
+											"top": 475,
+											"width": 167,
+											"height": 13,
+											"text": "id = \"R1.1.2\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.1.2\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRnQYQ4x4EM=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRkkjg4JF4A="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRkkjA39Apk="
+											},
+											"font": "Arial;13;0",
+											"left": 317,
+											"top": 490,
+											"width": 167,
+											"height": 39,
+											"text": "text = \"A rendszer képes a felküldött fájlok alapján eclipse projektet létrehozni\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer képes a felküldött fájlok alapján eclipse projektet létrehozni\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 312,
+									"top": 470,
+									"width": 177,
+									"height": 64
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 312,
+							"top": 432,
+							"width": 177,
+							"height": 102,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRkkjQ4Arks="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRkkjg4FJgg="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRkkjg4G6tk="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRkkjg4HNBg="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRkkjg4IO/o="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRkkjg4JF4A="
+							}
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FRnt0g449UA=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRHagwzYNyo="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRkkjQ3/SYo="
+							},
+							"lineStyle": 1,
+							"points": "379:431;364:395"
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRuIiw5How4=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRuIiQ5FKCY="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRuIiw5IfoY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuIiw5How4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuIiQ5FKCY="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuIiw5J4cA=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuIiw5IfoY="
+											},
+											"font": "Arial;13;0",
+											"left": 331.50830078125,
+											"top": 765,
+											"width": 144.49169921875,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuIiw5KHFI=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuIiw5IfoY="
+											},
+											"font": "Arial;13;1",
+											"left": 331.50830078125,
+											"top": 780,
+											"width": 144.49169921875,
+											"height": 13,
+											"text": "Gamma transzformáció"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuIiw5Lr3M=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuIiw5IfoY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -496,
+											"top": 192,
+											"width": 221.78076171875,
+											"height": 13,
+											"text": "(from Gamma műveletek értelmezése)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuIiw5MLcY=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuIiw5IfoY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -496,
+											"top": 192,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 326.50830078125,
+									"top": 760,
+									"width": 154.49169921875,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRuIiw5J4cA="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRuIiw5KHFI="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRuIiw5Lr3M="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRuIiw5MLcY="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRuIiw5NiIo=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuIiw5How4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuIiQ5FKCY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -248,
+									"top": 96,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRuIiw5Ovq4=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuIiw5How4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuIiQ5FKCY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -248,
+									"top": 96,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRuIiw5PzCg=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuIiw5How4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuIiQ5FKCY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -248,
+									"top": 96,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRuIiw5QSWE=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuIiw5How4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuIiQ5FKCY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -248,
+									"top": 96,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRuIiw5RYnA=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuIiw5How4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuIiQ5FKCY="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRv/qw77xEw=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuIiw5RYnA="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRuIiQ5FKCY="
+											},
+											"font": "Arial;13;0",
+											"left": 331.50830078125,
+											"top": 803,
+											"width": 144.49169921875,
+											"height": 13,
+											"text": "id = \"R1.2.1\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.2.1\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRw4DQ7/2i0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuIiw5RYnA="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRuIiQ5FKCY="
+											},
+											"font": "Arial;13;0",
+											"left": 331.50830078125,
+											"top": 818,
+											"width": 144.49169921875,
+											"height": 52,
+											"text": "text = \"A rendszer támogatja a Gamma transzformáció műveletet\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer támogatja a Gamma transzformáció műveletet\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 326.50830078125,
+									"top": 798,
+									"width": 154.49169921875,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 326.50830078125,
+							"top": 760,
+							"width": 154.49169921875,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRuIiw5IfoY="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRuIiw5NiIo="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRuIiw5Ovq4="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRuIiw5PzCg="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRuIiw5QSWE="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRuIiw5RYnA="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRuV+w50r/4=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRuV+w5yCoE="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRuV/A51ALY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuV+w50r/4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuV+w5yCoE="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuV/A52R10=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuV/A51ALY="
+											},
+											"font": "Arial;13;0",
+											"left": 501,
+											"top": 765,
+											"width": 119,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuV/A5359Q=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuV/A51ALY="
+											},
+											"font": "Arial;13;1",
+											"left": 501,
+											"top": 780,
+											"width": 119,
+											"height": 13,
+											"text": "Gamma verifikáció"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuV/A54AEs=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuV/A51ALY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -704,
+											"width": 221.78076171875,
+											"height": 13,
+											"text": "(from Gamma műveletek értelmezése)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuV/A55liY=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuV/A51ALY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -704,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": 760,
+									"width": 129,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRuV/A52R10="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRuV/A5359Q="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRuV/A54AEs="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRuV/A55liY="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRuV/A56VzQ=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuV+w50r/4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuV+w5yCoE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -352,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRuV/A57iNc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuV+w50r/4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuV+w5yCoE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -352,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRuV/A58aZA=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuV+w50r/4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuV+w5yCoE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -352,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRuV/A59rlI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuV+w50r/4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuV+w5yCoE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -352,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRuV/A5+6/s=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuV+w50r/4="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuV+w5yCoE="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRymmQ8OtM8=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuV/A5+6/s="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRuV+w5yCoE="
+											},
+											"font": "Arial;13;0",
+											"left": 501,
+											"top": 803,
+											"width": 119,
+											"height": 52,
+											"text": "text = \"A rendszer támogatja a Gamma modell verifikáció funkciót\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer támogatja a Gamma modell verifikáció funkciót\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": 798,
+									"width": 129,
+									"height": 62
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 496,
+							"top": 760,
+							"width": 129,
+							"height": 100,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRuV/A51ALY="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRuV/A56VzQ="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRuV/A57iNc="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRuV/A58aZA="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRuV/A59rlI="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRuV/A5+6/s="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRueVg6hHrc=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRueVg6fqUg="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRueVg6iyf8=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRueVg6hHrc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRueVg6fqUg="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRueVg6jqiQ=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRueVg6iyf8="
+											},
+											"font": "Arial;13;0",
+											"left": 829,
+											"top": 765,
+											"width": 151,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRueVg6kKwA=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRueVg6iyf8="
+											},
+											"font": "Arial;13;1",
+											"left": 829,
+											"top": 780,
+											"width": 151,
+											"height": 13,
+											"text": "Gamma kódgenerálás"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRueVg6lLoc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRueVg6iyf8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 992,
+											"top": -64,
+											"width": 221.78076171875,
+											"height": 13,
+											"text": "(from Gamma műveletek értelmezése)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRueVw6mrHA=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRueVg6iyf8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 992,
+											"top": -64,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 824,
+									"top": 760,
+									"width": 161,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRueVg6jqiQ="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRueVg6kKwA="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRueVg6lLoc="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRueVw6mrHA="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRueVw6ngbk=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRueVg6hHrc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRueVg6fqUg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRueVw6oerA=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRueVg6hHrc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRueVg6fqUg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRueVw6pOq4=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRueVg6hHrc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRueVg6fqUg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRueVw6qjt8=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRueVg6hHrc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRueVg6fqUg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 496,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRueVw6rllI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRueVg6hHrc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRueVg6fqUg="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRx58Q8Jh3c=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRueVw6rllI="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRueVg6fqUg="
+											},
+											"font": "Arial;13;0",
+											"left": 829,
+											"top": 803,
+											"width": 151,
+											"height": 13,
+											"text": "id = \"R1.2.2\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.2.2\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FRxqww8FA3U=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRueVw6rllI="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRueVg6fqUg="
+											},
+											"font": "Arial;13;0",
+											"left": 829,
+											"top": 818,
+											"width": 151,
+											"height": 39,
+											"text": "text = \"A rendszer támogatja a Gamma kódgenerálás műveletet\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer támogatja a Gamma kódgenerálás műveletet\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 824,
+									"top": 798,
+									"width": 161,
+									"height": 64
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 824,
+							"top": 760,
+							"width": 161,
+							"height": 102,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRueVg6iyf8="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRueVw6ngbk="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRueVw6oerA="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRueVw6pOq4="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRueVw6qjt8="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRueVw6rllI="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FRuicQ7Or04=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FRuicQ7M04g="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FRuicg7PxCE=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuicQ7Or04="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuicQ7M04g="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuicg7Q7Oc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuicg7PxCE="
+											},
+											"font": "Arial;13;0",
+											"left": 653,
+											"top": 765,
+											"width": 145.5263671875,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuicg7Rwgc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuicg7PxCE="
+											},
+											"font": "Arial;13;1",
+											"left": 653,
+											"top": 780,
+											"width": 145.5263671875,
+											"height": 13,
+											"text": "Gamma tesztgenerálás"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuicg7Suuo=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuicg7PxCE="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1024,
+											"top": 16,
+											"width": 221.78076171875,
+											"height": 13,
+											"text": "(from Gamma műveletek értelmezése)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FRuicg7TrFQ=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuicg7PxCE="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1024,
+											"top": 16,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 648,
+									"top": 760,
+									"width": 155.5263671875,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FRuicg7Q7Oc="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FRuicg7Rwgc="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FRuicg7Suuo="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FRuicg7TrFQ="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FRuicg7U5uY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuicQ7Or04="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuicQ7M04g="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 512,
+									"top": 8,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FRuicg7V6EI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuicQ7Or04="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuicQ7M04g="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 512,
+									"top": 8,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FRuicg7W65k=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuicQ7Or04="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuicQ7M04g="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 512,
+									"top": 8,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FRuicg7XmM0=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuicQ7Or04="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuicQ7M04g="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 512,
+									"top": 8,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FRuicg7Y5cE=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRuicQ7Or04="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FRuicQ7M04g="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FSM1Qm5uTxo=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuicg7Y5cE="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRuicQ7M04g="
+											},
+											"font": "Arial;13;0",
+											"left": 653,
+											"top": 803,
+											"width": 145.5263671875,
+											"height": 13,
+											"text": "id = \"R1.2.4\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.2.4\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FSNdpm5yBIQ=",
+											"_parent": {
+												"$ref": "AAAAAAF2FRuicg7Y5cE="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FRuicQ7M04g="
+											},
+											"font": "Arial;13;0",
+											"left": 653,
+											"top": 818,
+											"width": 145.5263671875,
+											"height": 39,
+											"text": "text = \"A rendszer támogatja a Gamma tesztgenerálásműveletet\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer támogatja a Gamma tesztgenerálásműveletet\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 648,
+									"top": 798,
+									"width": 155.5263671875,
+									"height": 64
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 648,
+							"top": 760,
+							"width": 155.5263671875,
+							"height": 102,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FRuicg7PxCE="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FRuicg7U5uY="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FRuicg7V6EI="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FRuicg7W65k="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FRuicg7XmM0="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FRuicg7Y5cE="
+							}
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FSTGJ26MQcE=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRHH1Qyr4n8="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRuIiw5How4="
+							},
+							"lineStyle": 1,
+							"points": "457:759;542:667"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FSTMym6QUwU=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRHH1Qyr4n8="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRuV+w50r/4="
+							},
+							"lineStyle": 1,
+							"points": "569:759;586:667"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FSTTTm6UIQk=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRHH1Qyr4n8="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRuicQ7Or04="
+							},
+							"lineStyle": 1,
+							"points": "692:759;633:667"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FSTb4m6YFCo=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRHH1Qyr4n8="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FRueVg6hHrc="
+							},
+							"lineStyle": 1,
+							"points": "826:759;685:667"
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FSUQqm6dfeo=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FSUQqW6bHGY="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FSUQqm6e8AU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FSUQqm6dfeo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FSUQqW6bHGY="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FSUQq26fCRE=",
+											"_parent": {
+												"$ref": "AAAAAAF2FSUQqm6e8AU="
+											},
+											"font": "Arial;13;0",
+											"left": 893,
+											"top": 429,
+											"width": 143,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FSUQq26gkIc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FSUQqm6e8AU="
+											},
+											"font": "Arial;13;1",
+											"left": 893,
+											"top": 444,
+											"width": 143,
+											"height": 13,
+											"text": "Részeredmény lekérés"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FSUQq26hOsI=",
+											"_parent": {
+												"$ref": "AAAAAAF2FSUQqm6e8AU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1248,
+											"top": -848,
+											"width": 174.8271484375,
+											"height": 13,
+											"text": "(from Eredmény visszaküldés)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FSUQq26iIIM=",
+											"_parent": {
+												"$ref": "AAAAAAF2FSUQqm6e8AU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1248,
+											"top": -848,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 888,
+									"top": 424,
+									"width": 153,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FSUQq26fCRE="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FSUQq26gkIc="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FSUQq26hOsI="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FSUQq26iIIM="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FSUQq26jqQM=",
+									"_parent": {
+										"$ref": "AAAAAAF2FSUQqm6dfeo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FSUQqW6bHGY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 624,
+									"top": -424,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FSUQq26kLm4=",
+									"_parent": {
+										"$ref": "AAAAAAF2FSUQqm6dfeo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FSUQqW6bHGY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 624,
+									"top": -424,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FSUQq26l2lw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FSUQqm6dfeo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FSUQqW6bHGY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 624,
+									"top": -424,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FSUQq26mRn8=",
+									"_parent": {
+										"$ref": "AAAAAAF2FSUQqm6dfeo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FSUQqW6bHGY="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 624,
+									"top": -424,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FSUQq26nvuU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FSUQqm6dfeo="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FSUQqW6bHGY="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FT3xFm7MoCs=",
+											"_parent": {
+												"$ref": "AAAAAAF2FSUQq26nvuU="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FSUQqW6bHGY="
+											},
+											"font": "Arial;13;0",
+											"left": 893,
+											"top": 467,
+											"width": 143,
+											"height": 13,
+											"text": "id = \"R1.3.1\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.3.1\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FT4aCW7QQYE=",
+											"_parent": {
+												"$ref": "AAAAAAF2FSUQq26nvuU="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FSUQqW6bHGY="
+											},
+											"font": "Arial;13;0",
+											"left": 893,
+											"top": 482,
+											"width": 143,
+											"height": 52,
+											"text": "text = \"Felhasználónak lehetősége kell legyen egyedi fájlok/mappák lekérésére.\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"Felhasználónak lehetősége kell legyen egyedi fájlok/mappák lekérésére.\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 888,
+									"top": 462,
+									"width": 153,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 888,
+							"top": 424,
+							"width": 153,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FSUQqm6e8AU="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FSUQq26jqQM="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FSUQq26kLm4="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FSUQq26l2lw="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FSUQq26mRn8="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FSUQq26nvuU="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FT60w27Z+Ms=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FT60wm7XL9E="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FT60w27agSA=",
+									"_parent": {
+										"$ref": "AAAAAAF2FT60w27Z+Ms="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FT60wm7XL9E="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FT60w27bdoM=",
+											"_parent": {
+												"$ref": "AAAAAAF2FT60w27agSA="
+											},
+											"font": "Arial;13;0",
+											"left": 685,
+											"top": 429,
+											"width": 168.4423828125,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FT60w27cfD8=",
+											"_parent": {
+												"$ref": "AAAAAAF2FT60w27agSA="
+											},
+											"font": "Arial;13;1",
+											"left": 685,
+											"top": 444,
+											"width": 168.4423828125,
+											"height": 13,
+											"text": "Teljes projekt visszakérése",
+											"wordWrap": true
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FT60w27dklI=",
+											"_parent": {
+												"$ref": "AAAAAAF2FT60w27agSA="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -928,
+											"top": -832,
+											"width": 174.8271484375,
+											"height": 13,
+											"text": "(from Eredmény visszaküldés)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FT60w27eUqA=",
+											"_parent": {
+												"$ref": "AAAAAAF2FT60w27agSA="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -928,
+											"top": -832,
+											"horizontalAlignment": 1,
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 680,
+									"top": 424,
+									"width": 178.4423828125,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FT60w27bdoM="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FT60w27cfD8="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FT60w27dklI="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FT60w27eUqA="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FT60w27fL4w=",
+									"_parent": {
+										"$ref": "AAAAAAF2FT60w27Z+Ms="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FT60wm7XL9E="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -464,
+									"top": -416,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FT60xG7gunQ=",
+									"_parent": {
+										"$ref": "AAAAAAF2FT60w27Z+Ms="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FT60wm7XL9E="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -464,
+									"top": -416,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FT60xG7hMbU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FT60w27Z+Ms="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FT60wm7XL9E="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -464,
+									"top": -416,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FT60xG7iqPg=",
+									"_parent": {
+										"$ref": "AAAAAAF2FT60w27Z+Ms="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FT60wm7XL9E="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -464,
+									"top": -416,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FT60xG7jaJY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FT60w27Z+Ms="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FT60wm7XL9E="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FT705m8GSc8=",
+											"_parent": {
+												"$ref": "AAAAAAF2FT60xG7jaJY="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FT60wm7XL9E="
+											},
+											"font": "Arial;13;0",
+											"left": 685,
+											"top": 467,
+											"width": 168.4423828125,
+											"height": 13,
+											"text": "id = \"R1.3.2\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.3.2\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FT9i5G8Kla8=",
+											"_parent": {
+												"$ref": "AAAAAAF2FT60xG7jaJY="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FT60wm7XL9E="
+											},
+											"font": "Arial;13;0",
+											"left": 685,
+											"top": 482,
+											"width": 168.4423828125,
+											"height": 52,
+											"text": "text = \"A felhasználónak lehetősége kell legyen a teljes eclipse projekt tartalmát lekérni\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A felhasználónak lehetősége kell legyen a teljes eclipse projekt tartalmát lekérni\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 680,
+									"top": 462,
+									"width": 178.4423828125,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 680,
+							"top": 424,
+							"width": 178.4423828125,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FT60w27agSA="
+							},
+							"wordWrap": true,
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FT60w27fL4w="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FT60xG7gunQ="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FT60xG7hMbU="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FT60xG7iqPg="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FT60xG7jaJY="
+							}
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FUBX228l6N0=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRQcCA1aB5E="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FT60w27Z+Ms="
+							},
+							"lineStyle": 1,
+							"points": "770:423;770:395"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FUBgim8pPaU=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRQcCA1aB5E="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FSUQqm6dfeo="
+							},
+							"lineStyle": 1,
+							"points": "887:423;849:395"
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2G5mpFUCI5Kk=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"model": {
+								"$ref": "AAAAAAF2G5mpFECGODU="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2G5mpFUCJ/mE=",
+									"_parent": {
+										"$ref": "AAAAAAF2G5mpFUCI5Kk="
+									},
+									"model": {
+										"$ref": "AAAAAAF2G5mpFECGODU="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2G5mpFUCKeQQ=",
+											"_parent": {
+												"$ref": "AAAAAAF2G5mpFUCJ/mE="
+											},
+											"font": "Arial;13;0",
+											"left": 141,
+											"top": 749,
+											"width": 135,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2G5mpFUCL0/Q=",
+											"_parent": {
+												"$ref": "AAAAAAF2G5mpFUCJ/mE="
+											},
+											"font": "Arial;13;1",
+											"left": 141,
+											"top": 764,
+											"width": 135,
+											"height": 13,
+											"text": "Művelet leállítás"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2G5mpFUCM8H8=",
+											"_parent": {
+												"$ref": "AAAAAAF2G5mpFUCJ/mE="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -176,
+											"top": 128,
+											"width": 221.78076171875,
+											"height": 13,
+											"text": "(from Gamma műveletek értelmezése)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2G5mpFkCNVMY=",
+											"_parent": {
+												"$ref": "AAAAAAF2G5mpFUCJ/mE="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -176,
+											"top": 128,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 136,
+									"top": 744,
+									"width": 145,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2G5mpFUCKeQQ="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2G5mpFUCL0/Q="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2G5mpFUCM8H8="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2G5mpFkCNVMY="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2G5mpFkCOa74=",
+									"_parent": {
+										"$ref": "AAAAAAF2G5mpFUCI5Kk="
+									},
+									"model": {
+										"$ref": "AAAAAAF2G5mpFECGODU="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -88,
+									"top": 64,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2G5mpFkCPqho=",
+									"_parent": {
+										"$ref": "AAAAAAF2G5mpFUCI5Kk="
+									},
+									"model": {
+										"$ref": "AAAAAAF2G5mpFECGODU="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -88,
+									"top": 64,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2G5mpFkCQpGc=",
+									"_parent": {
+										"$ref": "AAAAAAF2G5mpFUCI5Kk="
+									},
+									"model": {
+										"$ref": "AAAAAAF2G5mpFECGODU="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -88,
+									"top": 64,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2G5mpFkCR9QY=",
+									"_parent": {
+										"$ref": "AAAAAAF2G5mpFUCI5Kk="
+									},
+									"model": {
+										"$ref": "AAAAAAF2G5mpFECGODU="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -88,
+									"top": 64,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2G5mpF0CSjiE=",
+									"_parent": {
+										"$ref": "AAAAAAF2G5mpFUCI5Kk="
+									},
+									"model": {
+										"$ref": "AAAAAAF2G5mpFECGODU="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2G5okbkC13Zw=",
+											"_parent": {
+												"$ref": "AAAAAAF2G5mpF0CSjiE="
+											},
+											"model": {
+												"$ref": "AAAAAAF2G5mpFECGODU="
+											},
+											"font": "Arial;13;0",
+											"left": 141,
+											"top": 787,
+											"width": 135,
+											"height": 13,
+											"text": "id = \"R1.2.5\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R1.2.5\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2G5rNvUC51Z4=",
+											"_parent": {
+												"$ref": "AAAAAAF2G5mpF0CSjiE="
+											},
+											"model": {
+												"$ref": "AAAAAAF2G5mpFECGODU="
+											},
+											"font": "Arial;13;0",
+											"left": 141,
+											"top": 802,
+											"width": 135,
+											"height": 65,
+											"text": "text = \"A felhasználónak lehetősége kell legyen az egyes futó műveletek leállítására\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A felhasználónak lehetősége kell legyen az egyes futó műveletek leállítására\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 136,
+									"top": 782,
+									"width": 145,
+									"height": 90
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 136,
+							"top": 744,
+							"width": 145,
+							"height": 128,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2G5mpFUCJ/mE="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2G5mpFkCOa74="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2G5mpFkCPqho="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2G5mpFkCQpGc="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2G5mpFkCR9QY="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2G5mpF0CSjiE="
+							}
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2G5s0M0DHm40=",
+							"_parent": {
+								"$ref": "AAAAAAF2FErREAvgcSQ="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FRHH1Qyr4n8="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2G5mpFUCI5Kk="
+							},
+							"lineStyle": 1,
+							"points": "281:770;495:661"
+						}
+					]
+				},
+				{
+					"_type": "SysMLRequirement",
+					"_id": "AAAAAAF2FEr6XgvtiSg=",
+					"_parent": {
+						"$ref": "AAAAAAF2FErRDwvfFaM="
+					},
+					"name": "Internetes kommunikáció",
+					"ownedElements": [
+						{
+							"_type": "SysMLRequirement",
+							"_id": "AAAAAAF2FRHagwzWAUA=",
+							"_parent": {
+								"$ref": "AAAAAAF2FEr6XgvtiSg="
+							},
+							"name": "Eclipse projekt feldolgozás",
+							"ownedElements": [
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2FRQhGQ2FfYY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHagwzWAUA="
+									},
+									"name": "Projekt törlés",
+									"id": "R1.1.1",
+									"text": "A rendszer képes egy mér létező eclipse projekt törlésére"
+								},
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2FRkkjA39Apk=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHagwzWAUA="
+									},
+									"name": "Projekt létrehozás",
+									"id": "R1.1.2",
+									"text": "A rendszer képes a felküldött fájlok alapján eclipse projektet létrehozni"
+								}
+							],
+							"id": "R1.1",
+							"text": " A rendszer képes kell legyen a gamma modelleket és a hozzá tartozó adatokat tartalmazó eclipse projektek kezelésére"
+						},
+						{
+							"_type": "SysMLRequirement",
+							"_id": "AAAAAAF2FRHH1Ayp+XY=",
+							"_parent": {
+								"$ref": "AAAAAAF2FEr6XgvtiSg="
+							},
+							"name": "Gamma műveletek értelmezése",
+							"ownedElements": [
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2FRuIiQ5FKCY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"name": "Gamma transzformáció",
+									"id": "R1.2.1",
+									"text": "A rendszer támogatja a Gamma transzformáció műveletet"
+								},
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2FRuV+w5yCoE=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"name": "Gamma verifikáció",
+									"text": "A rendszer támogatja a Gamma modell verifikáció funkciót"
+								},
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2FRuicQ7M04g=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"name": "Gamma tesztgenerálás",
+									"id": "R1.2.4",
+									"text": "A rendszer támogatja a Gamma tesztgenerálásműveletet"
+								},
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2FRueVg6fqUg=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"name": "Gamma kódgenerálás",
+									"id": "R1.2.2",
+									"text": "A rendszer támogatja a Gamma kódgenerálás műveletet"
+								},
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2G5mpFECGODU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRHH1Ayp+XY="
+									},
+									"name": "Művelet leállítás",
+									"id": "R1.2.5",
+									"text": "A felhasználónak lehetősége kell legyen az egyes futó műveletek leállítására"
+								}
+							],
+							"id": "R1.2",
+							"text": "A felhasználónak lehetősége van a saját felküldött projektjein gamma műveleteket futtatni"
+						},
+						{
+							"_type": "SysMLRequirement",
+							"_id": "AAAAAAF2FRQY4w0rjw0=",
+							"_parent": {
+								"$ref": "AAAAAAF2FEr6XgvtiSg="
+							},
+							"name": "Felhasználó identitás",
+							"id": "R2",
+							"text": "A rendszer képes kell legyen felhasználók azonosítására"
+						},
+						{
+							"_type": "SysMLRequirement",
+							"_id": "AAAAAAF2FRQcCA1YSXo=",
+							"_parent": {
+								"$ref": "AAAAAAF2FEr6XgvtiSg="
+							},
+							"name": "Eredmény visszaküldés",
+							"ownedElements": [
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2FT60wm7XL9E=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQcCA1YSXo="
+									},
+									"name": "Teljes projekt visszakérése",
+									"id": "R1.3.2",
+									"text": "A felhasználónak lehetősége kell legyen a teljes eclipse projekt tartalmát lekérni"
+								},
+								{
+									"_type": "SysMLRequirement",
+									"_id": "AAAAAAF2FSUQqW6bHGY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FRQcCA1YSXo="
+									},
+									"name": "Részeredmény lekérés",
+									"id": "R1.3.1",
+									"text": "Felhasználónak lehetősége kell legyen egyedi fájlok/mappák lekérésére."
+								}
+							],
+							"id": "R1.3",
+							"text": "A felhasználónak lehetősége kell legyen  a gamma művelet eredményeit lekérni a rendszertől"
+						}
+					],
+					"isActive": true,
+					"id": "R1",
+					"text": "A rendszer képes kell legyen  interneten keresztüli kérések feldolgozására"
+				}
+			]
+		},
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAF2FUY0j29A9Yc=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model2",
+			"ownedElements": [
+				{
+					"_type": "SysMLRequirementDiagram",
+					"_id": "AAAAAAF2FUY0kG9BSsk=",
+					"_parent": {
+						"$ref": "AAAAAAF2FUY0j29A9Yc="
+					},
+					"name": "Funkcionális követelmények 2",
+					"ownedViews": [
+						{
+							"_type": "UMLFrameView",
+							"_id": "AAAAAAF2FUY0kG9Cv6Q=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF2FUY0kG9Dods=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUY0kG9Cv6Q="
+									},
+									"font": "Arial;13;0",
+									"left": 43.59912109375,
+									"top": 53,
+									"width": 160.580078125,
+									"height": 13,
+									"text": "Funkcionális követelmények 2"
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF2FUY0kW9ETSI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUY0kG9Cv6Q="
+									},
+									"font": "Arial;13;1",
+									"left": 21,
+									"top": 53,
+									"width": 17.59912109375,
+									"height": 13,
+									"text": "req"
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 16,
+							"top": 48,
+							"width": 721,
+							"height": 417,
+							"nameLabel": {
+								"$ref": "AAAAAAF2FUY0kG9Dods="
+							},
+							"frameTypeLabel": {
+								"$ref": "AAAAAAF2FUY0kW9ETSI="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FUc/c2/08xc=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FUc/cm/yQCI="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FUc/c2/13jI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUc/c2/08xc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUc/cm/yQCI="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUc/c2/2s9U=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUc/c2/13jI="
+											},
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 85,
+											"width": 135,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUc/c2/3clQ=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUc/c2/13jI="
+											},
+											"font": "Arial;13;1",
+											"left": 469,
+											"top": 100,
+											"width": 135,
+											"height": 13,
+											"text": "Inaktív projektek"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUc/c2/46Y8=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUc/c2/13jI="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 432,
+											"top": -176,
+											"width": 80.9072265625,
+											"height": 13,
+											"text": "(from Model2)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUc/c2/597U=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUc/c2/13jI="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 432,
+											"top": -176,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 80,
+									"width": 145,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FUc/c2/2s9U="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FUc/c2/3clQ="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FUc/c2/46Y8="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FUc/c2/597U="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FUc/c2/6MxM=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUc/c2/08xc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUc/cm/yQCI="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 216,
+									"top": -88,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FUc/c2/7RFY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUc/c2/08xc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUc/cm/yQCI="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 216,
+									"top": -88,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FUc/c2/8wrI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUc/c2/08xc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUc/cm/yQCI="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 216,
+									"top": -88,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FUc/dG/90+w=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUc/c2/08xc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUc/cm/yQCI="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 216,
+									"top": -88,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FUc/dG/+l/M=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUc/c2/08xc="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUc/cm/yQCI="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUiqzHBhwvE=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUc/dG/+l/M="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUc/cm/yQCI="
+											},
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 123,
+											"width": 135,
+											"height": 13,
+											"text": "id = \"R3\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R3\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUkefXBlvK0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUc/dG/+l/M="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUc/cm/yQCI="
+											},
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 138,
+											"width": 135,
+											"height": 39,
+											"text": "text = \"Rendszer képes kell legyen inaktív projektek törlésére\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"Rendszer képes kell legyen inaktív projektek törlésére\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 118,
+									"width": 145,
+									"height": 64
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 464,
+							"top": 80,
+							"width": 145,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FUc/c2/13jI="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FUc/c2/6MxM="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FUc/c2/7RFY="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FUc/c2/8wrI="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FUc/dG/90+w="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FUc/dG/+l/M="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FUdJgnAh720=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FUdJgXAfD6Y="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FUdJgnAiThc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUdJgnAh720="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUdJgXAfD6Y="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUdJgnAj9xg=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUdJgnAiThc="
+											},
+											"font": "Arial;13;0",
+											"left": 133,
+											"top": 85,
+											"width": 124.28076171875,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUdJgnAkcvg=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUdJgnAiThc="
+											},
+											"font": "Arial;13;1",
+											"left": 133,
+											"top": 100,
+											"width": 124.28076171875,
+											"height": 13,
+											"text": "Felhasználó kezelés"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUdJgnAl86I=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUdJgnAiThc="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -48,
+											"top": -144,
+											"width": 80.9072265625,
+											"height": 13,
+											"text": "(from Model2)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUdJgnAmqy0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUdJgnAiThc="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -48,
+											"top": -144,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 128,
+									"top": 80,
+									"width": 134.28076171875,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FUdJgnAj9xg="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FUdJgnAkcvg="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FUdJgnAl86I="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FUdJgnAmqy0="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FUdJgnAnluM=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUdJgnAh720="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUdJgXAfD6Y="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -24,
+									"top": -72,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FUdJgnAoagM=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUdJgnAh720="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUdJgXAfD6Y="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -24,
+									"top": -72,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FUdJgnApc74=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUdJgnAh720="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUdJgXAfD6Y="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -24,
+									"top": -72,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FUdJgnAqagA=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUdJgnAh720="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUdJgXAfD6Y="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -24,
+									"top": -72,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FUdJgnArDf0=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUdJgnAh720="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUdJgXAfD6Y="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUfeaHBVdKs=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUdJgnArDf0="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUdJgXAfD6Y="
+											},
+											"font": "Arial;13;0",
+											"left": 133,
+											"top": 123,
+											"width": 124.28076171875,
+											"height": 13,
+											"text": "id = \"R2\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R2\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUgvnXBZ1uw=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUdJgnArDf0="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUdJgXAfD6Y="
+											},
+											"font": "Arial;13;0",
+											"left": 133,
+											"top": 138,
+											"width": 124.28076171875,
+											"height": 52,
+											"text": "text = \"A rendszer képes kell legyen felhasználó identitás támogatására\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer képes kell legyen felhasználó identitás támogatására\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 128,
+									"top": 118,
+									"width": 134.28076171875,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 128,
+							"top": 80,
+							"width": 134.28076171875,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FUdJgnAiThc="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FUdJgnAnluM="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FUdJgnAoagM="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FUdJgnApc74="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FUdJgnAqagA="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FUdJgnArDf0="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FUlslXBuv24=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FUlslHBsXXs="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FUlslXBvmlU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUlslXBuv24="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUlslHBsXXs="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUlslXBwA4c=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUlslXBvmlU="
+											},
+											"font": "Arial;13;0",
+											"left": 29,
+											"top": 245,
+											"width": 151,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUlslXBxA1Q=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUlslXBvmlU="
+											},
+											"font": "Arial;13;1",
+											"left": 29,
+											"top": 260,
+											"width": 151,
+											"height": 13,
+											"text": "Felhasználó-projekt "
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUlslXBym6g=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUlslXBvmlU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -160,
+											"top": -32,
+											"width": 156.05712890625,
+											"height": 13,
+											"text": "(from Felhasználó kezelés)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUlslXBzzdE=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUlslXBvmlU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -160,
+											"top": -32,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 24,
+									"top": 240,
+									"width": 161,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FUlslXBwA4c="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FUlslXBxA1Q="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FUlslXBym6g="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FUlslXBzzdE="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FUlslXB0/fE=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUlslXBuv24="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUlslHBsXXs="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -80,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FUlslXB1eRg=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUlslXBuv24="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUlslHBsXXs="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -80,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FUlslnB2i/E=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUlslXBuv24="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUlslHBsXXs="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -80,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FUlslnB3I5Q=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUlslXBuv24="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUlslHBsXXs="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -80,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FUlslnB4ajw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUlslXBuv24="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUlslHBsXXs="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUnKFXD1nOY=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUlslnB4ajw="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUlslHBsXXs="
+											},
+											"font": "Arial;13;0",
+											"left": 29,
+											"top": 283,
+											"width": 151,
+											"height": 13,
+											"text": "id = \"R2.1\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R2.1\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUo0eHD5YTc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUlslnB4ajw="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUlslHBsXXs="
+											},
+											"font": "Arial;13;0",
+											"left": 29,
+											"top": 298,
+											"width": 151,
+											"height": 52,
+											"text": "text = \"A rendszer képes kell legyen felhasználó-projekt összerendelések tárolására\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszer képes kell legyen felhasználó-projekt összerendelések tárolására\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 24,
+									"top": 278,
+									"width": 161,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 24,
+							"top": 240,
+							"width": 161,
+							"height": 128,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FUlslXBvmlU="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FUlslXB0/fE="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FUlslXB1eRg="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FUlslnB2i/E="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FUlslnB3I5Q="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FUlslnB4ajw="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FUl4rXCbk68=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FUl4rXCZ5TM="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FUl4rXCc/0c=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl4rXCbk68="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl4rXCZ5TM="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUl4rXCdUuA=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl4rXCc/0c="
+											},
+											"font": "Arial;13;0",
+											"left": 197,
+											"top": 245,
+											"width": 151,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUl4rXCeyzc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl4rXCc/0c="
+											},
+											"font": "Arial;13;1",
+											"left": 197,
+											"top": 260,
+											"width": 151,
+											"height": 13,
+											"text": "Felhasználó értésítés"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUl4rXCf+Q0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl4rXCc/0c="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -784,
+											"top": -32,
+											"width": 156.05712890625,
+											"height": 13,
+											"text": "(from Felhasználó kezelés)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUl4rXCg1lo=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl4rXCc/0c="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -784,
+											"top": -32,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 192,
+									"top": 240,
+									"width": 161,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FUl4rXCdUuA="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FUl4rXCeyzc="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FUl4rXCf+Q0="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FUl4rXCg1lo="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FUl4rXChfD0=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl4rXCbk68="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl4rXCZ5TM="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -392,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FUl4rXCiEUw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl4rXCbk68="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl4rXCZ5TM="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -392,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FUl4rnCjSf8=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl4rXCbk68="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl4rXCZ5TM="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -392,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FUl4rnCkkbw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl4rXCbk68="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl4rXCZ5TM="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -392,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FUl4rnCleAc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl4rXCbk68="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl4rXCZ5TM="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUqolnEE6Zg=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl4rnCleAc="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUl4rXCZ5TM="
+											},
+											"font": "Arial;13;0",
+											"left": 197,
+											"top": 283,
+											"width": 151,
+											"height": 13,
+											"text": "id = \"R2.2\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R2.2\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUsRG3EJdIo=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl4rnCleAc="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUl4rXCZ5TM="
+											},
+											"font": "Arial;13;0",
+											"left": 197,
+											"top": 298,
+											"width": 151,
+											"height": 52,
+											"text": "text = \"Rendszer képes kell legyen értesítéseket küldeni az egyes Gamma műveletk futásáról a felhasználónak\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"Rendszer képes kell legyen értesítéseket küldeni az egyes Gamma műveletk futásáról a felhasználónak\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 192,
+									"top": 278,
+									"width": 161,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 192,
+							"top": 240,
+							"width": 161,
+							"height": 128,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FUl4rXCc/0c="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FUl4rXChfD0="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FUl4rXCiEUw="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FUl4rnCjSf8="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FUl4rnCkkbw="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FUl4rnCleAc="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FUl/vHDIW9E=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FUl/vHDGEH4="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FUl/vHDJz2I=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl/vHDIW9E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl/vHDGEH4="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUl/vXDKW4M=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl/vHDJz2I="
+											},
+											"font": "Arial;13;0",
+											"left": 389,
+											"top": 245,
+											"width": 151,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUl/vXDL0c4=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl/vHDJz2I="
+											},
+											"font": "Arial;13;1",
+											"left": 389,
+											"top": 260,
+											"width": 151,
+											"height": 26,
+											"text": "Intakví projekt meghosszabítás",
+											"wordWrap": true
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUl/vXDMpcE=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl/vHDJz2I="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -240,
+											"top": -32,
+											"width": 132.92626953125,
+											"height": 13,
+											"text": "(from Inaktív projektek)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FUl/vXDNok8=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl/vHDJz2I="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -240,
+											"top": -32,
+											"horizontalAlignment": 1,
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 384,
+									"top": 240,
+									"width": 161,
+									"height": 51,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FUl/vXDKW4M="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FUl/vXDL0c4="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FUl/vXDMpcE="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FUl/vXDNok8="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FUl/vXDOt+k=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl/vHDIW9E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl/vHDGEH4="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -120,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FUl/vXDPEsc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl/vHDIW9E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl/vHDGEH4="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -120,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FUl/vXDQxxY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl/vHDIW9E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl/vHDGEH4="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -120,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FUl/vXDRC1s=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl/vHDIW9E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl/vHDGEH4="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -120,
+									"top": -16,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FUl/vXDS9eU=",
+									"_parent": {
+										"$ref": "AAAAAAF2FUl/vHDIW9E="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FUl/vHDGEH4="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUwz3nEasWE=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl/vXDS9eU="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUl/vHDGEH4="
+											},
+											"font": "Arial;13;0",
+											"left": 389,
+											"top": 296,
+											"width": 151,
+											"height": 13,
+											"text": "id = \"R3.1\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R3.1\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FUzfuXEe0I4=",
+											"_parent": {
+												"$ref": "AAAAAAF2FUl/vXDS9eU="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FUl/vHDGEH4="
+											},
+											"font": "Arial;13;0",
+											"left": 389,
+											"top": 311,
+											"width": 151,
+											"height": 52,
+											"text": "text = \"A felhasználónak lehetősége kell legyen egy projekt lejárati idejét meghosszabítani\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A felhasználónak lehetősége kell legyen egy projekt lejárati idejét meghosszabítani\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 384,
+									"top": 291,
+									"width": 161,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 384,
+							"top": 240,
+							"width": 161,
+							"height": 128,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FUl/vHDJz2I="
+							},
+							"wordWrap": true,
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FUl/vXDOt+k="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FUl/vXDPEsc="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FUl/vXDQxxY="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FUl/vXDRC1s="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FUl/vXDS9eU="
+							}
+						},
+						{
+							"_type": "SysMLRequirementView",
+							"_id": "AAAAAAF2FU1qVXExeiw=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FU1qVHEvOAM="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF2FU1qVnEy8FY=",
+									"_parent": {
+										"$ref": "AAAAAAF2FU1qVXExeiw="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FU1qVHEvOAM="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FU1qVnEz7CM=",
+											"_parent": {
+												"$ref": "AAAAAAF2FU1qVnEy8FY="
+											},
+											"font": "Arial;13;0",
+											"left": 557,
+											"top": 245,
+											"width": 151,
+											"height": 13,
+											"text": "«requirement»"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FU1qVnE0tlk=",
+											"_parent": {
+												"$ref": "AAAAAAF2FU1qVnEy8FY="
+											},
+											"font": "Arial;13;1",
+											"left": 557,
+											"top": 260,
+											"width": 151,
+											"height": 13,
+											"text": "Lejáró projekt értesítés"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FU1qVnE1Yp0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FU1qVnEy8FY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -48,
+											"top": -128,
+											"width": 132.92626953125,
+											"height": 13,
+											"text": "(from Inaktív projektek)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF2FU1qVnE2Ru8=",
+											"_parent": {
+												"$ref": "AAAAAAF2FU1qVnEy8FY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -48,
+											"top": -128,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 552,
+									"top": 240,
+									"width": 161,
+									"height": 38,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF2FU1qVnEz7CM="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF2FU1qVnE0tlk="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF2FU1qVnE1Yp0="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF2FU1qVnE2Ru8="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF2FU1qVnE3jGc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FU1qVXExeiw="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FU1qVHEvOAM="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -24,
+									"top": -64,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF2FU1qVnE4ND4=",
+									"_parent": {
+										"$ref": "AAAAAAF2FU1qVXExeiw="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FU1qVHEvOAM="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -24,
+									"top": -64,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF2FU1qV3E51WE=",
+									"_parent": {
+										"$ref": "AAAAAAF2FU1qVXExeiw="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FU1qVHEvOAM="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -24,
+									"top": -64,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF2FU1qV3E6GMw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FU1qVXExeiw="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FU1qVHEvOAM="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -24,
+									"top": -64,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "SysMLPropertyValueCompartmentView",
+									"_id": "AAAAAAF2FU1qV3E7FEE=",
+									"_parent": {
+										"$ref": "AAAAAAF2FU1qVXExeiw="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FU1qVHEvOAM="
+									},
+									"subViews": [
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FU5jf3F0tt0=",
+											"_parent": {
+												"$ref": "AAAAAAF2FU1qV3E7FEE="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FU1qVHEvOAM="
+											},
+											"font": "Arial;13;0",
+											"left": 557,
+											"top": 283,
+											"width": 151,
+											"height": 13,
+											"text": "id = \"R3.2\"",
+											"horizontalAlignment": 0,
+											"property": "id",
+											"value": "\"R3.2\""
+										},
+										{
+											"_type": "SysMLPropertyValueCompartmentItemView",
+											"_id": "AAAAAAF2FU3wOXFfztc=",
+											"_parent": {
+												"$ref": "AAAAAAF2FU1qV3E7FEE="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FU1qVHEvOAM="
+											},
+											"font": "Arial;13;0",
+											"left": 557,
+											"top": 298,
+											"width": 151,
+											"height": 52,
+											"text": "text = \"A rendszernek értesíenie kell a projekt tulajdonosát a lejáró projektről\"",
+											"horizontalAlignment": 0,
+											"wordWrap": true,
+											"property": "text",
+											"value": "\"A rendszernek értesíenie kell a projekt tulajdonosát a lejáró projektről\""
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 552,
+									"top": 278,
+									"width": 161,
+									"height": 77
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 552,
+							"top": 240,
+							"width": 161,
+							"height": 115,
+							"nameCompartment": {
+								"$ref": "AAAAAAF2FU1qVnEy8FY="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAF2FU1qVnE3jGc="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF2FU1qVnE4ND4="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF2FU1qV3E51WE="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF2FU1qV3E6GMw="
+							},
+							"propertyValueCompartment": {
+								"$ref": "AAAAAAF2FU1qV3E7FEE="
+							}
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FU5wsHF41kw=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FUdJgnAh720="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FUlslXBuv24="
+							},
+							"lineStyle": 1,
+							"points": "139:239;163:195"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FU52+nF8c3M=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FUdJgnAh720="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FUl4rXCbk68="
+							},
+							"lineStyle": 1,
+							"points": "242:239;221:195"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FU59ZXGAZpM=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FUc/c2/08xc="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FUl/vHDIW9E="
+							},
+							"lineStyle": 1,
+							"points": "492:239;511:195"
+						},
+						{
+							"_type": "UMLContainmentView",
+							"_id": "AAAAAAF2FU6FNnGEMIU=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUY0kG9BSsk="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF2FUc/c2/08xc="
+							},
+							"tail": {
+								"$ref": "AAAAAAF2FU1qVXExeiw="
+							},
+							"lineStyle": 1,
+							"points": "597:239;571:195"
+						}
+					]
+				},
+				{
+					"_type": "SysMLRequirement",
+					"_id": "AAAAAAF2FUc/cm/yQCI=",
+					"_parent": {
+						"$ref": "AAAAAAF2FUY0j29A9Yc="
+					},
+					"name": "Inaktív projektek",
+					"ownedElements": [
+						{
+							"_type": "SysMLRequirement",
+							"_id": "AAAAAAF2FUl/vHDGEH4=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUc/cm/yQCI="
+							},
+							"name": "Intakví projekt meghosszabítás",
+							"id": "R3.1",
+							"text": "A felhasználónak lehetősége kell legyen egy projekt lejárati idejét meghosszabítani"
+						},
+						{
+							"_type": "SysMLRequirement",
+							"_id": "AAAAAAF2FU1qVHEvOAM=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUc/cm/yQCI="
+							},
+							"name": "Lejáró projekt értesítés",
+							"id": "R3.2",
+							"text": "A rendszernek értesíenie kell a projekt tulajdonosát a lejáró projektről"
+						}
+					],
+					"id": "R3",
+					"text": "Rendszer képes kell legyen inaktív projektek törlésére"
+				},
+				{
+					"_type": "SysMLRequirement",
+					"_id": "AAAAAAF2FUdJgXAfD6Y=",
+					"_parent": {
+						"$ref": "AAAAAAF2FUY0j29A9Yc="
+					},
+					"name": "Felhasználó kezelés",
+					"ownedElements": [
+						{
+							"_type": "SysMLRequirement",
+							"_id": "AAAAAAF2FUlslHBsXXs=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUdJgXAfD6Y="
+							},
+							"name": "Felhasználó-projekt ",
+							"id": "R2.1",
+							"text": "A rendszer képes kell legyen felhasználó-projekt összerendelések tárolására"
+						},
+						{
+							"_type": "SysMLRequirement",
+							"_id": "AAAAAAF2FUl4rXCZ5TM=",
+							"_parent": {
+								"$ref": "AAAAAAF2FUdJgXAfD6Y="
+							},
+							"name": "Felhasználó értésítés",
+							"id": "R2.2",
+							"text": "Rendszer képes kell legyen értesítéseket küldeni az egyes Gamma műveletk futásáról a felhasználónak"
+						}
+					],
+					"id": "R2",
+					"text": "A rendszer képes kell legyen felhasználó identitás támogatására"
+				}
+			]
+		}
+	]
+}
