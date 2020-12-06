@@ -54,7 +54,6 @@
 	4.2 Architektura
 		- abran mutatott modulokon vegigmenni es leirni miert jo miert rossz mibol all (logikai)
 		- activity diagramm /szekvencia 
-		- ahol elegedtlen vagyok ott improvement jellegu megjegyzest teszek (fejlesztesi folytato munkat konnyiteni) 
 		- itt nem fontos hogy 3 kulonallo szoftver
 	4.3 Implementacio	
 		- a mar konkret technologiai implementalasokat mondanam el (nem tudom mennyire kell technikai legyen) szarazabb infok, nehezsegek, fuggosegekkel valo szivas, mintha forum valasz lennne
@@ -68,8 +67,10 @@
 	- tests osszes publikus esettanulamyt tartalmaz
 	
 6. 	Tovabbfejlesztesi lehetosegek
-	- ha nem sikerul a ggen-es megoldast implementalni akkor errol irnek kicsit 
+	- ha nem sikerul a ggen-es megoldast implementalni akkor errol irnek kicsit , sikerult de ennek ellener leirjuk mi volt az inicialis terv
 	- kliens integraciok, pl magicdraw 
+	- ahol elegedtlen vagyok ott improvement jellegu megjegyzest teszek (fejlesztesi folytato munkat konnyiteni) 
+
 
 
 Ne legyenek nagyon hosszu mondatok!!!!

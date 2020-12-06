@@ -65,3 +65,102 @@ Az alapvető elérhető funkciók közé tartozik: a munkatér létrehozás, ame
 %----------------------------------------------------------------------------
 \section{Architektúra}
 %----------------------------------------------------------------------------
+
+Ez a fejezet részletezi a specifikált rendszer struktúráját, továbbá áttekintünk fontosabb folyamatokat.
+%----------------------------------------------------------------------------
+\subsection{Struktúra}
+%----------------------------------------------------------------------------
+
+A rendszer felépítését \aref{fig:structure} ábra mutatja be. A továbbiakban részletezem az ábrán látható egyes komponenseket, milyen szerepük van és hogyan kommunikálnak más komponensekkel.
+\begin{figure}[t]
+	\includegraphics[width=150mm, keepaspectratio]{figures/architecture.jpg}
+	\caption{Architektúra terv}
+	\label{fig:structure}
+\end{figure}
+Az ábrán látható egy nagyobb, mindent magába foglaló \textit{Gamma Wrapper} nevezetű modul, ez a rendszer amely megvalósításra került a félév során és amiről a dolgozat szól. A nevét a funkcionalitásáról kapta, magyarul \textit{Gamma csomag}-nak is nevezhetnénk.
+
+\paragraph{REST API} Ez az alkalmazás belépési pontja, ez látható a világ számára. Önmagában egy Vert.x webszerver amely egy OpenAPI specifikációban\footnote{OpenAPI specifikáció \url{https://app.swaggerhub.com/apis/szlnnn/GAMMA_WRAPPER3.0/1.0.0}} meghatározott \textit{endpoint}-ok alapján épül fel. Endpointnak hívjuk azokat az egyedi belépési pontokat, amelyek meghívhatók az alkalmazáson kívül. A rendszer az alábbi endpointokat tartalmazza, a fontosabbak működését a következő fejezet részletesen bemutatja:
+\begin{itemize}
+	\item POST /gamma/addworkspace eclipse workspace létrehozásának lehetőségét kínálja fel, minden további művelethez szükséges, a kérés nem tartalmaz további információt
+	\item POST /gamma/addproject/{\textit{workspace}}\footnote{Minden döntött betűs rész egy URL-ben utazó paraméter} eclipse projekt létrehozást teszi lehetővé a {workspace} paraméterből kiolvasott munkatérben, a kérés törzsében szerepelnie kell az archivált fájl, ami tartalmazza az importálni kívánt projektet
+	\item PUT /gamma/api/{\textit{workspace}}/{\textit{projectName}}/{\textit{filePath}} a munkatér és projekt páros alapján meghatározott Gamma műveleteket tartalmazó fájl futtatását teszi lehetővé. A {\textit{filePath}} paraméter írja le, hogy a műveleteket leíró fájl hol van, ez relatív kell legyen és a {\textit{projectName}} paraméterben tárolt projekt mappájában
+	\item PUT /gamma/stopprocess/{\textit{workspace}}/{\textit{projectName}} a fentebb leírt folyamat leállítását teszi lehetővé, mivel egy projekt-munkatér pároson egy időben csak egy gamma művelethalmaz futhat ezért elég csak ezt a párost megadni
+	\item PUT /gamma/getresult/{\textit{workspace}}/{\textit{projectName}} a gamma által generált fájlok visszakérését teszi lehetővé, ehhez szükséges, hogy a kérés törzsében utazzon, hogy milyen fájlokat/könyvtárakat szeretnénk visszakérni, az itt megadott elérések a projekthez képest relatívak kell legyenek, ha szerepel a "." elérés akkor a projekt teljes tartalmát visszaküldjük
+	\item DELETE /gamma/deleteproject/{\textit{workspace}}/{\textit{projectName}} eclipse projekt törlését teszi lehetővé
+	\item PUT /gamma/extendexpiration/{\textit{workspace}}/{\textit{projectName}} alapértelmezetten minden projekt automatikusan törlésre kerül 30 nappal a létrehozás után, ezzel az endpointal további 30 nappal lehet ezt az időtartamot meghosszabítani, az URL-ben utazó munkatér és projekt név párossal tudjuk eldönteni, hogy melyik projektet kívánja a felhasználó meghosszabbítani.
+\end{itemize}
+A komponens további feladatok is ellát, ilyenek a megfelelő HTTP válasz összeállítása, a szerverre küldött fájlok automatikus mentése vagy a más komponensek vezérlése. Egy időzítő is ide tartozik, ezzel ellenőrizzük a projektek lejárati dátumát és, ha ennek eljön az ideje akkor egy törlést fog indítani.
+
+\paragraph{UI és MagicDraw} Mivel a rendszerünk egy szerver oldali komponens, ezért önmagában nem tudja bárki használni. Az ábrán feltüntetett kliens rendszereknek kell a felhasználói felület szerepét betölteni, ilyen lenne egy speciális UI ami az alapvető funkcióknak egy grafikus felületet biztosít és kontextust ad az alkalmazásunknak. Továbbá, tervben van a Gamma integrációja a MagicDraw\footnote{MagicDraw modellező eszköz \url{https://www.nomagic.com/products/magicdraw}} modellező eszközbe, a rendszerünk ezt az integrációt megkönnyítené. 
+
+\paragraph{Headless Generator} A Gamma önmagában nem képes eclipse munkatér és projekt létrehozásra ezért kellet egy olyan komponens, ami előkészít egy környezetet, amiben futtathatunk Gamma műveleteket, ennek a neve \textit{Headless Generator}. Két fő funkciója van: eclipse munkatér (workspace) létrehozás és eclipse projekt importálás egy megadott munkatérbe. Mindkét funkcionalitást ugyanaz a folyamat valósítja meg annyi eltérésben, hogy ha a komponens kap egy archivált fájl elérést akkor tudni fogja, hogy ezt importálnia kell, mint eclipse projekt.  Egy \textit{headless runtime eclipse}-ként van megvalósítva és parancssorból lehet meghívni, két paramétert lehet megadni az első a \textit{-data} amiben a workspace nevét kell megadni, ha egy nem létező workspace-t adunk meg akkor a komponens ezt létrehozza, ez egy kötelező paraméter. A második argumentum pedig a projekt archivált fájl elérése, ezt fogja kicsomagolni és regisztrálni a munkatérbe, ez az argumentum opcionális. Fontos kiemelni, hogy a forrás fájl már a munkatér mappájában kell legyen.
+
+\paragraph{Headless Gamma} Annak ellenére, hogy csupán egy endpoint meghívása során kerül működésbe a rendszer legfontosabb eleme. A Headless Generator-hoz hasonlóan egy headless runtime eclipse-ként lett kialakítva és ugyanúgy parancssorból lehet elindítani. Három kötelező paraméterre van szüksége. (1) Létező munkatér, amely tartalmazza az átadott (2) projekt állományait. Az utolsó (3) paraméter egy a projekthez relatív elérés, ami a gamma műveleteket leíró fájlra mutat. A fájl .ggen kiterjesztésű kell legyen, és megfelelő sorrendbe kell tartalmazza a futtatni kívánt műveleteket és a futtatáshoz szükséges modell állományok hivatkozását, amelyek a projekten belül kell legyenek. A Gamma miután elvégezte a műveleteket tipikusan 3 mappába generálja le az eredményeket: src-gen,test-gen, trace. Ezek mind a projekt mappán belül találhatóak. 
+
+Az UPAAL telepítése egy alapvető követelmény a gamma megfelelő működéséhez, ennek az elérést a rendszer a környezeti változókból tudja kinyerni.
+Az OSGi előnyeit itt tudjuk kihasználni, mivel a headless gamma több száz \textit{plug-in}-t igényel. A plug-in-ek egyesével frissíthetőek, elméletileg nem kéne nagy akadályt okozzon egy új release telepítése.
+
+\paragraph{Process Builder} A REST webszerver és a headless komponensek közé biztosítani kell egy olyan réteget, ami a webes hívások paramétereit átalakítja parancssori argumentumokká és eltud indítani egy ilyen runtime eclipse-t, ezt a szerepet a \textit{Process Builder} tölti be. Négy funkció esetén jelenik meg a végrehajtási sorban, (1) munkatér létrehozás, (2) projekt importálás archív fájlból, (3) gamma művelet futtatás és (4) gamma műveletet futtató folyamat leállítás. Minden funkció esetén lehetőség van asszinkron működésre, viszont jelenleg csak a (3) és (4) esetén van implementálva,  a szinkron működést azzal az érvel lehet védeni, hogy csak abban az esetben küldjünk választ a kliensnek ha valóban a kért funkcionalitást eltudtuk végezni. Ez a gamma művelet futtatáskor azért nem egy élhető koncepció, mert vannak olyan modellek amelyek több ezer vagy akár több tíz ezer állapotból állnak, ezeknek a feldolgozása órákba is kerülhet így az asszinkron működés egy szükséglet. A gamma művelet leállítása pedig nem igényel semmilyen megvárást, nincs olyan eset amikor ez eltud akadni. A másik két esetben (1)(2) viszont megvárjuk amíg a munkatér vagy projekt létrejön, mert nem költséges műveletek, ezt a jövőben érdemes lehet átgondolni és esetleg átalakítani.
+\paragraph{Validator} A valamennyi bejövő kérések validációs lépéseken is át kell essenek, ezt a \textit{Validator} modul biztosítja. A REST webszerver vezérli, hogy a bejövő paraméterek közül melyek azok amelyek valamilyen validáción át kell essenek. A legfontosabb ellenőrzési lépések közé tartoznak a munkatér létezés ellenőrzése, a projekt-munkatér páros vizsgálata és az átadott projekten futó gamma folyamat ellenőrzése. Az utóbbi kiemelkedően fontos, hiszen egy futás alatt levő projekttel nem végezhetünk semmit, csak leállíthatjuk. Ahhoz, hogy a futás állapotát nyilván tudjuk tartani, be lett vezetve egy leíró json fájl amit minden projekt importálásánál létrehozunk, ez a fájl többek közt tartalmazza azt is, hogy jelenleg van-e futó folyamat a projekten. Ennek az állapotát a ProcessBuilder beállítja \textit{inProgress}-be majd a HeadlessGamma futása végén frissíti \textit{notInProgress}-re.
+\paragraph{Provider} A \textit{Provider}-nek két feladat van, az első, hogy a REST webszerver által feldolgozott eredmény visszakérő endpoint-ban megadott relatív elérések alapján összecsomagoljon egy zip állományt, a másik pedig a projekt törlés. Az eredmény fájl összecsomagolásánál lehetőségünk van megadni egyedi fájlok elérését vagy akár teljes mappákat. Ide tartozik a teljes projekt mappa is, ezt a "." eléréssel tudjuk megadni, ha ez szerepel a kérésbe akkor a többi eredmény eléréssel nem is foglalkozik a rendszer, hiszen ez mindent tartalmazni fog.
+\paragraph{Data} Az ábrán megjelenik a \textit{Data} fogalom is, ez valójában a hoszt szerveren levő fájl kezelőt jelenti. Itt tároljuk a létrehozott munkatér és projekt párosokat és ezek teljes tartalmát, továbbá a metaadatokat tároló json fájlokat is. Egy adatbázis réteg bevezetésével a fájlban tárolt metaadatokat könnyebben tudnánk kezelni, sajnos a projektbe ez nem fért bele.
+
+
+
+%----------------------------------------------------------------------------
+\subsection{Folyamatok}
+%----------------------------------------------------------------------------
+
+Négy alapvető funkció részletes működését fogom bemutatni ebben a fejezetben, ezek sorra: munkatér létrehozás, projekt importálás, gamma műveletek futtatása és a futtatás eredmény lekérés. A folyamat bemutatja milyen modulokon megy végig az adat, továbbá milyen feldolgozások történnek egyes végrehajtási lépéseken. Mindezt szekvencia diagramokkal ábrázoltam. Az így bemutatott funkciók lefedik a rendszer legfontosabb felhasználói eseteit.
+
+
+\paragraph{Munkatér létrehozás}
+
+\begin{figure}[!ht]
+	\includegraphics[width=150mm, keepaspectratio]{figures/add_workspace_seq.jpg}
+	\caption{Munkatér létrehozás szekvencia diagram}
+	\label{fig:addworkspace}
+\end{figure}
+
+A workspace létrehozás szekvencia diagramja \aref{fig:addworkspace} ábrán látható. Első fázisban bejön egy POST HTTP metódus az addworkspace endpointra, ennek a törzse üres és az URL-ben sem hordoz paramétereket. Látható, hogy az OpenAPIVerticle fogadja a kérést, ez lényegében a REST webszerverünk, mivel ez a legelső művelet, amit a kliens meg kell hívjon így nem kell semmilyen ellenőrzést végezni. A végrehajtási sor következő lépése a \textit{ProcessBuilder}-ben van, itt a rendszer generál egy egyedi UID azonosítót, amit felhasznál a parancs kialakításhoz, amivel elindítja a a HeadlessGenerator-t.A parancs (command) elkészítéséhez a ProcessBuildernek szüksége van a headless eclipse elérésére, ez jelenleg a kódba be van égetve, a továbbiakban célszerű lenne egy konfigurációs fájlba kiemelni. A generator amíg elkészíti a workspace-t a ProcessBuilder vár, ha végzett akkor visszaadja az OpenAPIVerticle-nek a generált UID-ot ami továbbítja a kliens felé. Mikor a headless eclipse elvégezte a feladatot akkor teljesen leáll, ezt jelzi az X a folyamatábrán.
+
+
+\paragraph{Eclipse projekt importálás}
+\begin{figure}[!ht]
+	\includegraphics[width=150mm, keepaspectratio]{figures/add_eclipseproject_seq.jpg}
+	\caption{Eclipse projekt importálás szekvencia diagram}
+	\label{fig:addproject}
+\end{figure}
+
+A projekt importálás funkció szekvencia diagramját \aref{fig:addproject} ábrán lehet megtekinteni. A folyamat megint a kérés érkezésével indul, ezt minden esetben az OpenAPIVerticle dolgozza fel, ez a kérés egy POST HTTP metódus ami az addproject endpoint-ra jön be. Ebben az esetben viszont már az URL-ben utazik egy munkatér azonosító amit korábban adtunk vissza a workspace létrehozáskor. Továbbá, a törzsben két attribútum szerepel: (1) \textit{files} ez tartalmazza a projekt archivált állományait és (2) \textit{contact} ez egy email cím, ami a projekt tulajdonosáé, erre későbbiekben értesítések küldésénél lesz szükségünk. A munkatér létezését a Validator komponenssel elvégezzük, a kapott válasz alapján két esetet különböztetünk meg, az első, ha nem érvényes a megadott workspace azonosító, ekkor egyből szólunk a kliensnek, hogy rossz a kérés. Viszont, ha ez helyes akkor tovább adjuk a kérést a ProcessBuilder-nek ami az előző esethez hasonlóan elindítja a HeadlessGenerator-t, de kiegészíti az argumentum listát a forrás fájl nevével, mindezek előtt a nyers fájlt a munkatér mappájába másolja. A generator elvégzi az import műveletet, majd visszaadja a futási jogot a ProcessBuildernek, ami végezetül regisztrálja a munkatér-projekt párost és létrehoz egy leíró fájlt a frissen létrehozott projektben, ami tartalmazza, hogy mi a projekt neve, ki hozta létre (email cím), mikor hozta létre, mikor jár le és beállítja, hogy jelenleg nincs futás alatt, ezek után törli az iniciális forrás fájlt, hogy tárhelyet spóroljunk. Végezetül visszaadja a futási jogot a verticle-nek aki jelez a kliensnek, hogy minden rendben létrejött.
+
+
+
+\paragraph{Gamma műveletek futtatása}
+\begin{figure}[!ht]
+	\includegraphics[width=150mm, keepaspectratio]{figures/run_gamma_seq.jpg}
+	\caption{Gamma művelet futtatás szekvencia diagram}
+	\label{fig:rungamma}
+\end{figure}
+A gamma műveletek futtatását bemutató szekvencia diagram \aref{fig:rungamma} ábrán tekinthető meg. Ebben az esetben egy PUT HTTP kérés érkezik az \textit{api} endpoint-ra, amit szintén az OpenAPI réteg dolgoz fel kezdetben. A törzsben nem szerepel semmi, viszont az URL-ben utazik a munkatér azonosító, projektnév és futtatni kívánt gamma műveleteket leíró .ggen fájl elérése. Ez a hármas egyedileg meghatározza az erőforrást. A validációs fázis komplexebb ebben az esetben, hiszen ellenőriznünk kell a munkatér-projekt páros létezését és egyediségét, mert egy projekt egyszer szerepelhet egy munkatérben, továbbá azt is meg kell vizsgálni, hogy a projekt, amit ez a páros leír jelenleg használva van-e valamilyen más gamma műveletet futtató headless eclipse által. A Validator döntése alapján, megint két esetet különböztetünk meg, ha valamiért nem felel meg akkor az OpenAPIVerticle a megfelelő hibakóddal és üzenettel visszaszól a kliensnek, hogy nem érvényes a kérés. Ha minden megfelel, akkor a futást átadjuk a ProcessBuilder-nek, ami asszinkron módon elindítja a gamma műveletet futtató headless eclipset. Ezek után egyből frissíti a projektet leíró fájlt, pontosabban, rögzíti az így elindított folyamat operációs rendszer szintű azonosítóját (PID) és beállítja, hogy a projekt futás alatt van. Végezetül átadja a futást a verticle-nek, ami jelzi a kliens felé, hogy a kérés feldolgozása elkezdődött.
+A folyamat még nem ér véget, mivel a Gamma dolgozik a háttérben, mikor minden művelet lefutott amit a .ggen fájlban meghatározott a felhasználó, akkor a headless eclipse frissíti a projektet leíró állományt és beállítja, hogy a projekt már nincs futás alatt. További lezáró művelet lehet az értesítés küldés a tárolt email címre, hogy a kért kérés lefutott és az eredmény mostantól lekérhető.
+
+
+\paragraph{Eredmények lekérése}
+\begin{figure}[!ht]
+	\includegraphics[width=150mm, keepaspectratio]{figures/get_result_seq.jpg}
+	\caption{Eredmény lekérés szekvencia diagram}
+	\label{fig:getresult}
+\end{figure}
+A gamma által generált állományok lekérésére szolgáló funkció szekvencia diagramját \aref{fig:getresult} ábra mutatja be. Egy PUT HTTP kérés érkezik a \textit{getresult} endpoint-ra, ennek az URL-jében szerepelnie kell a munkatér azonosítójának és a projektnévnek amiből adatot akarunk lekérni. A kérés törzsében a \textit{resultDirs} attribútum kell szerepeljen, ami egy relatív elérésekből álló lista. A kérés feldolgozása a szokásos módon a verticle-ben kezdődik, ahol a kérésben utazó paraméterek kicsomagolásra kerülnek. A Validator ebben az esetben ugyanazokat ellenőrzi, mint a művelet futtatás folyamat esetén. Ha van futó folyamat a projekten vagy a workspace projekt páros nem megfelelő, akkor beszédes hibaüzenettel válaszolunk a kliensnek. Abban az esetben, ha minden rendben van, akkor a Provider kapja meg  a futási jogot. Itt az elérési listán iterálva összegyűjtjük a kért fájlokat és mappákat majd archiváljuk, az így archivált fájl elérést küldjük vissza a verticle-nek, ami ennek alapján visszaküldi a fájlt.
+
+Első látszatra zavaró lehet, hogy PUT metódust használunk a kérés feldolgozásához, mikor egy GET jobb lehetne és jobban megfelelne a REST szabványnak. Ennek két oka van, az első az, hogy annak ellenére, hogy \textit{getresult}-nak hívjuk az endpoint-ot az erőforrás állapota módosul hiszen a projekten belül generálunk egy archivált fájlt, a másik oka pedig az, hogy a GET kérésnél nem lehet a törzsben semmit sem küldeni, ezt a REST szigorúan megköveteli, nekünk viszont a becsomagolni kívánt állományokat listában kell megadnunk és ezt az URL-ben kényelmetlen lenne kezelni.
+
+
+%----------------------------------------------------------------------------
+\section{Implementáció}
+%----------------------------------------------------------------------------
+
+
+
+

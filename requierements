@@ -22,13 +22,13 @@ requieremnts:
 		
 		
 Reliability:
-A rendszer kepes kell legyen tobb gamma muvelet feldolgozasara kulonbozo projekteken egyidoben
 	- egy futas alatt levo pojekten nem futtathat mas gamma muveletet
 
 Security:
 - csak olyan projekthez adhat hozzaferest ami a felhasznalohoz tartozik
 
 Performance:
+	A rendszer kepes kell legyen tobb gamma muvelet feldolgozasara kulonbozo projekteken egyidoben
 	-a rendszer skalazhato kell legyen
 	
 Usability:
