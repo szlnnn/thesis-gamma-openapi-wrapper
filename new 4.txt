@@ -1,0 +1,56 @@
+runtime eclipse fuggoseg ,meg ha nem keri akkor is
+exportalva ott van de megsincs
+plugin confignal az extension point konfignal a run nev megegyezzen a product application nevvel 
+config.ini a runtime eclipsenek kell indulasi beallitasokat meghatarozni
+nem tortenik semmi mikor a headlesst elinditom- megoldas helyesen kell inditani parancssorbol
+http://codeandme.blogspot.com/2012/02/creating-headless-application.html
+hogyan csinalj IFile-t pathbol:
+https://stackoverflow.com/questions/47139578/convert-from-absolute-path-to-ifile
+https://sewiki.iai.uni-bonn.de/service/knowhow/eclipse/ifile -- inkabb ez 
+osgi.extender missing miutan add requiered : org.apache.felix.scr
+org.eclipse.equinox.event
+org.eclipse.compare.core
+org.eclipse.fx.osgi
+org.eclipse.team.core
+https://stackoverflow.com/questions/54783595/eclipse-e4-missing-constraint-require-capability-osgi-extender
+milyen workspace-t hasznaljon a healdess eclipse :
+-data argumentumamal lehet megmondani
+viatra system backend:
+https://www.eclipse.org/forums/index.php/t/1099838/
+working command: 
+eclipse -product hu.bme.mit.gamma.wrapper -dev file:C:/Eclipse-2020-09-workspace/.metadata/.plugins/org.eclipse.pde.core/product.configuration.wrapper.product/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog -data C:\Test\
+Let eclipse generate the startup configuration!!!
+
+Nagyon odafigyelni hogy a target platformon milyen pluginbol milyen verzio van mert lehet tobb is es hazudik az eclipse nekunk, nem azt exportalja amit mond!!!
+nalam 3 ilyen volt: batik.css es batik.util es guava
+
+Neha beragad ha a cel project meg van nyitva, cache-t nezi ahonnan meg nem lett torolve a generalt kod, itt osztalyt nem talalos hiba jon.
+
+most mar ezzel is mukodik:
+eclipse -consoleLog -data C:\Test
+
+
+uj parancs:
+eclipse -consoleLog -data C:\WrapperWorkspace /model/Crossroad.gcd hu.bme.mit.gamma.tutorial.finish
+
+https://www.codejava.net/java-se/file-io/programmatically-extract-a-zip-file-using-java
+https://mkyong.com/java/java-processbuilder-examples/
+https://swagger.io/docs/specification/describing-request-body/file-upload/
+// HOW TO SEND A ZIP FILE AS RESPONSE USING OCTET_STREAM media type
+https://stackoverflow.com/questions/35030479/spring-get-response-as-multipart-file-from-rest-webservice  
+// HOW TO create an eclipse project from zip archive programatically:
+https://stackoverflow.com/questions/12484128/how-do-i-import-an-eclipse-project-from-a-zip-file-programmatically
+
+generator inditito parancs:
+eclipse -consoleLog -data C:\workspace1 hu.bme.mit.gamma.tutorial.finish
+eclipse -consoleLog -data C:\WrapperWorkspace hu.bme.mit.gamma.tests
+eclipse -data C:\WrapperWorkspace C:\WrapperWorkspace\hu.bme.mit.gamma.tests\model\SSM\System\Mission.ggen
+mar letezo projectek hiba: 
+https://www.rdeeson.com/weblog/99/relocating-eclipse-projects-the-project-description-file-project-for-xxx--is-missing
+
+-lejarati datum a projekt felkuldesebe ezt letarolni es endpooint a hosszabitasra
+-hasznalhatosag biralas szempontjabol
+
+
+-- get result endpoint: body json ->string list (eleresek) (. - akkor mindent a sajat projektjen belul) ( 1 "." nal tobb nem lehet)
+
