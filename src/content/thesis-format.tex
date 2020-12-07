@@ -161,6 +161,131 @@ Első látszatra zavaró lehet, hogy PUT metódust használunk a kérés feldolg
 \section{Implementáció}
 %----------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------
+\subsection{Fejlesztés folyamata}
+%----------------------------------------------------------------------------
+
+
+Ebben a fejezetben a fejlesztés során felmerült nehézségeket és érédességeket mutatom be. Az alábbi információk alapvetően mély technikai szintre lemennek így szárazak lehetnek, viszont a témában dolgozóknak hasznos lehet, mert egyedi hibák és jelenségek megoldását vázolom föl.
+
+\paragraph{Eclipse környezettel kapcsolatos érdekességek} Az Eclipse környezetben tapasztalt fejlesztők tudják, hogy bizonyos dolgok nem triviálisak a fejlesztés során és olyan specifikus problémák merülhetnek fel, amelyekre nagyon elrejtett internetes fórumokon lehet választ kapni. Az alábbi jelenségek és problémák a \textit{Headless Gamma} komponens fejlesztése alatt merültek föl
+
+Az eclipse plug-in fejlesztés és termék export konfiguráció során számos függősségi problémával szembesültem. A legelső érdekesség ami felmerült, az volt, hogy az Eclipse a \textit{product} konfigurációban meghatározott plug-in függőségek verzióját automatikusan felülírta a környezetbe telepített legfrissebb verzióval. Ezen plug-in-ek listáját az Eclipse IDE-n belül a \textit{Target Platform}-on lehet megtekinteni és szerkeszteni. Ilyen problémás függőségek voltak a \textit{batik.css} és \textit{batik.util} plug-in-ek. A Target Platform szerkesztésével ezt a problémát orvosolni lehet, csupán ki kell vegyük vagy hozzá kell adjuk azt a verziót amire szükségünk van és győződjünk meg, hogy az adott plug-in-ből csak egy verziót aktív.
+
+A product konfigurációban a \textit{Content} fülön tudjuk meghatározni milyen plug-in-ekből álljon a termékünk, az IDE-ben lehetőség van arra, hogy megadjuk a fejlesztett alkalmazásunkat és rányomva az \textit{Add Requiered} gombra az IDE automatikusan beállítja a termékünk összes függőségét. Ennek ellenére az osgi.extender olyan plug-in-eket igényel, amelyek az OSGi helyes működéséhez szükségesek de nem importálja be automatikusan. A szükséges modulok:
+\begin{lstlisting}[language=]
+org.apache.felix.scr
+org.eclipse.equinox.event
+org.eclipse.compare.core
+org.eclipse.fx.osgi
+org.eclipse.team.core
+\end{lstlisting}
+
+Olyan jelenség is előjött, ahol a függőségi fában egy plug-in kétszer szerepelt viszont különböző verzióval, ezt az OSGi szabvány engedi de az Eclipse, az első jelenségben leírtak alapján, folyamatosan felülírta az elavultabb verziót. A probléma elképzelésében segít  \aref{fig:depend} ábra. Erre a megoldás az, hogy a fában felfele haladva megvizsgáljuk, hogy milyen verziókat tudunk frissíteni a Target Platformon úgy, hogy a működést megtartsuk de az elavult verziójú plug-in-t frissíteni tudjuk. Alapvetően egyszerű feladatnak tűnik, viszont a rendszer közel 250 függőséggel rendelkezik.
+
+\begin{figure}[t]
+	\includegraphics[width=150mm, keepaspectratio]{figures/depend.jpg}
+	\caption{Egyszerűsített függőségi fa}
+	\label{fig:depend}
+\end{figure}
+
+A termék export felületen meg kell határozni, hogy az egyes Eclipse modulok milyen sorrendbe induljanak el, a mi esetünkbe az alábbi indulási szintek meghatározása volt fontos:
+\begin{lstlisting}[language=XML]
+<configurations>
+	<plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+	<plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+	<plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+	<plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+	<plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+</configurations>
+\end{lstlisting}
+Ez a konfiguráció részlet a termék leírás XML fájlból van másolva, az IDE-ben a \textit{Configuration} fülön lehet mindezt beállítani.
+
+Egy termék konfiguráció futtatására két lehetőségünk van, az első, hogy exportáljuk (headless eclipse) majd parancssorból meghívjuk és átadjuk az argumentumokat vagy az IDE-ből elindítjuk. Az utóbbi tesztelés folyamán nagyon hasznos tud lenni. Ha IDE-ből futtatjuk akkor is van lehetőségünk argumentumokat átadni, erre szintén a termék konfigurációban van lehetőség, pontosabban a \textit{Launching} fülön. Arra viszont érdemes odafigyelni, hogy ezt a tesztelés után ne hagyjuk ott, mivel az export konstans argumentumoknak értelmezi és minden headless módban indulásnál átadja önmagának. A mi esetünkbe ez hatványozottan fontos, mivel az átadott argumentumok minden esetben mások a munkatér és projektek számossága miatt.
+
+Minden függőség lehet opcionális vagy kötelező az opcionálisakat csak abban az esetben tölti be a headless eclipse mikor éppen szüksége van rá. A rendszerünknek a \textit{jdt} plug-in család több komponensére is szüksége van viszont ezek a függőségi fában levő szülőjükön a \textit{xtext.ui} plug-in-en csupán opcionálisként vannak megjelölve és egy mai napig nem tisztázott ok miatt nem töltődtek be. A problémát azzal lehet orvosolni, hogy készítünk az xtext.ui plug-in-ből egy saját példányt, amin a függőségi beállításokat átírjuk opcionálisról kötelezőre. Ez sajnos nehezíti a rendszer tovább fejlesztését és a telepítési folyamat is komplexebbé válik.
+
+Egy kulcsfontosságú probléma az volt, hogy az Xtext\footnote{Xtext-ről többet: \url{https://www.eclipse.org/Xtext/}} modult eddig nem tudtuk injektálni a headless eclipse-be. Erre az alábbi kódrészlet ad megoldást:
+\begin{lstlisting}[language=Java]
+ 	Injector injector = new StatechartLanguageStandaloneSetupGenerated()
+ 							.createInjectorAndDoEMFRegistration();
+ 	XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
+\end{lstlisting}
+A fent definiált \textit{resourceSet}-ről tudjuk majd a headless eclipse-nek argumentumban átadott fájlt elérni.
+
+Minden Gamma nyelv interpretálóját egyedileg meg kellet hívni az alkalmazás indulási pillanataiban:
+
+\begin{lstlisting}[language=Java]
+//Alkalmazás belépési pontja
+ @Override
+public Object start(final IApplicationContext context) throws Exception {
+	ExpressionLanguageStandaloneSetup.doSetup();
+	ActionLanguageStandaloneSetup.doSetup();
+	StatechartLanguageStandaloneSetup.doSetup();
+	TraceLanguageStandaloneSetup.doSetup();
+	PropertyLanguageStandaloneSetup.doSetup();        
+	GenModelStandaloneSetup.doSetup();
+	.
+	.
+	.
+\end{lstlisting}
+
+\paragraph{OpenAPI REST webszerver} Olyan fejlesztői megoldásokat mutatok be, amelyek az OpenAPI és Vert.x használata által nagyon egyszerűen megvalósíthatóak voltak. Ehhez tekintsük át \aref{fig:endpoint_example} ábrát amely az \textit{addproject} endpoint specifikációját tartalmazza.
+
+A Vert.x, mint említettem támogatja az OpenAPI REST specifikáció integrációját, így kódból az alábbi módon tudjuk elérni a fájlban definiált \textit{endpointot} (gamma-wrapper.yaml), amit majd regisztrálunk a webszerverünkbe:
+\begin{lstlisting}[language=Java]
+@Override
+public void start(Future<Void> future) {
+        OpenAPI3RouterFactory.create(this.vertx, "gamma-wrapper.yaml", ar ->
+		{
+                OpenAPI3RouterFactory routerFactory = ar.result();
+                routerFactory.addHandlerByOperationId("addProject", routingContext -> {	... }
+		.
+		.
+\end{lstlisting}
+A fenti kódrészletben már nagyon egyszerűen tudjuk a kérésben utazó paramétereket Java objektummá átalakítani.A példában fájlok feldolgozását is el kell végezzük, ezt a Vert.x a fenti \textit{routingContext} objektumon már eltárolja és egy egyszerű \textit{routingContext.fileUploads()} hívással már \textit{File} objektumok listáját kapjuk vissza.
+
+
+Bizonyos validációs feladatokat is elvégez helyettünk az OpenAPI definíció alapján a Vert.x, \aref{fig:endpoint_example} ábrán látható, hogy meghatározzuk a munkatér(workspace) szintaktikáját, ha ettől eltérő, más formátumú karakterlánc szerepel a kérésben akkor automatikusan küldődik egy válasz a klienshez, hogy nem megfelelő a kérése.
 
 
 
+\begin{figure}[!ht]
+	\includegraphics[width=150mm, keepaspectratio]{figures/endpoint_example.png}
+	\caption{Endpoint példa}
+	\label{fig:endpoint_example}
+\end{figure}
+
+\paragraph{ProcessBuilder fejlesztés} Alapvetően a webszerver java 8 alapokon lett megvalósítva, majd kiderült, hogy a java 9 hasznos, új frissítéseket tartalmaz a \textit{java.lang.ProcessBuilder} komponensén. Számunkra ez azért fontos, mert bevezetésre került a \textit{pid} (process id) lekérése az éppen indított folyamatról. Ezt az azonosítót feltudjuk használni, hogy egy Gamma műveleteket feldolgozó folyamatot leállítsunk, ha úgy gondoljuk, hogy túl sok ideig fut.
+Nagyon fontos megjegyezni azt, hogy ha folyamatot indítunk a \textit{java.lang.ProcessBuilder} segítségével és ez több ideig fut, akkor a logolási eredményét kötelezően át kell irányítsuk fájlba vagy konzolba. Ennek hiányában a folyamatunk beakad. A rendszerünk a folyamatot indító konténerre leörökölteti a logolás feladatát. A HeadlessGamma elindítására szolgáló kódrészlet:
+
+\begin{lstlisting}[language=Java]
+	ProcessBuilder pb = new ProcessBuilder(commandToBeExecuted); // ProcessBuilder inicializálás, commandToBeExecuted a futtatni kivánt parancs karakterláncát tartalmazza
+	pb.redirectErrorStream(true);
+	pb.inheritIO(); // Logolás öröklés
+	long pib =  pb.start().pid(); // Folyamat azonosító lekérése
+}
+\end{lstlisting}
+
+
+%----------------------------------------------------------------------------
+\subsection{Rendszer szoftverkomponensei}
+%----------------------------------------------------------------------------
+
+A rendszer struktúrájából kiindulva, ezt \aref{fig:structure} ábrán lehet megtekinteni, a rendszer szoftver szintű felépítése három komponensből tevődik össze, ezek vizuális reprezentációját \aref{fig:software_components} ábra mutatja be.
+
+\begin{figure}[t]
+	\includegraphics[width=75mm, keepaspectratio]{figures/software_components.jpg}
+	\caption{Szoftver komponensek}
+	\label{fig:software_components}
+\end{figure}
+
+A Webszerver tartalmazza az összes olyan komponenst, amely a webes kérések értelmezését és átalakítását végzik, itt található az OpenAPI definíció. Önmagában egy Maven\footnote{Maven-ről többet: \url{https://maven.apache.org/}} alapú InteliJ IDEA-ban fejlesztett alkalmazás. A Gamma és a Generator pedig az eddigiekben már többször említett két headless eclipse alkalmazás. A webszerver egy master szerepet tölt be a rendszerünkbe, mivel ö koordinálja a másik kettő működését.
+
+A szoftverkomponensek forráskódja megtekinthető:
+
+\begin{itemize}
+	\item Webszerver \url{https://github.com/szlnnn/gamma-openapi-vertx/tree/dev}
+	\item Gamma \url{https://github.com/szlnnn/gamma/tree/dev/plugins/headless/hu.bme.mit.gamma.api.headless}
+	\item Generator \url{https://github.com/szlnnn/eclipse-headless-project-import-tool/tree/dev}
+\end{itemize}

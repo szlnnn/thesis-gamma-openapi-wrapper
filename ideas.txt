@@ -4,44 +4,44 @@
 	- modellezesi eszkozok -- gamma
 2. Bevezeto
 	- ismetelni az absztraktban leirtakat (modellezes -> tipusok -> reactiv rendszerek -> statechart -> gamma ) 
-			https://cs.ccsu.edu/~stan/classes/CS410/Notes16/05-SystemModeling.html
-	- gamma frameworkrol par szot 
-			https://inf.mit.bme.hu/node/6028
+		@CITED@	https://cs.ccsu.edu/~stan/classes/CS410/Notes16/05-SystemModeling.html
+	- gamma frameworkrol par szot (szomoru emberke az IDE oldalon, boldog a cloudos oldalon)
+		@CITED@	https://inf.mit.bme.hu/node/6028
 	- felvazalni a feladatot (nagyon absztrakt legyen)
 	- miert van igeny ra (skalazhatosag, felhasznalo baratsag) 
-			https://www.salesforce.com/uk/blog/2015/11/why-move-to-the-cloud-10-benefits-of-cloud-computing.html 
-			https://www.tutorialspoint.com/webservices/why_web_services.htm
-			https://www.ibm.com/cloud/learn/benefits-of-cloud-computing
+		@CITED@	https://www.salesforce.com/uk/blog/2015/11/why-move-to-the-cloud-10-benefits-of-cloud-computing.html 
+		@CITED@	https://www.tutorialspoint.com/webservices/why_web_services.htm
+		@CITED@	https://www.ibm.com/cloud/learn/benefits-of-cloud-computing
 	- abrat es rovid leirast arrol hogy milyen megoldast javasoltam  
 		-- attekintes a igeny-kovetelmeny,use-casek,architektura 
 	- pontositani a dolgozat melyik pontjan mit irok le 
 3. Hatterismeretek
 	3.1 Modern technologiak 
 		- osgi -par szot ? (minden technologiarol esetleg?)
-				https://www.osgi.org/developer/what-is-osgi/
-				https://www.eclipse.org/equinox/				
+				@CITED@https://www.osgi.org/developer/what-is-osgi/
+				@CITED@https://www.eclipse.org/equinox/				
 		- eclipse rcp szerintem mindenkepp megeri beszelni (os com.)
-				https://www.vogella.com/tutorials/EclipsePlugin/article.html
-				https://www.vogella.com/tutorials/EclipseProductDeployment/article.html
-				https://www.vogella.com/tutorials/EclipseExtensionPoint/article.html
+				@CITED@https://www.vogella.com/tutorials/EclipsePlugin/article.html
+				@CITED@https://www.vogella.com/tutorials/EclipseProductDeployment/article.html
 		- REST 
-				https://chelseatroy.com/2018/08/01/api-design-part-1-before-there-was-rest/
-				https://restfulapi.net/
-				https://medium.com/@ahmetozlu93/mastering-rest-architecture-rest-architecture-details-e47ec659f6bc
-				https://www.codecademy.com/articles/what-is-rest
-				https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582
+			@CITED@	https://chelseatroy.com/2018/08/01/api-design-part-1-before-there-was-rest/
+			@CITED@	https://restfulapi.net/
+			@CITED@	https://medium.com/@ahmetozlu93/mastering-rest-architecture-rest-architecture-details-e47ec659f6bc
+			@CITED@	https://www.codecademy.com/articles/what-is-rest
+			@CITED@	https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-2-rest-constraints-129a4b69a582
 		- OPENAPI es swaggerhub
-				https://swagger.io/blog/api-strategy/difference-between-swagger-and-openapi/
-				https://swagger.io/docs/specification/about/
+			@CITED@	https://swagger.io/blog/api-strategy/difference-between-swagger-and-openapi/
+			@CITED@	https://swagger.io/docs/specification/about/
 				
 		- java alapu technologiak
-			https://vertx.io/ miert ez? mert tud openapi specko alapjan webszervert generalni
+			@CITED@https://vertx.io/ miert ez? mert tud openapi specko alapjan webszervert generalni
 			ide meg jon a process builder
 		- kontenereziacio ?
 				https://www.citrix.com/glossary/what-is-containerization.html
 				https://www.monitis.com/blog/top-5-benefits-of-containerization/
 			
 	3.2 Gamma
+	KENE BIBTEC A BENCE SZAKDOGAJAROL!!!!
 		- gamma , reszeltesen leirni mi a gamma (motivacio) // mit nem tamogat a gamma resz zaraskent
 				-- funkcio lista es hianyossagok
 4. Specifikacio es implementacio (nem tudom szetbontani) (barmit amit itt leirok ertheto kell legyen a hatterismeretek alapjan)
@@ -60,6 +60,9 @@
 		- kodot masolni esetleg ? csak ahol nagyon fontos, pl az xtext validator injector (minimalis kodreszlet)
 		- abran mutatott modulokon vegigmenni (pl gamma - tobb modulok ebbol 1 headless ez a kontribucio + sajat headless + webszerver) (fizikai)
 		- itt fontos hogy 3 kulonallo szoftver
+		
+		kerdesek: gites linket szabad a kodomhoz?
+				 szoftveres abra mennyire para? es az openapis kep? esetleg sok a kod? szerintem csak a fontos dolgok szerepelnek.
 	
 5. Hasznalati utmutato 
 	- endpoinok hasznalata

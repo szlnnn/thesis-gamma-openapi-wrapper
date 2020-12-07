@@ -1,33 +1,25 @@
 %----------------------------------------------------------------------------
 \chapter{\bevezetes}
 %----------------------------------------------------------------------------
+
+Napjainkban egy modern alkalmazás fejlesztése komoly komplexitással jár, ennek hatására új szoftverfejlesztési módszertanok jelennek meg az informatika világában. Egy ilyen módszertan a \textit{modellalapú szoftverfejlesztés}, aminek segítségével egy rendszer fejlesztési ciklusa és felépítése transzparensé válik, a komplexitás könnyebben kezelhető és az üzleti oldal is átláthatja a fejlesztői oldal munkáját. Ezzel párhuzamosan a felhő alapú megoldások is egyre több helyen felbukkannak az iparban a flexibilitásuk, hatékonyságuk és stratégiai értéküknek köszönhetően. Ezen dolgozat keretein belül bemutatom, hogyan lehet egy létező modellezési eszközt transzformálni egy felhő alapú szolgáltatássá.
 %----------------------------------------------------------------------------
-\section{Rendszer modellezés}
+\section{Modellalapú szoftverfejlesztés}
 %----------------------------------------------------------------------------
 
-Napjainkban a modellezés fogalom nagyon elterjedté vált az ipari világ valamennyi ágában. A rendszermodellezés egy olyan folyamat, amelyben egy rendszert írunk le különböző absztrakciós szinteken. Minden modell egy különálló nézőpontból mutatja be a rendszert.
+A modellalapú szoftverfejlesztés megoldásokat nyújt a modern rendszereknek az exponenciálisan növekedő komplexitásuk kezelésére. Különböző absztrakciós szinteken tudjuk az alkalmazásunk felépítését és működését vizuális elemekkel leírni. A modellek négy főbb perspektívából tudják a rendszert leírni\cite{cs1}:
 
-A modellek több nézőpontból írják le a rendszert:
  \begin{itemize}
  	\item Külső perspektíva, ahol a rendszer kontextusát és környezetét írjuk le
  	\item Belső perspektíva, ahol a rendszer belső komponensei közti és a környezettel való kapcsolatot írjuk le
  	\item Strukturális perspektíva, ahol a rendszer felépítését és a feldolgozott adatok struktúráját ábrázoljuk
  	\item Viselkedési perspektíva, ahol a rendszer viselkedését és különböző eseményekre való reakcióját részletezzük
  \end{itemize}
-
-Mindehhez valamilyen grafikus jelölésre van szükségünk, a legismertebb ábrázolási szemantika a Unified Modeling Language (UML). Az öt legelterjedtebb UML diagram:
- \begin{itemize}
-	\item Működési (Activity) - folyamatokat és adatfeldolgozási lépéseket modellezhetünk
-	\item Használati eset (Use case) - a rendszer és a környezete közti interakciókat írjuk le
-	\item Szekvencia (Sequence) - aktorok és rendszer továbbá belső komponensek közti kommunikációt ábrázolják
-	\item Osztály (Class) - objektumokat és ezek közti hierarchikus kapcsolatokat tudjuk leírni
-	\item Állapot (State) - a rendszer viselkedését modellezhetjük különböző belső vagy külső események hatására
-\end{itemize}
-
+Egy ilyen modellezési eszköz a Gamma Keretrendszer.
 %----------------------------------------------------------------------------
 \section{Gamma keretrendszer}
 %----------------------------------------------------------------------------
-A Gamma keretrendszer\footnote{A keretrendszer weblapja: \url{gamma.inf.mit.bme.hu}} (Gamma Állapotgép Kompozíciós Keretrendszer) egy olyan eszköz amivel komponens alapú reaktív rendszereket tudunk modellezni, verifikálni vagy akár kódot generálni. A gamma az egyetem Méréstechnika és Információs Rendszerek tanszékén készült, fő fejlesztője Graics Bence.
+A Gamma keretrendszer\cite{DBLP:journals/sosym/GraicsMVMV20} (Gamma Állapotgép Kompozíciós Keretrendszer) egy olyan eszköz, amivel komponens alapú reaktív rendszereket tudunk modellezni, verifikálni vagy akár kódot generálni.
 
 Reaktív rendszernek nevezzük azt az architekturális stílust, amely segítségével lehetőségünk van különálló alkalmazások egységként való kezelésére úgy, hogy ezek a komponensek továbbá képesek egymás eseményeire és a környezetükre reagálni.
 
@@ -42,24 +34,24 @@ A Gamma által nyújtott műveletekre manapság a modellalapú fejlesztések elt
 
 A Gamma egy Eclipse-alapú eszköz, így jelen formájában nem tud felhőben futó szolgáltatásként létezni. A feladat ennek megfelelően az, hogy az alkalmazás szolgáltatásként is használható részeit parancssoron keresztül, illetve OpenAPI segítségével webes szolgáltatásként is elérhetővé tegyük.
 
+A fentebb leírtak alapján a Gamma egy Eclipse IDE-n belüli eszköz, ennek a transzformációját webes szolgáltatásba \aref{fig:transformation} ábra mutatja be.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=150mm, keepaspectratio]{figures/transformation.jpg}
+	\caption{Gamma mint szolgáltatás}
+	\label{fig:transformation}
+\end{figure}
+
+
+Alapvetően a Gammát mint Eclipse IDE Plug-in ki kell emelni, hogy egy fekete szoftver doboz legyen, ami bemeneti paraméterként kap egy műveleteket leíró fájlt, ezután legyártja a különböző műveletek által definiált eredmény fájlokat. A gamma fölé kell építeni egy webes kiszolgálót, ami képes bejövő kéréseket értelmezni, majd átfogalmazva tovább küldi a Gamma komponensnek. A megoldás során olyan mellék/segítő komponenseket is megkellet tervezni és implementálni, amelyek az adatok átalakításáért vagy mozgatásáért felelősek.
+
 %----------------------------------------------------------------------------
 \section{Motiváció}
 %----------------------------------------------------------------------------
 
-Ebbe a fejezetben részletezni fogom a feladatban említett felhő és webes szolgáltatások előnyeit.
-
-%----------------------------------------------------------------------------
-\subsection{Felhő alapú megoldások}
-%----------------------------------------------------------------------------
-Napjaikban egyre gyakrabban merül föl a Felhő/Cloud fogalom, ez annak köszönhető, hogy az informatika világában valamennyi kis- és nagyvállalat egyaránt vezet be különböző felhő alapú szolgáltatásokat. Három fő kategóriába tudjuk csoportosítani a felhőalapú szolgáltatásokat:
-
-\begin{enumerate}
-	\item \textbf{Software as Service (SaaS)} leggyakrabban használt megoldás, alkalmazások disztribúciója az interneten keresztül felhasználók számára
-	\item \textbf{Infrastructure as Service (IaaS)}	Skálázható és automatizált erőforrások
-	\item \textbf{Platform as Service (PaaS)} Olyan környezetet biztosít a fejlesztők számára, amelyen kényelmesen tudnak alkalmazásokat fejleszteni
-\end{enumerate}
-
-Számos előnyei vannak a fenti felhő alapú szolgáltatásoknak, 3 fő kategóriába tudjuk ezeket sorolni:
+A felhő világban definiáltak alapján a rendszerünk egy \textbf{Software as Service (SaaS)} komponens lesz, amely megoldási szolgáltatás a leggyakrabban használt, röviden annyit foglal magába, hogy egy alkalmazást teszünk elérhetővé felhasználók számára az internet segítségével.
+A rendszerünk felhőbe való integrációja mögötti igényt az alábbi három kategóriába sorolt előnyhalmaz magyarázza meg\cite{top10}\cite{ibm}:
 
  \begin{itemize}
 	\item \textbf{Flexibilitás} : Igény szerint skálázható, publikus és privát adattárolás lehetősége, vezérlési lehetőségek (egy szervezet eldöntheti, hogy milyen szinten szeretné kontrollálni az igényelt szolgáltatását), gazdag portfólió (számos létező eszköz és megoldás közül választhatunk) és nem utolsó sorban biztonsági szempontból is rengeteg létező vagy új megoldást lehet implementálni az adatok titkosításához
@@ -67,28 +59,12 @@ Számos előnyei vannak a fenti felhő alapú szolgáltatásoknak, 3 fő kategó
 	\item \textbf{Stratégiai érték} : Számos terhet vesz le egy felhőalapú szolgáltatás a szervezetek válláról, így több idő marad a fejlesztésekre, mindig friss az igénybe vett szolgáltatás verziója. Az elérhetőség lehetővé teszi, hogy a világ bármilyen részéről emberek közösen tudjanak dolgozni ugyanazon a problémán
 \end{itemize}
 
-%----------------------------------------------------------------------------
-\subsection{Webes szolgáltatások}
-%----------------------------------------------------------------------------
+Mivel az alkalmazásunk egy webes szolgáltatás lesz így ezzel az aspektussal járó pozitívumok is alátámasszák a rendszer piaci igényét.
 
-Egy webes szolgáltatás lehetővé teszi, hogy a meglévő szoftverünket elérhetővé tegyük a világ számára. HTTP protokollt használva nem csak kliensek felé oszthatjuk meg, hanem különböző más létező szoftver komponensekkel való kommunikációt is kitudunk alakítani.
+Egy webes szolgáltatás lehetővé teszi, hogy a meglévő szoftverünket elérhetővé tegyük a világ számára\cite{tutorialspoint}. HTTP protokollt használva nem csak kliensek felé oszthatjuk meg, hanem különböző más létező szoftver komponensekkel való kommunikációt is kitudunk alakítani.
 
-Számos előnye van: Rengeteg már létező megoldás van már belőle, így nehéz elakadni. Jól előredefiniált protokollok lettek meghatározva, így bármilyen szoftveres világ tud kommunikálni egy teljesen más világgal.
+Számos előnye van. Rengeteg már létező megoldási minta létezik, így nehéz elakadni. Jól előredefiniált protokollok vannak meghatározva, így két teljesen különböző ipari ágakból származó rendszerek közti kommunikáció is kialakítható.
 
-%----------------------------------------------------------------------------
-\section{Megoldás}
-%----------------------------------------------------------------------------
-A fentebb leírtak alapján a Gamma egy Eclipse IDE-n belüli eszköz, ennek a transzformációját webes szolgáltatásba a következő ábra írja le:
-
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=150mm, keepaspectratio]{figures/transformation.jpg}
-	\caption{Gamma infrastruktúra}
-	\label{fig:TeXstudio}
-\end{figure}
-
-
-Alapvetően a Gammát mint Eclipse IDE Plug-in ki kellet emelni, hogy egy fekete szoftver doboz legyen, ami bemeneti paraméterként kap egy műveleteket leíró fájlt, ezután legyártja a különböző műveletek által definiált eredmény fájlokat. A gamma fölé kellet építeni egy webes kiszolgálót, ami képes bejövő kéréseket értelmezni, majd átfogalmazva tovább küldi a Gamma komponensnek. A megoldás során olyan mellék/segítő komponenseket is megkellet tervezni és implementálni, amelyek az adatok átalakításáért vagy mozgatásáért felelősek.
 %----------------------------------------------------------------------------
 \section{Dolgozat felépítése}
 %----------------------------------------------------------------------------

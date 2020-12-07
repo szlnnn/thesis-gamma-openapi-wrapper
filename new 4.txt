@@ -54,3 +54,31 @@ https://www.rdeeson.com/weblog/99/relocating-eclipse-projects-the-project-descri
 
 -- get result endpoint: body json ->string list (eleresek) (. - akkor mindent a sajat projektjen belul) ( 1 "." nal tobb nem lehet)
 
+implementacional errol tudok irni:
+	eclipse fejlesztes:
+		""""""	- runtime fuggoseg , nem igenyli de akkor is kell (ez egyertelunek tunhet)
+		""""""-  eclipse nem a megfelelo verziot exportalja (tobb verzio letezik az eclipsen belul, mindig felulirja a frissebbikel), target platformrol kicsit beszelni
+		""""""	- az Add requiered plugin nem mindent ad hozza, minden esetben elojott az , h az osgi.extender hianyol dolgokat ezek :
+		""""""	- inicialis fuggosegi issue, amire az osgi papiron megoldast nyujt de az eclipse valamiert ezt nem tamogatta , itt meg tudok irni a kezdeti implementaciorol
+		""""""	- fontos hogy a product konfigba ha minden fuggosegunk megvan akkor az indulasi sorrendet az eclipsere bizzuk ezt it tlehet megcsinalni
+		""""""- teszteleshez (IDE-ben)valo futtatashoz megtudunk adni argumentumokat a konfigba, viszont ezeket export elott celszeru kivenni maskepp konstanson mindig atadja indulaskor
+		""""""-- xtext sajat build (optional fuggosegek miatt)
+		"""""" viatra fuggosegek megadasa
+		""""""-- az xtext validator injektalasa
+		""""""- gamma nyelvek konifgorulasa, doAloneSetup
+		- headless eclipse import megkotesek
+		- -consoleLog csatolo
+	webszerver erdekessegek:
+		""""""- yaml openapi definicioban definialt endpointokat egy operationId-val 
+		""""""- erdekesseg h az openapi-ban definialt parameter szintaktikat ellenorizi automatikusan
+	processbuilder:
+		""""""--szinkron asszinkron mukodes hogyan
+		""""""--logolas hosszu folyamatokat megol, erre mi a megoldas
+		""""""-- java 9 tol van lehetoseg a pid visszakeresere
+	provider:
+		eredmeny halmaz lekerese implementacio, osszemasolja majd elkuldi , elotte torli a korabbi eredemnyeket
+	jsonFájlok:
+		-elonye hogy gyorsan integralhato de nem a legbiztonsagosabb.
+	
+	szoftver komponensek: a három szoftver komponens
+		
