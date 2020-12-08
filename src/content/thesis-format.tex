@@ -122,7 +122,7 @@ Négy alapvető funkció részletes működését fogom bemutatni ebben a fejeze
 	\label{fig:addworkspace}
 \end{figure}
 
-A workspace létrehozás szekvencia diagramja \aref{fig:addworkspace} ábrán látható. Első fázisban bejön egy POST HTTP metódus az addworkspace endpointra, ennek a törzse üres és az URL-ben sem hordoz paramétereket. Látható, hogy az OpenAPIVerticle fogadja a kérést, ez lényegében a REST webszerverünk, mivel ez a legelső művelet, amit a kliens meg kell hívjon így nem kell semmilyen ellenőrzést végezni. A végrehajtási sor következő lépése a \textit{ProcessBuilder}-ben van, itt a rendszer generál egy egyedi UID azonosítót, amit felhasznál a parancs kialakításhoz, amivel elindítja a a HeadlessGenerator-t.A parancs (command) elkészítéséhez a ProcessBuildernek szüksége van a headless eclipse elérésére, ez jelenleg a kódba be van égetve, a továbbiakban célszerű lenne egy konfigurációs fájlba kiemelni. A generator amíg elkészíti a workspace-t a ProcessBuilder vár, ha végzett akkor visszaadja az OpenAPIVerticle-nek a generált UID-ot ami továbbítja a kliens felé. Mikor a headless eclipse elvégezte a feladatot akkor teljesen leáll, ezt jelzi az X a folyamatábrán.
+A workspace létrehozás szekvencia diagramja \aref{fig:addworkspace} ábrán látható. Első fázisban bejön egy POST HTTP metódus az addworkspace endpointra, ennek a törzse üres és az URL-ben sem hordoz paramétereket. Látható, hogy az OpenAPIVerticle fogadja a kérést, ez lényegében a REST webszerverünk, mivel ez a legelső művelet, amit a kliens meg kell hívjon így nem kell semmilyen ellenőrzést végezni. A végrehajtási sor következő lépése a \textit{ProcessBuilder}-ben van, itt a rendszer generál egy egyedi UID azonosítót, amit felhasznál a parancs kialakításhoz, amivel elindítja a a HeadlessGenerator-t.A parancs (command) elkészítéséhez a ProcessBuildernek szüksége van a headless eclipse elérésére, ezt a \textit{config.properties} fájlban lehet beállítani. A generator amíg elkészíti a workspace-t a ProcessBuilder vár, ha végzett akkor visszaadja az OpenAPIVerticle-nek a generált UID-ot ami továbbítja a kliens felé. Mikor a headless eclipse elvégezte a feladatot akkor teljesen leáll, ezt jelzi az X a folyamatábrán.
 
 
 \paragraph{Eclipse projekt importálás}
@@ -228,6 +228,7 @@ public Object start(final IApplicationContext context) throws Exception {
 	.
 	.
 	.
+}
 \end{lstlisting}
 
 \paragraph{OpenAPI REST webszerver} Olyan fejlesztői megoldásokat mutatok be, amelyek az OpenAPI és Vert.x használata által nagyon egyszerűen megvalósíthatóak voltak. Ehhez tekintsük át \aref{fig:endpoint_example} ábrát amely az \textit{addproject} endpoint specifikációját tartalmazza.
@@ -238,10 +239,11 @@ A Vert.x, mint említettem támogatja az OpenAPI REST specifikáció integráci�
 public void start(Future<Void> future) {
         OpenAPI3RouterFactory.create(this.vertx, "gamma-wrapper.yaml", ar ->
 		{
-                OpenAPI3RouterFactory routerFactory = ar.result();
-                routerFactory.addHandlerByOperationId("addProject", routingContext -> {	... }
-		.
-		.
+               	OpenAPI3RouterFactory routerFactory = ar.result();
+                routerFactory.addHandlerByOperationId("addProject", routingContext -> {	... });
+				...	
+		});
+}
 \end{lstlisting}
 A fenti kódrészletben már nagyon egyszerűen tudjuk a kérésben utazó paramétereket Java objektummá átalakítani.A példában fájlok feldolgozását is el kell végezzük, ezt a Vert.x a fenti \textit{routingContext} objektumon már eltárolja és egy egyszerű \textit{routingContext.fileUploads()} hívással már \textit{File} objektumok listáját kapjuk vissza.
 
@@ -275,17 +277,10 @@ Nagyon fontos megjegyezni azt, hogy ha folyamatot indítunk a \textit{java.lang.
 A rendszer struktúrájából kiindulva, ezt \aref{fig:structure} ábrán lehet megtekinteni, a rendszer szoftver szintű felépítése három komponensből tevődik össze, ezek vizuális reprezentációját \aref{fig:software_components} ábra mutatja be.
 
 \begin{figure}[t]
+	\centering
 	\includegraphics[width=75mm, keepaspectratio]{figures/software_components.jpg}
 	\caption{Szoftver komponensek}
 	\label{fig:software_components}
 \end{figure}
 
 A Webszerver tartalmazza az összes olyan komponenst, amely a webes kérések értelmezését és átalakítását végzik, itt található az OpenAPI definíció. Önmagában egy Maven\footnote{Maven-ről többet: \url{https://maven.apache.org/}} alapú InteliJ IDEA-ban fejlesztett alkalmazás. A Gamma és a Generator pedig az eddigiekben már többször említett két headless eclipse alkalmazás. A webszerver egy master szerepet tölt be a rendszerünkbe, mivel ö koordinálja a másik kettő működését.
-
-A szoftverkomponensek forráskódja megtekinthető:
-
-\begin{itemize}
-	\item Webszerver \url{https://github.com/szlnnn/gamma-openapi-vertx/tree/dev}
-	\item Gamma \url{https://github.com/szlnnn/gamma/tree/dev/plugins/headless/hu.bme.mit.gamma.api.headless}
-	\item Generator \url{https://github.com/szlnnn/eclipse-headless-project-import-tool/tree/dev}
-\end{itemize}

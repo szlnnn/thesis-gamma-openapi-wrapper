@@ -41,13 +41,13 @@
 				https://www.monitis.com/blog/top-5-benefits-of-containerization/
 			
 	3.2 Gamma
-	KENE BIBTEC A BENCE SZAKDOGAJAROL!!!!
+????	KENE BIBTEC A BENCE SZAKDOGAJAROL!!!!
 		- gamma , reszeltesen leirni mi a gamma (motivacio) // mit nem tamogat a gamma resz zaraskent
 				-- funkcio lista es hianyossagok
 4. Specifikacio es implementacio (nem tudom szetbontani) (barmit amit itt leirok ertheto kell legyen a hatterismeretek alapjan)
 	4.1 Specifikacio
 		-stakeholderektol elindulva (kinek fontos kire figyeljunk)
-???? - use case-k nagyon egyszeruek lennenek es repititvek, rakjak be? 		
+		- use case-k nagyon egyszeruek lennenek es repititvek, rakjak be? 		
 		-kovetelmenyek (pl skalazhatosag, projekt kezeles), activityk, use-case diagrammok
 		-tervezesi folyamatok
 		-mindenre egy ok, hogy miert lett csinalva (pl miert kell tobb workspace, miert kell tobb projekt, miert kell docker, miert kell headless stb..)
@@ -61,19 +61,39 @@
 		- abran mutatott modulokon vegigmenni (pl gamma - tobb modulok ebbol 1 headless ez a kontribucio + sajat headless + webszerver) (fizikai)
 		- itt fontos hogy 3 kulonallo szoftver
 		
-		kerdesek: gites linket szabad a kodomhoz?
-				 szoftveres abra mennyire para? es az openapis kep? esetleg sok a kod? szerintem csak a fontos dolgok szerepelnek.
+???? 		kerdesek: gites linket szabad a kodomhoz?
+				 szoftveres abra mennyire para? ----- webes reteg es backend
+				 es az openapis kep? - listing
+				 esetleg sok a kod?
+				 szerintem csak a fontos dolgok szerepelnek.
 	
 5. Hasznalati utmutato 
 	- endpoinok hasznalata
 	- egy peldan keresztul vegigvezetnem az olvasot, hogy hogyan lehet hasznalni a fejlesztest
-	- tests osszes publikus esettanulamyt tartalmaz
-	
+???? 	kerdesek: ez igy jo ?
+			 telepitesrol vajon irjak? ideaba importald ezt inditsd el a zold gombal stb..
 6. 	Tovabbfejlesztesi lehetosegek
-	- ha nem sikerul a ggen-es megoldast implementalni akkor errol irnek kicsit , sikerult de ennek ellener leirjuk mi volt az inicialis terv
-	- kliens integraciok, pl magicdraw 
+
 	- ahol elegedtlen vagyok ott improvement jellegu megjegyzest teszek (fejlesztesi folytato munkat konnyiteni) 
+???? 	-miről volt szó, mi valósult meg és mit lehet tovább fejleszteni
+	a megvalósulásnál kiemelem a követelmény ábrát és rárajzolok mi teljesült és mi nem
+	kiemelném a hiányosságokat és hibákat pl a delete endpoint nem mukodik csak ha egy projekt van
 
 
+a citing gammanal legyen a reszletes fejezetenel a bevezetoben kapok mast.
 
 Ne legyenek nagyon hosszu mondatok!!!!
+
+ha valami a kovetkezo oldalra hivatkozik akkor ezeket ellenorizni, 1 sorosnal 
+kepek meretet nezd at, ne legyen ures hely
+ne legyen az abran a betumeret kisebb mint a labjegyzetben
+konfig fajl a telepitesben legyen leirva
+delete endpoint es extendexpdate teszt vegere es az automatizalt torlesrol 2 szot
+planttext.com 
+req abran -> gamma transzf = yak transzf
+
+mi valosult meg miert jo
+tovabbfejlesztes - alfejezet max fel oldal
+masfel oldal szoveg + a 2 abra
+szoftveres abra mennyire para? ----- webes reteg es backend
+absztrakt max 2/3 oldal osszefoglalasa a munkanak, trailer

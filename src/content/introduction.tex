@@ -2,9 +2,9 @@
 \chapter{\bevezetes}
 %----------------------------------------------------------------------------
 
-Napjainkban egy modern alkalmazás fejlesztése komoly komplexitással jár, ennek hatására új szoftverfejlesztési módszertanok jelennek meg az informatika világában. Egy ilyen módszertan a \textit{modellalapú szoftverfejlesztés}, aminek segítségével egy rendszer fejlesztési ciklusa és felépítése transzparensé válik, a komplexitás könnyebben kezelhető és az üzleti oldal is átláthatja a fejlesztői oldal munkáját. Ezzel párhuzamosan a felhő alapú megoldások is egyre több helyen felbukkannak az iparban a flexibilitásuk, hatékonyságuk és stratégiai értéküknek köszönhetően. Ezen dolgozat keretein belül bemutatom, hogyan lehet egy létező modellezési eszközt transzformálni egy felhő alapú szolgáltatássá.
+Napjainkban egy modern alkalmazás fejlesztése komoly komplexitással jár, ennek hatására új szoftverfejlesztési módszertanok jelennek meg az informatika világában. Egy ilyen módszertan a \textit{modellalapú szoftverfejlesztés}, aminek segítségével egy rendszer fejlesztési ciklusa és felépítése transzparenssé válik, a komplexitás könnyebben kezelhető és az üzleti oldal is átláthatja a fejlesztői oldal munkáját. Ezzel párhuzamosan a felhő alapú megoldások is egyre több helyen felbukkannak az iparban a flexibilitásuk, hatékonyságuk és stratégiai értéküknek köszönhetően. Ezen dolgozat keretein belül bemutatom, hogyan lehet egy létező modellezési eszközt elérhetővé tenni felhő alapú szolgáltatásként.
 %----------------------------------------------------------------------------
-\section{Modellalapú szoftverfejlesztés}
+%\section{Modellalapú szoftverfejlesztés}
 %----------------------------------------------------------------------------
 
 A modellalapú szoftverfejlesztés megoldásokat nyújt a modern rendszereknek az exponenciálisan növekedő komplexitásuk kezelésére. Különböző absztrakciós szinteken tudjuk az alkalmazásunk felépítését és működését vizuális elemekkel leírni. A modellek négy főbb perspektívából tudják a rendszert leírni\cite{cs1}:
@@ -15,18 +15,18 @@ A modellalapú szoftverfejlesztés megoldásokat nyújt a modern rendszereknek a
  	\item Strukturális perspektíva, ahol a rendszer felépítését és a feldolgozott adatok struktúráját ábrázoljuk
  	\item Viselkedési perspektíva, ahol a rendszer viselkedését és különböző eseményekre való reakcióját részletezzük
  \end{itemize}
-Egy ilyen modellezési eszköz a Gamma Keretrendszer.
+%Egy ilyen modellezési eszköz a Gamma Keretrendszer.
 %----------------------------------------------------------------------------
-\section{Gamma keretrendszer}
+%\section{Gamma keretrendszer}
 %----------------------------------------------------------------------------
-A Gamma keretrendszer\cite{DBLP:journals/sosym/GraicsMVMV20} (Gamma Állapotgép Kompozíciós Keretrendszer) egy olyan eszköz, amivel komponens alapú reaktív rendszereket tudunk modellezni, verifikálni vagy akár kódot generálni.
+A Gamma keretrendszer \cite{DBLP:journals/sosym/GraicsMVMV20} (Gamma Állapotgép Kompozíciós Keretrendszer) egy olyan eszköz, amivel komponens alapú reaktív rendszereket tudunk modellezni, verifikálni vagy akár kódot generálni.
 
 Reaktív rendszernek nevezzük azt az architekturális stílust, amely segítségével lehetőségünk van különálló alkalmazások egységként való kezelésére úgy, hogy ezek a komponensek továbbá képesek egymás eseményeire és a környezetükre reagálni.
 
 A keretrendszer Yakindu (Yakindu Statechart Tools) alapokon készült, ami egy nyílt forráskódú állapotgépeket modellező eszköz. A gamma ezt továbbviszi és egy magasabb modellezési réteget biztosít a felhasználók számára, amely segítségével hierarchikus állapotgép hálózatokat tudnak kialakítani. A Gamma képes egyszerű állapotgépek és komplex állapotgép hálózatok modell verifikációjára, mindehhez felhasználja az UPAAL-t ami egy modell ellenőrző eszköz. Továbbá, a Gamma segítségével lehetőségünk van a teljes rendszerhez kódot generálni, jelenleg a Java nyelv támogatott.
 
 %----------------------------------------------------------------------------
-\section{Feladat áttekintés}
+%\section{Feladat áttekintés}
 %----------------------------------------------------------------------------
 
 A Gamma által nyújtott műveletekre manapság a modellalapú fejlesztések elterjedése miatt egyre nagyobb igény van, ilyen műveletek a kódgenerálás, modelltranszformáció vagy modellellenőrzés. Továbbá, a korszerű eszközök közt a felhő alapú megoldások nagyon elterjedté váltak. Az említett funkciók arányos erőforrás igénye és a folytonos integráció lehetősége miatt, ideális lenne ha a két világot ötvöznénk.
@@ -47,7 +47,7 @@ A fentebb leírtak alapján a Gamma egy Eclipse IDE-n belüli eszköz, ennek a t
 Alapvetően a Gammát mint Eclipse IDE Plug-in ki kell emelni, hogy egy fekete szoftver doboz legyen, ami bemeneti paraméterként kap egy műveleteket leíró fájlt, ezután legyártja a különböző műveletek által definiált eredmény fájlokat. A gamma fölé kell építeni egy webes kiszolgálót, ami képes bejövő kéréseket értelmezni, majd átfogalmazva tovább küldi a Gamma komponensnek. A megoldás során olyan mellék/segítő komponenseket is megkellet tervezni és implementálni, amelyek az adatok átalakításáért vagy mozgatásáért felelősek.
 
 %----------------------------------------------------------------------------
-\section{Motiváció}
+%\section{Motiváció}
 %----------------------------------------------------------------------------
 
 A felhő világban definiáltak alapján a rendszerünk egy \textbf{Software as Service (SaaS)} komponens lesz, amely megoldási szolgáltatás a leggyakrabban használt, röviden annyit foglal magába, hogy egy alkalmazást teszünk elérhetővé felhasználók számára az internet segítségével.
@@ -66,7 +66,7 @@ Egy webes szolgáltatás lehetővé teszi, hogy a meglévő szoftverünket elér
 Számos előnye van. Rengeteg már létező megoldási minta létezik, így nehéz elakadni. Jól előredefiniált protokollok vannak meghatározva, így két teljesen különböző ipari ágakból származó rendszerek közti kommunikáció is kialakítható.
 
 %----------------------------------------------------------------------------
-\section{Dolgozat felépítése}
+%\section{Dolgozat felépítése}
 %----------------------------------------------------------------------------
 
 A szakdolgozat keretin belül a fentebb leírt megoldás specifikációját, fejlesztési folyamatát, tesztelési útmutatóját és továbbfejlesztési lehetőségét részletezem.
