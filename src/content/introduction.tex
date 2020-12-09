@@ -19,7 +19,7 @@ A modellalapú szoftverfejlesztés megoldásokat nyújt a modern rendszereknek a
 %----------------------------------------------------------------------------
 %\section{Gamma keretrendszer}
 %----------------------------------------------------------------------------
-A Gamma keretrendszer \cite{DBLP:journals/sosym/GraicsMVMV20} (Gamma Állapotgép Kompozíciós Keretrendszer) egy olyan eszköz, amivel komponens alapú reaktív rendszereket tudunk modellezni, verifikálni vagy akár kódot generálni.
+A Gamma keretrendszer \cite{DBLP:conf/icse/MolnarGVMV18} (Gamma Állapotgép Kompozíciós Keretrendszer) egy olyan eszköz, amivel komponens alapú reaktív rendszereket tudunk modellezni, verifikálni vagy akár kódot generálni.
 
 Reaktív rendszernek nevezzük azt az architekturális stílust, amely segítségével lehetőségünk van különálló alkalmazások egységként való kezelésére úgy, hogy ezek a komponensek továbbá képesek egymás eseményeire és a környezetükre reagálni.
 
@@ -38,7 +38,7 @@ A fentebb leírtak alapján a Gamma egy Eclipse IDE-n belüli eszköz, ennek a t
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=150mm, keepaspectratio]{figures/transformation.jpg}
+	\includegraphics[width=150mm, keepaspectratio]{figures/transformation.png}
 	\caption{Gamma mint szolgáltatás}
 	\label{fig:transformation}
 \end{figure}
@@ -51,7 +51,7 @@ Alapvetően a Gammát mint Eclipse IDE Plug-in ki kell emelni, hogy egy fekete s
 %----------------------------------------------------------------------------
 
 A felhő világban definiáltak alapján a rendszerünk egy \textbf{Software as Service (SaaS)} komponens lesz, amely megoldási szolgáltatás a leggyakrabban használt, röviden annyit foglal magába, hogy egy alkalmazást teszünk elérhetővé felhasználók számára az internet segítségével.
-A rendszerünk felhőbe való integrációja mögötti igényt az alábbi három kategóriába sorolt előnyhalmaz magyarázza meg\cite{top10}\cite{ibm}:
+A rendszerünk felhőbe való integrációja mögötti igényt az alábbi három kategóriába sorolt előnyhalmaz magyarázza meg \cite{top10} \cite{ibm}:
 
  \begin{itemize}
 	\item \textbf{Flexibilitás} : Igény szerint skálázható, publikus és privát adattárolás lehetősége, vezérlési lehetőségek (egy szervezet eldöntheti, hogy milyen szinten szeretné kontrollálni az igényelt szolgáltatását), gazdag portfólió (számos létező eszköz és megoldás közül választhatunk) és nem utolsó sorban biztonsági szempontból is rengeteg létező vagy új megoldást lehet implementálni az adatok titkosításához

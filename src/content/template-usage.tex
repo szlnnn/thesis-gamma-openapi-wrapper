@@ -15,7 +15,17 @@ Használat előtt győződjünk meg, hogy rendelkezünk az alábbiakkal:
 	\item API tesztelő alkalmazás pl: Postman\footnote{Postman letölthető: \url{https://www.postman.com/}}
 	\item Egy Java fejlesztői eszköz pl: InteliJ IDEA\footnote{IDEA letölthető: \url{https://www.jetbrains.com/idea/download}}
 \end{itemize}
-++++++++++++++++++++++++ TODO ???? ++++++++
+
+A szoftver komponensek közül a Webszervert kell megnyitni az IDEA segítségével. Az OpenProject funkciót használva tallózzuk ki a webszerver gyökér mappájában levő \textit{pom.xml}-t.  Miután látható a projekt a fejlesztői környezetbe, keressük ki a \textit{configuration.properties} fájlt, ami tipikusan az \textit{/src/main/resource mappában} lesz elhelyezve, és állítsuk be az alábbiakat:
+
+\begin{lstlisting}[language=]
+headless.gamma.path=<A Headless Gamma teljes elérése>
+headless.generator.path=<A Headless Generator teljes elérése>
+root.of.workspaces.path=<Annak a mappának a teljes elérése, ami a munaktereket fogja tartalmazni>
+\end{lstlisting}
+
+Fontos, hogy a két headless eclipse elérése tartalmazza az eclipse kulcsszót az elérés végén, mivel ez lesz a .exe állomány (pl: C:/opt/gammaapi/eclipse). A két headless eclipse-t exportálással tudjuk előállítani, viszont a Webszerver komponens tartalmazni fogja ezeket, ennek ellenére a konfigurációt el kell végezni.
+Innentől kezdve az IDEA-ból elindítható az alkalmazás és a \textit{localhost:8080}-on fog figyelni a kérésekre. Az alábbiakban részletezni fogom, hogyan tudjuk tesztelni az alkalmazást.
 %----------------------------------------------------------------------------
 \section{Tesztelés}
 %----------------------------------------------------------------------------
@@ -133,7 +143,7 @@ A projektek jelenleg feldolgozás alatt állnak, így semmilyen műveletet nem l
 	\label{fig:stop_gamma_request}
 \end{figure}
 
-Eredményként annyit tapasztalunk, hogy megint használhatóvá válik a projekt és \aref{fig:run_gamma_result} ábrán látható folyamatokból a megfelelő eltűnik.
+Eredményként annyit tapasztalunk, hogy megint használhatóvá válik a projekt.
 
 \paragraph{Gamma eredmények lekérése} Végezetül szükségünk van a generált eredmény állományokra. Ezt \aref{fig:get_result_request} ábrán levő kéréssel tudjuk megvalósítani, az URL-ben a megszokott munkatér-projektnév páros utazik, a törzsben pedig egy olyan json objektum van, amiben listaként szerepelnek az egyes állományok relatív elérése. A Postman-be ilyenkor nem csak el kell küldeni a kérést hanem a \textit{Send and Download} gombra kell kattintani, így tudni fogja, hogy fájlt fog kapni a szervertől.
 

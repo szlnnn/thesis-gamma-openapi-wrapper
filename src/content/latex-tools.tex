@@ -12,7 +12,7 @@ A megoldás folyamán számos modern technológia bevezetésére, implementáci�
 \subsection{OSGi}
 %----------------------------------------------------------------------------
 
-Az OSGi (Open Services Gateway Initiative)\cite{alliance} egy Java keretrendszer, amely segítségével moduláris szoftvereket és könyvtárakat tudunk fejleszteni.
+Az OSGi (Open Services Gateway Initiative) \cite{alliance} egy Java keretrendszer, amely segítségével moduláris szoftvereket és könyvtárakat tudunk fejleszteni.
 
 A technológia alapvetően egy specifikáció halmazból, referencia implementációkból és minden specifikációhoz tartozó teszt halmazból áll össze, mindezek együtt leírnak egy dinamikus moduláris rendszert. A bevált szolgáltatás modellje lehetővé teszi, hogy az infrastruktúra és az alkalmazás komponensek úgy lokálisan, mint hálózaton keresztül is kommunikáljanak egymással, hogy egy koherens és konzisztens architektúrát alkossanak.
 
@@ -23,7 +23,7 @@ Kompozícióilag két részből áll az OSGi. Az első egy olyan specifikáció,
 
 Az OSGi a fejlesztési ciklus majdnem minden területén csökkenti a komplexitást. Kódírás és tesztelés jelentősen kevesebb erőforrást fog elnyelni, támogatja az újrahasznosítást (létező komponenseket egyszerűen fel lehet használni egy új modulban). Az üzemeltetési feladatokat is könnyíti, lehetővé teszi a moduláris frissítést vagy telepítést, nem kell minden funkció bevezetésekor az egész rendszert leállítani. Könnyebben lehet lokalizálni egyes hibákat, így a támogatói feladatkör is egyszerűsödik. Az alkalmazásunk moduláris függőségi fájában egyszerűbben tudunk bizonyos elemeket bevezetni, helyettesíteni vagy akár kivenni.
 
-Eclipse világban az Equinox\cite{committers} OSGi implementációt lehet használni, a fentebb részletezett szolgáltatásokat és szükséges infrastruktúrát alakítja ki számunkra.
+Eclipse világban az Equinox \cite{committers} OSGi implementációt lehet használni, a fentebb részletezett szolgáltatásokat és szükséges infrastruktúrát alakítja ki számunkra.
 
 %----------------------------------------------------------------------------
 \subsection{Eclipse Plug-in fejlesztés}
@@ -31,10 +31,10 @@ Eclipse világban az Equinox\cite{committers} OSGi implementációt lehet haszn�
 
 Eclipse egy nyílt forráskódú, platform független fejlesztői környezet (IDE). Egy alap munkaterület (workspace) és egy plug-in rendszert tartalmaz, aminek segítségével könnyen tesztre szabhatóvá lehet tenni. Az utóbbit használja ki a Gamma is és az általa használt mellék komponensek is. 
 
-Az Eclipse IDE egy speciális Eclipse alkalmazás ami lehetővé teszi a fejlesztőknek, hogy egyedi alkalmazásokat tudjanak fejleszteni. Egy Eclipse alkalmazás egy vagy több szoftver komponensből tevődik össze ezeket nevezünk plug-in-eknek\cite{plugin}. Ezek a modulok bővíthetőek vagy felhasználhatóak más komponensek létrehozására. Összefoglalva, az Eclipse IDE egy több plug-in-ekből (JDT) álló Eclipse alkalmazás.
+Az Eclipse IDE egy speciális Eclipse alkalmazás ami lehetővé teszi a fejlesztőknek, hogy egyedi alkalmazásokat tudjanak fejleszteni. Egy Eclipse alkalmazás egy vagy több szoftver komponensből tevődik össze ezeket nevezünk plug-in-eknek \cite{plugin}. Ezek a modulok bővíthetőek vagy felhasználhatóak más komponensek létrehozására. Összefoglalva, az Eclipse IDE egy több plug-in-ekből (JDT) álló Eclipse alkalmazás.
 
 Lehetőségünk van az így létrehozott alkalmazásainkat összecsomagolni és az Eclipse IDE- től függetlenül futtatni és tesztelni (\textbf{headless Eclipse}).
-Ehhez definiálnunk kell egy termék leírást (product configuration)\cite{product}, aminek tartalmaznia kell az alkalmazásunk plug-in-jét, minden felhasznált függőséget és minden más olyan konfigurációt ami szükséges ahhoz, hogy egy külön komponenseként tudjuk hordozni a szoftverünket. Ilyen konfigurációk, az alkalmazás belépési pontja (extension point), komponensek indulási sorrendje, esetleges ikonok és függőségi fa, ami meghatározza, hogy milyen komponens mitől és hogyan (kötelező, opcionális) függ valamilyen más modultól.
+Ehhez definiálnunk kell egy termék leírást (product configuration) \cite{product}, aminek tartalmaznia kell az alkalmazásunk plug-in-jét, minden felhasznált függőséget és minden más olyan konfigurációt ami szükséges ahhoz, hogy egy külön komponenseként tudjuk hordozni a szoftverünket. Ilyen konfigurációk, az alkalmazás belépési pontja (extension point), komponensek indulási sorrendje, esetleges ikonok és függőségi fa, ami meghatározza, hogy milyen komponens mitől és hogyan (kötelező, opcionális) függ valamilyen más modultól.
 
 A termékleírásunk egy alkalmazás osztályra kell mutasson ami alapértelmezetten két fajta lehet:
 
@@ -56,17 +56,17 @@ A dolgozatban leírt fejlesztés ezzel a megoldási opcióval lett megvalósítv
 \subsection{REST API}
 %----------------------------------------------------------------------------
 
-Az internet megszületése óta, mikor Charley Kline és Bill Duvall összekötöttek két számítógépet és elküldték egymásnak az "L" és "O" karaktereket, számos internet alapú adatmozgatási megoldás született ilyenek a CORBA, RPC vagy SOAP. Ezek mind nagyon komplex mechanizmusok és a mai világban elavultnak számítanak. Itt jön szóba a REST a legújabb iteráció az internetes adatszállítási megoldások körében.\cite{rest_history}
+Az internet megszületése óta, mikor Charley Kline és Bill Duvall összekötöttek két számítógépet és elküldték egymásnak az "L" és "O" karaktereket, számos internet alapú adatmozgatási megoldás született ilyenek a CORBA, RPC vagy SOAP. Ezek mind nagyon komplex mechanizmusok és a mai világban elavultnak számítanak. Itt jön szóba a REST a legújabb iteráció az internetes adatszállítási megoldások körében. \cite{rest_history}
 
 REST vagy \textbf{RE}presentational \textbf{S}tate \textbf{T}ransfer egy tervezési stílus, amellyel különböző rendszerek közti kapcsolatot tudunk megvalósítani. Olyan rendszereket, amelyek megfelelnek a REST szabványnak RESTful rendszereknek is nevezünk, alapvetően ezeket két fő jellemző írja le, az első, hogy nem tartják nyilván az egyes kérések állapotát, a második pedig az, hogy elkülönítik a kliens és szerver fogalmakat. 
 
 \begin{figure}[t]
 	\includegraphics[width=150mm, keepaspectratio]{figures/rest_structure.jpeg}
-	\caption{REST egyszerű architektúra\cite{kep_rest}}
+	\caption{REST egyszerű architektúra \cite{kep_rest}}
 	\label{fig:rest_structure}
 \end{figure}
 
-Ahhoz, hogy egy szolgáltatást RESTful-nak nevezzünk meg kell felelni egy szabványnak ami hat alapelvből áll\cite{rest_1}\cite{rest_3}.
+Ahhoz, hogy egy szolgáltatást RESTful-nak nevezzünk meg kell felelni egy szabványnak ami hat alapelvből áll \cite{rest_1} \cite{rest_3}.
 
 
 \paragraph{Szerver és Kliens szeparáció} a tervezési minta előírja, hogy a szerver és a kliens két független és önállóan egységként létező komponens kell legyen. Ez lehetővé teszi, hogy a két rendszerünket külön tudjuk fejleszteni, telepíteni, javítani, karban tartani. Bármilyen kódmódosítást kell végezni bármelyik oldalon a másikat nem befolyásolja mind addig amíg az interfész nem módosul, ilyenkor a szerver egy master szerepet vesz át és az elvégzett módosítást kezelni kell kliens oldalon is. Ez az elv támogatja a moduláris gondolkodást, ezzel flexibilissé válik a komplex rendszerünk. Továbbá, skálázhatósági lehetőségek is felmerülnek, hiszen az erőforrás igényesebb komponens alatti erőforrásokat igény szerint bővíthetjük. A szétválasztás lehetővé teszi, hogy akár egy szerverhez több kliens is csatlakozzon, így sokszínű rendszereket tudunk létrehozni. Ennek egy vizuális reprezentációja \aref{fig:rest_structure} ábrán látható.
@@ -84,7 +84,7 @@ Az egységes interfész lehetővé teszi, hogy a kliens típusától (böngész�
 \paragraph{Igény szerinti kód (opcionális)} - Az egyedüli elv ami opcionális, annyit von magában, hogy a kliens bármikor kérhet kódrészleteket a szervertől és ez a válaszban valamilyen HTML vagy szkript formátumba becsomagolja és elküldi ennek , amit majd a kliens futtatni tud. Az alapelv teljesülése nélkül is tud egy rendszer RESTful lenni.
 
 
-A fentebb többször említett kérés/válasz fogalmakat a REST világban HTTP kérésekbe csomagoljuk, ezek tipikusan a következőket kell tartalmazzák\cite{rest_2} :
+A fentebb többször említett kérés/válasz fogalmakat a REST világban HTTP kérésekbe csomagoljuk, ezek tipikusan a következőket kell tartalmazzák \cite{rest_2} :
 \begin{enumerate}
 	\item egy HTTP ige, ami leírja a művelet típusát, jelenleg használt igék:
 	\begin{enumerate}
@@ -104,7 +104,7 @@ A fentebb többször említett kérés/válasz fogalmakat a REST világban HTTP 
 %----------------------------------------------------------------------------
 \subsection{OpenAPI és Swagger}
 %----------------------------------------------------------------------------
-\textbf{OpenAPI Specifikáció}\cite{swagger} egy API leíró szintaktika REST API-k számára. A specifikáció YAML és JSON formátumban is írható, az így létrehozott fájl a teljes API-t meghatározza, jellemzően a következőket tartalmazza:
+\textbf{OpenAPI Specifikáció} \cite{swagger} egy API leíró szintaktika REST API-k számára. A specifikáció YAML és JSON formátumban is írható, az így létrehozott fájl a teljes API-t meghatározza, jellemzően a következőket tartalmazza:
 \begin{itemize}
 	\item Endpointok halmazát és az ezeken meghatározott műveletek leírását, mint például GET /api/students, ami a tanulók listáját adja vissza vagy a POST /api/students, ami a kliens oldalról felküldött adatok alapján létrehoz egy tanulót a szerver oldalon.
 	\item Műveletek bemeneti és kimeneti paraméterét
@@ -112,7 +112,7 @@ A fentebb többször említett kérés/válasz fogalmakat a REST világban HTTP 
 	\item Licenc, felhasználói feltételek vagy bármilyen adminisztratív információ ami az API-hoz tartozik
 \end{itemize}
 
-Az OpenAPI specifikációt korábban Swagger specifikációnak hívták, amíg a SmartBear Software felajánlotta az OpenAPI iniciatívának. Azóta az OpenAPI 3.0 verziónál tartunk, az új verzió részletes dokumentációjáról és az OpenAPI-ról itt lehet részletesebben információkat olvasni: \textbf{\href{https://www.openapis.org/blog/2017/07/26/the-oai-announces-the-openapi-specification-3-0-0}{OpenAPI 3.0 Documentation}}
+Az OpenAPI specifikációt korábban Swagger specifikációnak hívták, amíg a SmartBear Software felajánlotta az OpenAPI iniciatívának. Azóta az OpenAPI 3.0 verziónál tartunk.
 
 \begin{figure}[!ht]
 	\includegraphics[width=150mm, keepaspectratio]{figures/swagerr_UI.png}
@@ -120,7 +120,7 @@ Az OpenAPI specifikációt korábban Swagger specifikációnak hívták, amíg a
 	\label{fig:openAPI_swagger}
 \end{figure}
 
-A Swagger\cite{swagger.io} egy olyan eszköztár ami az OpenAPI köré épült, hogy segítse a REST API tervezést, implementálást, tesztelést. Számos ilyen eszköz tartozik ide, ezek közül a legfontosabbak:
+A Swagger \cite{swagger.io} egy olyan eszköztár ami az OpenAPI köré épült, hogy segítse a REST API tervezést, implementálást, tesztelést. Számos ilyen eszköz tartozik ide, ezek közül a legfontosabbak:
 \begin{itemize}
 	\item \textbf{\href{https://editor.swagger.io/?_ga=2.32011518.1535494714.1606415394-1420243541.1606415394}{Swagger Editor}} Egy böngészőből elérhető felhasználó barát felületet biztosít, ahol lehetőségünk van megírni a specifikációnkat. Számos előnyt kínál egy hagyományos szerkesztőhöz képest, ilyenek a szintaktikai ellenőrzések, bizonyos REST API szabályok betartását is megköveteli, pl: egy GET metódusnak nem lehet törzse.
 	\item  \textbf{\href{https://swagger.io/swagger-ui/}{Swagger UI}} Egy olvasható, részletes és vizuálisan látványos dokumentációt generál az Editorban elkészített API specifikációnkhoz, \aref{fig:openAPI_swagger} ábrán egy ilyent lehet megtekinteni.
@@ -131,7 +131,7 @@ A specifikációnak tehát rengeteg előnye van, többek közt az egységes API 
 %----------------------------------------------------------------------------
 \subsection{Fontosabb Java könyvtárak}
 %----------------------------------------------------------------------------
-A Vert.x\cite{vertx} egy eszköztár, amelynek segítségével JVM alapú alkalmazásokat tudunk készíteni. Nagyon flexibilis, azaz nagyon széles az alkalmazás típus spektrum, ahol használni lehet. HTTP/REST mikroszolgáltatások, komplex webes alkalmazások vagy eseményvezérelt back-end fejlesztése során is használható.
+A Vert.x \cite{vertx} egy eszköztár, amelynek segítségével JVM alapú alkalmazásokat tudunk készíteni. Nagyon flexibilis, azaz nagyon széles az alkalmazás típus spektrum, ahol használni lehet. HTTP/REST mikroszolgáltatások, komplex webes alkalmazások vagy eseményvezérelt back-end fejlesztése során is használható.
 
 Flexibilitása miatt a piac számos területén használjak, például valós idejű játékokban vagy banki rendszerekben.
 
@@ -142,7 +142,7 @@ OpenAPI specifikáció integrálását is támogatja. Nagyon egyszerűen lehető
 \section{Gamma}
 %----------------------------------------------------------------------------
 
-A Gamma egy tanszéken fejlesztett eszköz, amely segítségével komponens alapú reaktív rendszereket tudunk modellezni. Több funkcióval rendelkezik, ezek kerülnek rövid bemutatásra ebben a fejezetben, részletes dokumentációt számos publikáció tartalmaz ezekről itt lehet olvasni: \textbf{\href{https://inf.mit.bme.hu/node/6028}{Gamma Keretrendszer}}
+A Gamma egy olyan eszközhalmaz, amely segítségével komponens alapú reaktív rendszereket tudunk modellezni. Több funkcióval rendelkezik \cite{DBLP:journals/sosym/GraicsMVMV20}, ezek kerülnek rövid bemutatásra ebben a fejezetben.
 %----------------------------------------------------------------------------
 \subsection{Gamma funkciók}
 %----------------------------------------------------------------------------

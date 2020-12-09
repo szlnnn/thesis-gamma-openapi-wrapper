@@ -5,7 +5,7 @@
 Ez a fejezet tartalmazza a \ref{gamma_missing} fejezetben leírt hiányosságokra adott megoldásom specifikációját, architektúra tervét és implementációját. 
 
 %----------------------------------------------------------------------------
-\section{Specifikáció}
+\section{Specifikáció} \label{specification}
 %----------------------------------------------------------------------------
 
 A specifikálást a rendszert meghatározó követelmény halmaz kialakításával kezdjük. A követelményeket alapvetően két csoportra lehet osztani, funkcionális és nem funkcionális. Kulcsfontosságú absztrakt követelményeket az alábbi lista foglal össze, viszont nem tartalmazza a teljes körű követelmény hierarchiát, ezt \aref{fig:requierments_placeholder} és \aref{fig:requierements_2} ábrákon lehet megtekinteni.
@@ -19,13 +19,13 @@ A specifikálást a rendszert meghatározó követelmény halmaz kialakításáv
 	\item A rendszer képes kell legyen inaktív projektek automatizált törlésére.
 \end{itemize}
 
-\begin{figure}[t]
+\begin{figure}[!ht]
 	\includegraphics[width=\textwidth, keepaspectratio]{figures/requierments_placeholder.png}
 	\caption{Követelmény hierarchia 1}
 	\label{fig:requierments_placeholder}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[!ht]
 	\includegraphics[width=150mm, keepaspectratio]{figures/requierments_2.png}
 	\caption{Követelmény hierarchia 2}
 	\label{fig:requierements_2}
@@ -72,8 +72,9 @@ Ez a fejezet részletezi a specifikált rendszer struktúráját, továbbá átt
 %----------------------------------------------------------------------------
 
 A rendszer felépítését \aref{fig:structure} ábra mutatja be. A továbbiakban részletezem az ábrán látható egyes komponenseket, milyen szerepük van és hogyan kommunikálnak más komponensekkel.
-\begin{figure}[t]
-	\includegraphics[width=150mm, keepaspectratio]{figures/architecture.jpg}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[height=135mm,keepaspectratio]{figures/architecture.png}
 	\caption{Architektúra terv}
 	\label{fig:structure}
 \end{figure}
@@ -117,7 +118,7 @@ Négy alapvető funkció részletes működését fogom bemutatni ebben a fejeze
 \paragraph{Munkatér létrehozás}
 
 \begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/add_workspace_seq.jpg}
+	\includegraphics[width=150mm, keepaspectratio]{figures/add_workspace_seq.png}
 	\caption{Munkatér létrehozás szekvencia diagram}
 	\label{fig:addworkspace}
 \end{figure}
@@ -127,7 +128,7 @@ A workspace létrehozás szekvencia diagramja \aref{fig:addworkspace} ábrán l�
 
 \paragraph{Eclipse projekt importálás}
 \begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/add_eclipseproject_seq.jpg}
+	\includegraphics[width=150mm, keepaspectratio]{figures/add_eclipseproject_seq.png}
 	\caption{Eclipse projekt importálás szekvencia diagram}
 	\label{fig:addproject}
 \end{figure}
@@ -138,7 +139,7 @@ A projekt importálás funkció szekvencia diagramját \aref{fig:addproject} áb
 
 \paragraph{Gamma műveletek futtatása}
 \begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/run_gamma_seq.jpg}
+	\includegraphics[width=150mm, keepaspectratio]{figures/run_gamma_seq.png}
 	\caption{Gamma művelet futtatás szekvencia diagram}
 	\label{fig:rungamma}
 \end{figure}
@@ -148,7 +149,7 @@ A folyamat még nem ér véget, mivel a Gamma dolgozik a háttérben, mikor mind
 
 \paragraph{Eredmények lekérése}
 \begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/get_result_seq.jpg}
+	\includegraphics[keepaspectratio]{figures/get_result_seq.png}
 	\caption{Eredmény lekérés szekvencia diagram}
 	\label{fig:getresult}
 \end{figure}
@@ -183,8 +184,9 @@ org.eclipse.team.core
 
 Olyan jelenség is előjött, ahol a függőségi fában egy plug-in kétszer szerepelt viszont különböző verzióval, ezt az OSGi szabvány engedi de az Eclipse, az első jelenségben leírtak alapján, folyamatosan felülírta az elavultabb verziót. A probléma elképzelésében segít  \aref{fig:depend} ábra. Erre a megoldás az, hogy a fában felfele haladva megvizsgáljuk, hogy milyen verziókat tudunk frissíteni a Target Platformon úgy, hogy a működést megtartsuk de az elavult verziójú plug-in-t frissíteni tudjuk. Alapvetően egyszerű feladatnak tűnik, viszont a rendszer közel 250 függőséggel rendelkezik.
 
-\begin{figure}[t]
-	\includegraphics[width=150mm, keepaspectratio]{figures/depend.jpg}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[keepaspectratio]{figures/depend.png}
 	\caption{Egyszerűsített függőségi fa}
 	\label{fig:depend}
 \end{figure}
@@ -253,7 +255,40 @@ Bizonyos validációs feladatokat is elvégez helyettünk az OpenAPI definíció
 
 
 \begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/endpoint_example.png}
+\begin{lstlisting}[language=Java]
+ /gamma/addproject/{workspace}:
+	post:
+		operationId: addProject
+		description: Send a file that contains the eclipse project on which the gamma operations will run
+		parameters:
+		  - in: path
+			name: workspace
+			required: true
+			description: The workspace which contains the project
+			schema:
+				type: string
+				format: uuid
+				example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+		requestBody:
+			content:
+				multipart/form-data:
+					schema:
+						type: object
+						properties:
+							contactEmail:
+  							  type: string
+							file:
+							  type: string
+							  format: binary
+		responses:
+		  200:
+			description: Successfully uploaded the file
+		  401:
+			description: Did not provide a valid workspace
+		  403:
+			description: Project already exists under this workspace, delete it and resend this request
+
+\end{lstlisting}
 	\caption{Endpoint példa}
 	\label{fig:endpoint_example}
 \end{figure}
@@ -278,7 +313,7 @@ A rendszer struktúrájából kiindulva, ezt \aref{fig:structure} ábrán lehet 
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=75mm, keepaspectratio]{figures/software_components.jpg}
+	\includegraphics[width=75mm, keepaspectratio]{figures/software_components.png}
 	\caption{Szoftver komponensek}
 	\label{fig:software_components}
 \end{figure}
