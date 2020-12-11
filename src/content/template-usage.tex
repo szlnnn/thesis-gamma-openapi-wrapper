@@ -1,22 +1,22 @@
 
-%----------------------------------------------------------------------------
+%--------------------------------------
 \chapter{Használati útmutató}
-%----------------------------------------------------------------------------
+%--------------------------------------
 
 Ez a fejezet tartalmazza az alkalmazás jelenlegi formájának a telepítési instrukcióit, továbbá bemutatja a fentebb részletezett funkciókat működés közben. Jelenleg az alkalmazás még nem konténerízalt formátumú így szükségünk lesz segédeszközökre. 
-%----------------------------------------------------------------------------
+%--------------------------------------
 \section{Telepítés}
-%----------------------------------------------------------------------------
+%--------------------------------------
 
 Használat előtt győződjünk meg, hogy rendelkezünk az alábbiakkal:
 \begin{itemize}
-	\item java 11
-	\item UPAAL elérés regisztrálva van a környezeti változókba
+	\item Java 11
+	\item UPPAAL elérés regisztrálva van a környezeti változókba
 	\item API tesztelő alkalmazás pl: Postman\footnote{Postman letölthető: \url{https://www.postman.com/}}
 	\item Egy Java fejlesztői eszköz pl: InteliJ IDEA\footnote{IDEA letölthető: \url{https://www.jetbrains.com/idea/download}}
 \end{itemize}
 
-A szoftver komponensek közül a Webszervert kell megnyitni az IDEA segítségével. Az OpenProject funkciót használva tallózzuk ki a webszerver gyökér mappájában levő \textit{pom.xml}-t.  Miután látható a projekt a fejlesztői környezetbe, keressük ki a \textit{configuration.properties} fájlt, ami tipikusan az \textit{/src/main/resource mappában} lesz elhelyezve, és állítsuk be az alábbiakat:
+A szoftver komponensek közül a Webszervert kell megnyitni az IDEA segítségével. Az OpenProject funkciót használva tallózzuk ki a webszerver gyökér mappájában levő \textit{pom.xml}-t.  Miután látható a projekt a fejlesztői környezetbe, keressük ki a \textit{configuration.properties} fájlt, ami tipikusan az \textit{/src/main/resource} mappában lesz elhelyezve, és állítsuk be az alábbiakat:
 
 \begin{lstlisting}[language=]
 headless.gamma.path=<A Headless Gamma teljes elérése>
@@ -24,15 +24,15 @@ headless.generator.path=<A Headless Generator teljes elérése>
 root.of.workspaces.path=<Annak a mappának a teljes elérése, ami a munaktereket fogja tartalmazni>
 \end{lstlisting}
 
-Fontos, hogy a két headless eclipse elérése tartalmazza az eclipse kulcsszót az elérés végén, mivel ez lesz a .exe állomány (pl: C:/opt/gammaapi/eclipse). A két headless eclipse-t exportálással tudjuk előállítani, viszont a Webszerver komponens tartalmazni fogja ezeket, ennek ellenére a konfigurációt el kell végezni.
+Fontos, hogy a két headless Eclipse elérése tartalmazza az eclipse kulcsszót az elérés végén, mivel ez lesz a .exe állomány (pl: C:/opt/gammaapi/eclipse). A két headless Eclipse-t exportálással tudjuk előállítani, viszont a Webszerver komponens tartalmazni fogja ezeket -- ennek ellenére a konfigurációt el kell végezni.
 Innentől kezdve az IDEA-ból elindítható az alkalmazás és a \textit{localhost:8080}-on fog figyelni a kérésekre. Az alábbiakban részletezni fogom, hogyan tudjuk tesztelni az alkalmazást.
-%----------------------------------------------------------------------------
+%--------------------------------------
 \section{Tesztelés}
-%----------------------------------------------------------------------------
+%--------------------------------------
 
-Tesztelés során a gamma teszt projektet\footnote{https://github.com/ftsrg/gamma/tree/master/tests} fogom használni, mivel tartalmaz komplex gamma művelethalmazokat. Minden kérést a Postman segítségével fogok összeállítani és elküldeni, majd megtekintjük a szerveren milyen hatása volt.
+Tesztelés során a Gamma teszt projektet\footnote{\url{https://github.com/ftsrg/gamma/tree/master/tests}} fogom használni, mivel tartalmaz komplex gamma művelethalmazokat. Minden kérést a Postman segítségével fogok összeállítani és elküldeni, majd megtekintjük, milyen hatása volt a szerveren.
 
-\paragraph{Workspace létrehozás} Mivel jelenleg a szerverünk nem tárol semmit ezért hozzunk létre három munkateret. A kiadott HTTP kérések ugyanazok lesznek hiszen nem utazik semmi a paraméterekben ezt \aref{fig:addworkspace_test} ábrán lehet megtekinteni.
+\paragraph{Workspace létrehozás} Mivel jelenleg a szerverünk nem tárol semmit, ezért hozzunk létre három munkateret. A kiadott HTTP kérések ugyanazok lesznek, hiszen nem utazik semmi a paraméterekben -- ezt \aref{fig:addworkspace_test} ábrán lehet megtekinteni.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[keepaspectratio]{figures/addworkspace_test.PNG}
@@ -47,7 +47,7 @@ Tesztelés során a gamma teszt projektet\footnote{https://github.com/ftsrg/gamm
 394d3fc8-5abb-4f40-a13d-252185d8c9bf
 \end{lstlisting}
 
-Ezt a mappa kezelő segítségével is ellenőrizni tudjuk, ahogy \aref{fig:workspace_infile} ábrán látható is. Az alkalmazáshoz tartozik egy  konfigurációs fájl, amiben megadható, hogy a workspace-k hova jöjjenek létre.
+\noindent Ezt a mappa kezelő segítségével is ellenőrizni tudjuk, ahogy \aref{fig:workspace_infile} ábrán látható is.
 
 \begin{figure}[!ht]
 	\includegraphics[width=\textwidth, keepaspectratio]{figures/workspace_infile.PNG}
@@ -55,7 +55,7 @@ Ezt a mappa kezelő segítségével is ellenőrizni tudjuk, ahogy \aref{fig:work
 	\label{fig:workspace_infile}
 \end{figure}
 
-\paragraph{Projekt importálás} A gamma teszt projektet fogjuk importálni két különböző munkatérbe. Nagyon fontos, hogy a projekt tartalma archiválva legyen és az archivált fájl neve megegyezzen a projekt nevével. A kérésben ebben az esetben meg kell adjuk a munkatér azonosítót az URL-ben és a kérés törzsébe fel kell vennünk az említett archivált állományt és a projekt tulajdonos e-mail címét. A példánkra illeszkedő kérést \aref{fig:add_project_request} ábra mutatja be.
+\paragraph{Projekt importálás} A Gamma teszt projektet fogjuk importálni két különböző munkatérbe. Nagyon fontos, hogy a projekt tartalma archiválva legyen és az archivált fájl neve megegyezzen a projekt nevével. A kérésben ebben az esetben meg kell adjuk a munkatér azonosítót az URL-ben és a kérés törzsébe fel kell vennünk az említett archivált állományt és a projekt tulajdonos e-mail címét. A példánkra illeszkedő kérést \aref{fig:add_project_request} ábra mutatja be.
 
 
 \begin{figure}[!ht]
@@ -64,7 +64,7 @@ Ezt a mappa kezelő segítségével is ellenőrizni tudjuk, ahogy \aref{fig:work
 	\label{fig:add_project_request}
 \end{figure}
 
-Ezen kérések hatására létrejönnek a projektek a megfelelő munkaterek alá, ezt \aref{fig:add_project_result} ábrán is meglehet tekinteni.
+Ezen kérések hatására létrejönnek a projektek a megfelelő munkaterek alá, ezt \aref{fig:add_project_result} ábrán is meg lehet tekinteni.
 
 \begin{figure}[!ht]
 	\includegraphics[width=150mm, keepaspectratio]{figures/add_project_result.PNG}
@@ -112,7 +112,7 @@ verification {
 	test-language : java
 }
 \end{lstlisting}
-Látható, hogy három kódgenerálást és egy verifikációt is fogunk végezni a felső három sorban importált modelleken. Futtassuk ezt az állományt a két projektünkön , \aref{fig:request_gamma_operation} kérés alapján, annyi különbséggel, hogy a megfelelő munkatér azonosítót adjuk meg. Az URL-ben utazik a munkatér azonosító, projektnév és a .ggen fájl elérése a projekten belül.
+Látható, hogy három kódgenerálást és egy verifikációt is fogunk végezni a felső három sorban importált modelleken. Futtassuk ezt az állományt a két projektünkön, \aref{fig:request_gamma_operation} kérés alapján, annyi különbséggel, hogy a megfelelő munkatér azonosítót adjuk meg. Az URL-ben utazik a munkatér azonosító, projektnév és a .ggen fájl elérése a projekten belül.
 \begin{figure}[!ht]
 	\includegraphics[width=150mm, keepaspectratio]{figures/request_gamma_operation.PNG}
 	\caption{Gamma műveletek futtatására kérés}
@@ -134,7 +134,7 @@ A projektek jelenleg feldolgozás alatt állnak, így semmilyen műveletet nem l
 }
 \end{lstlisting}
 
-\paragraph{Gamma műveletek leállítása} Előfordulhat, hogy valamiért egy művelet túl sok ideig fut, ezzel zárolva a teljes projektet, ezt fel lehet oldani \aref{fig:stop_gamma_request} ábrán levő kérés segítségével. A kérésben URL-jében a projektet meghatározó munkatér-projektnév páros kell utazzon, a törzs üres maradhat. Jelenlegi esetben nem merül fel ilyen hiba, mivel mindkét folyamat kb 5-7 perc alatt lefut, viszont a tesztelés céljából leállítjuk az egyiket.
+\paragraph{Gamma műveletek leállítása} Előfordulhat, hogy valamiért egy művelet túl sok ideig fut, ezzel zárolva a teljes projektet -- ezt fel lehet oldani \aref{fig:stop_gamma_request} ábrán levő kérés segítségével. A kérés URL-jében a projektet meghatározó munkatér-projektnév páros kell utazzon, a törzs üres maradhat. Jelenlegi esetben nem merül fel ilyen hiba, mivel mindkét folyamat kb 5-7 perc alatt lefut, viszont a tesztelés céljából leállítjuk az egyiket.
 
 
 \begin{figure}[!ht]
@@ -143,9 +143,9 @@ A projektek jelenleg feldolgozás alatt állnak, így semmilyen műveletet nem l
 	\label{fig:stop_gamma_request}
 \end{figure}
 
-Eredményként annyit tapasztalunk, hogy megint használhatóvá válik a projekt.
+\noindent Eredményként annyit tapasztalunk, hogy megint használhatóvá válik a projekt.
 
-\paragraph{Gamma eredmények lekérése} Végezetül szükségünk van a generált eredmény állományokra. Ezt \aref{fig:get_result_request} ábrán levő kéréssel tudjuk megvalósítani, az URL-ben a megszokott munkatér-projektnév páros utazik, a törzsben pedig egy olyan json objektum van, amiben listaként szerepelnek az egyes állományok relatív elérése. A Postman-be ilyenkor nem csak el kell küldeni a kérést hanem a \textit{Send and Download} gombra kell kattintani, így tudni fogja, hogy fájlt fog kapni a szervertől.
+\paragraph{Gamma eredmények lekérése} Végezetül szükségünk van a generált eredmény állományokra. Ezt \aref{fig:get_result_request} ábrán levő kéréssel tudjuk megvalósítani: az URL-ben a megszokott munkatér-projektnév páros utazik, a törzsben pedig egy olyan JSON objektum van, amiben listaként szerepelnek az egyes állományok relatív elérései. A Postman-be ilyenkor nem csak el kell küldeni a kérést hanem a \textit{Send and Download} gombra kell kattintani, így tudni fogja, hogy fájlt fog kapni a szervertől.
 
 \begin{figure}[!ht]
 	\includegraphics[width=150mm, keepaspectratio]{figures/get_result_request.PNG}
@@ -169,7 +169,7 @@ Eredményül pedig a megadott állományokat kapjuk becsomagolva, \aref{fig:resu
 	\label{fig:delete_project_request}
 \end{figure}
 
-A lejáró projektet dátumát egy naponta futó időzítő figyeli, ha talál olyan projektet, aminek a lejárati dátuma a mai nap, akkor azt törli. \Aref{fig:extend_expiration_req} ábrán levő kéréssel tudjuk 30 nappal meghosszabbítani a lejárati dátumot.
+A lejáró projektet dátumát egy naponta futó időzítő figyeli. Ha talál olyan projektet, aminek a lejárati dátuma a mai nap, akkor azt törli. \Aref{fig:extend_expiration_req} ábrán levő kéréssel tudjuk 30 nappal meghosszabbítani a lejárati dátumot. Ez a funkció jelenleg nem működik.
 
 \begin{figure}[!ht]
 	\includegraphics[width=\textwidth, keepaspectratio]{figures/extend_expiration_req.PNG}

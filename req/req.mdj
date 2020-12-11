@@ -56,7 +56,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 125.7890625,
-									"top": 109,
+									"top": 125,
 									"width": 174.41796875,
 									"height": 13,
 									"text": "Funkcionális követelmények 1"
@@ -69,7 +69,7 @@
 									},
 									"font": "Arial;13;1",
 									"left": 101,
-									"top": 109,
+									"top": 125,
 									"width": 19.7890625,
 									"height": 13,
 									"text": "req"
@@ -77,9 +77,9 @@
 							],
 							"font": "Arial;13;0",
 							"left": 96,
-							"top": 104,
-							"width": 953,
-							"height": 809,
+							"top": 120,
+							"width": 809,
+							"height": 937,
 							"nameLabel": {
 								"$ref": "AAAAAAF2FErREQviHaU="
 							},
@@ -355,8 +355,8 @@
 												"$ref": "AAAAAAF2FRHH1Qys8lU="
 											},
 											"font": "Arial;13;0",
-											"left": 501,
-											"top": 557,
+											"left": 429,
+											"top": 277,
 											"width": 192.943359375,
 											"height": 13,
 											"text": "«requirement»"
@@ -368,8 +368,8 @@
 												"$ref": "AAAAAAF2FRHH1Qys8lU="
 											},
 											"font": "Arial;13;1",
-											"left": 501,
-											"top": 572,
+											"left": 429,
+											"top": 292,
 											"width": 192.943359375,
 											"height": 13,
 											"text": "Gamma műveletek értelmezése"
@@ -382,8 +382,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 576,
-											"top": 832,
+											"left": 432,
+											"top": 272,
 											"width": 182.78076171875,
 											"height": 13,
 											"text": "(from Internetes kommunikáció)"
@@ -396,15 +396,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 576,
-											"top": 832,
+											"left": 432,
+											"top": 272,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 496,
-									"top": 552,
+									"left": 424,
+									"top": 272,
 									"width": 202.943359375,
 									"height": 38,
 									"stereotypeLabel": {
@@ -431,8 +431,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 288,
-									"top": 416,
+									"left": 216,
+									"top": 136,
 									"width": 10,
 									"height": 10
 								},
@@ -447,8 +447,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 288,
-									"top": 416,
+									"left": 216,
+									"top": 136,
 									"width": 10,
 									"height": 10
 								},
@@ -463,8 +463,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 288,
-									"top": 416,
+									"left": 216,
+									"top": 136,
 									"width": 10,
 									"height": 10
 								},
@@ -479,8 +479,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 288,
-									"top": 416,
+									"left": 216,
+									"top": 136,
 									"width": 10,
 									"height": 10
 								},
@@ -504,8 +504,8 @@
 												"$ref": "AAAAAAF2FRHH1Ayp+XY="
 											},
 											"font": "Arial;13;0",
-											"left": 501,
-											"top": 595,
+											"left": 429,
+											"top": 315,
 											"width": 192.943359375,
 											"height": 13,
 											"text": "id = \"R1.2\"",
@@ -523,8 +523,8 @@
 												"$ref": "AAAAAAF2FRHH1Ayp+XY="
 											},
 											"font": "Arial;13;0",
-											"left": 501,
-											"top": 610,
+											"left": 429,
+											"top": 330,
 											"width": 192.943359375,
 											"height": 52,
 											"text": "text = \"A felhasználónak lehetősége van a saját felküldött projektjein gamma műveleteket futtatni\"",
@@ -535,15 +535,15 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 496,
-									"top": 590,
+									"left": 424,
+									"top": 310,
 									"width": 202.943359375,
 									"height": 77
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 496,
-							"top": 552,
+							"left": 424,
+							"top": 272,
 							"width": 202.943359375,
 							"height": 115,
 							"nameCompartment": {
@@ -594,8 +594,8 @@
 												"$ref": "AAAAAAF2FRHagwzZsA4="
 											},
 											"font": "Arial;13;0",
-											"left": 221,
-											"top": 285,
+											"left": 157,
+											"top": 277,
 											"width": 239,
 											"height": 13,
 											"text": "«requirement»"
@@ -607,8 +607,8 @@
 												"$ref": "AAAAAAF2FRHagwzZsA4="
 											},
 											"font": "Arial;13;1",
-											"left": 221,
-											"top": 300,
+											"left": 157,
+											"top": 292,
 											"width": 239,
 											"height": 13,
 											"text": "Eclipse projekt feldolgozás"
@@ -621,8 +621,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 192,
-											"top": 416,
+											"left": 64,
+											"top": 400,
 											"width": 182.78076171875,
 											"height": 13,
 											"text": "(from Internetes kommunikáció)"
@@ -635,15 +635,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 192,
-											"top": 416,
+											"left": 64,
+											"top": 400,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 216,
-									"top": 280,
+									"left": 152,
+									"top": 272,
 									"width": 249,
 									"height": 38,
 									"stereotypeLabel": {
@@ -670,8 +670,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 96,
-									"top": 208,
+									"left": 32,
+									"top": 200,
 									"width": 10,
 									"height": 10
 								},
@@ -686,8 +686,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 96,
-									"top": 208,
+									"left": 32,
+									"top": 200,
 									"width": 10,
 									"height": 10
 								},
@@ -702,8 +702,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 96,
-									"top": 208,
+									"left": 32,
+									"top": 200,
 									"width": 10,
 									"height": 10
 								},
@@ -718,8 +718,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 96,
-									"top": 208,
+									"left": 32,
+									"top": 200,
 									"width": 10,
 									"height": 10
 								},
@@ -743,8 +743,8 @@
 												"$ref": "AAAAAAF2FRHagwzWAUA="
 											},
 											"font": "Arial;13;0",
-											"left": 221,
-											"top": 323,
+											"left": 157,
+											"top": 315,
 											"width": 239,
 											"height": 13,
 											"text": "id = \"R1.1\"",
@@ -762,8 +762,8 @@
 												"$ref": "AAAAAAF2FRHagwzWAUA="
 											},
 											"font": "Arial;13;0",
-											"left": 221,
-											"top": 338,
+											"left": 157,
+											"top": 330,
 											"width": 239,
 											"height": 52,
 											"text": "text = \" A rendszer képes kell legyen a gamma modelleket és a hozzá tartozó adatokat tartalmazó eclipse projektek kezelésére\"",
@@ -774,15 +774,15 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 216,
-									"top": 318,
+									"left": 152,
+									"top": 310,
 									"width": 249,
 									"height": 77
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 216,
-							"top": 280,
+							"left": 152,
+							"top": 272,
 							"width": 249,
 							"height": 115,
 							"nameCompartment": {
@@ -820,7 +820,7 @@
 								"$ref": "AAAAAAF2FRHagwzYNyo="
 							},
 							"lineStyle": 1,
-							"points": "427:279;496:233"
+							"points": "393:271;469:233"
 						},
 						{
 							"_type": "UMLContainmentView",
@@ -836,7 +836,7 @@
 								"$ref": "AAAAAAF2FRHH1Qyr4n8="
 							},
 							"lineStyle": 1,
-							"points": "593:551;578:233"
+							"points": "544:271;558:233"
 						},
 						{
 							"_type": "SysMLRequirementView",
@@ -865,9 +865,9 @@
 												"$ref": "AAAAAAF2FRQcCA1bYBE="
 											},
 											"font": "Arial;13;0",
-											"left": 685,
-											"top": 285,
-											"width": 175,
+											"left": 669,
+											"top": 277,
+											"width": 199,
 											"height": 13,
 											"text": "«requirement»"
 										},
@@ -878,9 +878,9 @@
 												"$ref": "AAAAAAF2FRQcCA1bYBE="
 											},
 											"font": "Arial;13;1",
-											"left": 685,
-											"top": 300,
-											"width": 175,
+											"left": 669,
+											"top": 292,
+											"width": 199,
 											"height": 13,
 											"text": "Eredmény visszaküldés"
 										},
@@ -892,8 +892,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -176,
-											"top": -112,
+											"left": -208,
+											"top": -128,
 											"width": 182.78076171875,
 											"height": 13,
 											"text": "(from Internetes kommunikáció)"
@@ -906,16 +906,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -176,
-											"top": -112,
+											"left": -208,
+											"top": -128,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 680,
-									"top": 280,
-									"width": 185,
+									"left": 664,
+									"top": 272,
+									"width": 209,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF2FRQcCQ1chIE="
@@ -941,8 +941,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": -56,
+									"left": -104,
+									"top": -64,
 									"width": 10,
 									"height": 10
 								},
@@ -957,8 +957,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": -56,
+									"left": -104,
+									"top": -64,
 									"width": 10,
 									"height": 10
 								},
@@ -973,8 +973,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": -56,
+									"left": -104,
+									"top": -64,
 									"width": 10,
 									"height": 10
 								},
@@ -989,8 +989,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": -56,
+									"left": -104,
+									"top": -64,
 									"width": 10,
 									"height": 10
 								},
@@ -1014,9 +1014,9 @@
 												"$ref": "AAAAAAF2FRQcCA1YSXo="
 											},
 											"font": "Arial;13;0",
-											"left": 685,
-											"top": 323,
-											"width": 175,
+											"left": 669,
+											"top": 315,
+											"width": 199,
 											"height": 13,
 											"text": "id = \"R1.3\"",
 											"horizontalAlignment": 0,
@@ -1033,9 +1033,9 @@
 												"$ref": "AAAAAAF2FRQcCA1YSXo="
 											},
 											"font": "Arial;13;0",
-											"left": 685,
-											"top": 338,
-											"width": 175,
+											"left": 669,
+											"top": 330,
+											"width": 199,
 											"height": 52,
 											"text": "text = \"A felhasználónak lehetősége kell legyen  a gamma művelet eredményeit lekérni a rendszertől\"",
 											"horizontalAlignment": 0,
@@ -1045,16 +1045,16 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 680,
-									"top": 318,
-									"width": 185,
+									"left": 664,
+									"top": 310,
+									"width": 209,
 									"height": 77
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 680,
-							"top": 280,
-							"width": 185,
+							"left": 664,
+							"top": 272,
+							"width": 209,
 							"height": 115,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2FRQcCA1bYBE="
@@ -1105,7 +1105,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 117,
-											"top": 437,
+											"top": 405,
 											"width": 159,
 											"height": 13,
 											"text": "«requirement»"
@@ -1118,7 +1118,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 117,
-											"top": 452,
+											"top": 420,
 											"width": 159,
 											"height": 13,
 											"text": "Projekt törlés",
@@ -1133,7 +1133,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -1360,
-											"top": 208,
+											"top": 144,
 											"width": 192.18798828125,
 											"height": 13,
 											"text": "(from Eclipse projekt feldolgozás)"
@@ -1147,14 +1147,14 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -1360,
-											"top": 208,
+											"top": 144,
 											"horizontalAlignment": 1,
 											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 112,
-									"top": 432,
+									"top": 400,
 									"width": 169,
 									"height": 38,
 									"stereotypeLabel": {
@@ -1182,7 +1182,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -680,
-									"top": 104,
+									"top": 72,
 									"width": 10,
 									"height": 10
 								},
@@ -1198,7 +1198,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -680,
-									"top": 104,
+									"top": 72,
 									"width": 10,
 									"height": 10
 								},
@@ -1214,7 +1214,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -680,
-									"top": 104,
+									"top": 72,
 									"width": 10,
 									"height": 10
 								},
@@ -1230,7 +1230,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -680,
-									"top": 104,
+									"top": 72,
 									"width": 10,
 									"height": 10
 								},
@@ -1255,7 +1255,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 117,
-											"top": 475,
+											"top": 443,
 											"width": 159,
 											"height": 13,
 											"text": "id = \"R1.1.1\"",
@@ -1274,7 +1274,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 117,
-											"top": 490,
+											"top": 458,
 											"width": 159,
 											"height": 39,
 											"text": "text = \"A rendszer képes egy mér létező eclipse projekt törlésére\"",
@@ -1286,14 +1286,14 @@
 									],
 									"font": "Arial;13;0",
 									"left": 112,
-									"top": 470,
+									"top": 438,
 									"width": 169,
 									"height": 64
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 112,
-							"top": 432,
+							"top": 400,
 							"width": 169,
 							"height": 102,
 							"nameCompartment": {
@@ -1332,7 +1332,7 @@
 								"$ref": "AAAAAAF2FRQcCA1aB5E="
 							},
 							"lineStyle": 1,
-							"points": "700:279;642:233"
+							"points": "693:271;644:233"
 						},
 						{
 							"_type": "UMLContainmentView",
@@ -1348,7 +1348,7 @@
 								"$ref": "AAAAAAF2FRQhGg2HxOQ="
 							},
 							"lineStyle": 1,
-							"points": "247:431;282:395"
+							"points": "281:449;320:448;320:392;317:387"
 						},
 						{
 							"_type": "SysMLRequirementView",
@@ -1377,8 +1377,8 @@
 												"$ref": "AAAAAAF2FRkkjQ4Arks="
 											},
 											"font": "Arial;13;0",
-											"left": 317,
-											"top": 437,
+											"left": 117,
+											"top": 533,
 											"width": 167,
 											"height": 13,
 											"text": "«requirement»"
@@ -1390,8 +1390,8 @@
 												"$ref": "AAAAAAF2FRkkjQ4Arks="
 											},
 											"font": "Arial;13;1",
-											"left": 317,
-											"top": 452,
+											"left": 117,
+											"top": 548,
 											"width": 167,
 											"height": 13,
 											"text": "Projekt létrehozás"
@@ -1404,8 +1404,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 240,
-											"top": -560,
+											"left": -160,
+											"top": -368,
 											"width": 192.18798828125,
 											"height": 13,
 											"text": "(from Eclipse projekt feldolgozás)"
@@ -1418,15 +1418,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 240,
-											"top": -560,
+											"left": -160,
+											"top": -368,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 312,
-									"top": 432,
+									"left": 112,
+									"top": 528,
 									"width": 177,
 									"height": 38,
 									"stereotypeLabel": {
@@ -1453,8 +1453,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 120,
-									"top": -280,
+									"left": -80,
+									"top": -184,
 									"width": 10,
 									"height": 10
 								},
@@ -1469,8 +1469,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 120,
-									"top": -280,
+									"left": -80,
+									"top": -184,
 									"width": 10,
 									"height": 10
 								},
@@ -1485,8 +1485,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 120,
-									"top": -280,
+									"left": -80,
+									"top": -184,
 									"width": 10,
 									"height": 10
 								},
@@ -1501,8 +1501,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 120,
-									"top": -280,
+									"left": -80,
+									"top": -184,
 									"width": 10,
 									"height": 10
 								},
@@ -1526,8 +1526,8 @@
 												"$ref": "AAAAAAF2FRkkjA39Apk="
 											},
 											"font": "Arial;13;0",
-											"left": 317,
-											"top": 475,
+											"left": 117,
+											"top": 571,
 											"width": 167,
 											"height": 13,
 											"text": "id = \"R1.1.2\"",
@@ -1545,8 +1545,8 @@
 												"$ref": "AAAAAAF2FRkkjA39Apk="
 											},
 											"font": "Arial;13;0",
-											"left": 317,
-											"top": 490,
+											"left": 117,
+											"top": 586,
 											"width": 167,
 											"height": 39,
 											"text": "text = \"A rendszer képes a felküldött fájlok alapján eclipse projektet létrehozni\"",
@@ -1557,15 +1557,15 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 312,
-									"top": 470,
+									"left": 112,
+									"top": 566,
 									"width": 177,
 									"height": 64
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 312,
-							"top": 432,
+							"left": 112,
+							"top": 528,
 							"width": 177,
 							"height": 102,
 							"nameCompartment": {
@@ -1603,7 +1603,7 @@
 								"$ref": "AAAAAAF2FRkkjQ3/SYo="
 							},
 							"lineStyle": 1,
-							"points": "379:431;364:395"
+							"points": "289:577;320:576;320:392;317:387"
 						},
 						{
 							"_type": "SysMLRequirementView",
@@ -1632,9 +1632,9 @@
 												"$ref": "AAAAAAF2FRuIiw5IfoY="
 											},
 											"font": "Arial;13;0",
-											"left": 331.50830078125,
-											"top": 765,
-											"width": 144.49169921875,
+											"left": 373,
+											"top": 933,
+											"width": 183,
 											"height": 13,
 											"text": "«requirement»"
 										},
@@ -1645,11 +1645,11 @@
 												"$ref": "AAAAAAF2FRuIiw5IfoY="
 											},
 											"font": "Arial;13;1",
-											"left": 331.50830078125,
-											"top": 780,
-											"width": 144.49169921875,
+											"left": 373,
+											"top": 948,
+											"width": 183,
 											"height": 13,
-											"text": "Gamma transzformáció"
+											"text": "Yakindu transzformáció"
 										},
 										{
 											"_type": "LabelView",
@@ -1659,8 +1659,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -496,
-											"top": 192,
+											"left": -413.0166015625,
+											"top": 528,
 											"width": 221.78076171875,
 											"height": 13,
 											"text": "(from Gamma műveletek értelmezése)"
@@ -1673,16 +1673,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -496,
-											"top": 192,
+											"left": -413.0166015625,
+											"top": 528,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 326.50830078125,
-									"top": 760,
-									"width": 154.49169921875,
+									"left": 368,
+									"top": 928,
+									"width": 193,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF2FRuIiw5J4cA="
@@ -1708,8 +1708,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -248,
-									"top": 96,
+									"left": -206.50830078125,
+									"top": 264,
 									"width": 10,
 									"height": 10
 								},
@@ -1724,8 +1724,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -248,
-									"top": 96,
+									"left": -206.50830078125,
+									"top": 264,
 									"width": 10,
 									"height": 10
 								},
@@ -1740,8 +1740,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -248,
-									"top": 96,
+									"left": -206.50830078125,
+									"top": 264,
 									"width": 10,
 									"height": 10
 								},
@@ -1756,8 +1756,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -248,
-									"top": 96,
+									"left": -206.50830078125,
+									"top": 264,
 									"width": 10,
 									"height": 10
 								},
@@ -1781,9 +1781,9 @@
 												"$ref": "AAAAAAF2FRuIiQ5FKCY="
 											},
 											"font": "Arial;13;0",
-											"left": 331.50830078125,
-											"top": 803,
-											"width": 144.49169921875,
+											"left": 373,
+											"top": 971,
+											"width": 183,
 											"height": 13,
 											"text": "id = \"R1.2.1\"",
 											"horizontalAlignment": 0,
@@ -1800,29 +1800,29 @@
 												"$ref": "AAAAAAF2FRuIiQ5FKCY="
 											},
 											"font": "Arial;13;0",
-											"left": 331.50830078125,
-											"top": 818,
-											"width": 144.49169921875,
-											"height": 52,
-											"text": "text = \"A rendszer támogatja a Gamma transzformáció műveletet\"",
+											"left": 373,
+											"top": 986,
+											"width": 183,
+											"height": 39,
+											"text": "text = \"A rendszer támogatja a Yakindu transzformáció műveletet\"",
 											"horizontalAlignment": 0,
 											"wordWrap": true,
 											"property": "text",
-											"value": "\"A rendszer támogatja a Gamma transzformáció műveletet\""
+											"value": "\"A rendszer támogatja a Yakindu transzformáció műveletet\""
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 326.50830078125,
-									"top": 798,
-									"width": 154.49169921875,
-									"height": 77
+									"left": 368,
+									"top": 966,
+									"width": 193,
+									"height": 64
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 326.50830078125,
-							"top": 760,
-							"width": 154.49169921875,
-							"height": 115,
+							"left": 368,
+							"top": 928,
+							"width": 193,
+							"height": 102,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2FRuIiw5IfoY="
 							},
@@ -1871,9 +1871,9 @@
 												"$ref": "AAAAAAF2FRuV/A51ALY="
 											},
 											"font": "Arial;13;0",
-											"left": 501,
-											"top": 765,
-											"width": 119,
+											"left": 373,
+											"top": 573,
+											"width": 183,
 											"height": 13,
 											"text": "«requirement»"
 										},
@@ -1884,9 +1884,9 @@
 												"$ref": "AAAAAAF2FRuV/A51ALY="
 											},
 											"font": "Arial;13;1",
-											"left": 501,
-											"top": 780,
-											"width": 119,
+											"left": 373,
+											"top": 588,
+											"width": 183,
 											"height": 13,
 											"text": "Gamma verifikáció"
 										},
@@ -1898,7 +1898,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -704,
+											"left": -944,
+											"top": -384,
 											"width": 221.78076171875,
 											"height": 13,
 											"text": "(from Gamma műveletek értelmezése)"
@@ -1911,15 +1912,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -704,
+											"left": -944,
+											"top": -384,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 496,
-									"top": 760,
-									"width": 129,
+									"left": 368,
+									"top": 568,
+									"width": 193,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF2FRuV/A52R10="
@@ -1945,7 +1947,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -352,
+									"left": -472,
+									"top": -192,
 									"width": 10,
 									"height": 10
 								},
@@ -1960,7 +1963,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -352,
+									"left": -472,
+									"top": -192,
 									"width": 10,
 									"height": 10
 								},
@@ -1975,7 +1979,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -352,
+									"left": -472,
+									"top": -192,
 									"width": 10,
 									"height": 10
 								},
@@ -1990,7 +1995,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -352,
+									"left": -472,
+									"top": -192,
 									"width": 10,
 									"height": 10
 								},
@@ -2014,10 +2020,10 @@
 												"$ref": "AAAAAAF2FRuV+w5yCoE="
 											},
 											"font": "Arial;13;0",
-											"left": 501,
-											"top": 803,
-											"width": 119,
-											"height": 52,
+											"left": 373,
+											"top": 611,
+											"width": 183,
+											"height": 39,
 											"text": "text = \"A rendszer támogatja a Gamma modell verifikáció funkciót\"",
 											"horizontalAlignment": 0,
 											"wordWrap": true,
@@ -2026,17 +2032,17 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 496,
-									"top": 798,
-									"width": 129,
-									"height": 62
+									"left": 368,
+									"top": 606,
+									"width": 193,
+									"height": 49
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 496,
-							"top": 760,
-							"width": 129,
-							"height": 100,
+							"left": 368,
+							"top": 568,
+							"width": 193,
+							"height": 87,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2FRuV/A51ALY="
 							},
@@ -2085,9 +2091,9 @@
 												"$ref": "AAAAAAF2FRueVg6iyf8="
 											},
 											"font": "Arial;13;0",
-											"left": 829,
-											"top": 765,
-											"width": 151,
+											"left": 373,
+											"top": 805,
+											"width": 183,
 											"height": 13,
 											"text": "«requirement»"
 										},
@@ -2098,9 +2104,9 @@
 												"$ref": "AAAAAAF2FRueVg6iyf8="
 											},
 											"font": "Arial;13;1",
-											"left": 829,
-											"top": 780,
-											"width": 151,
+											"left": 373,
+											"top": 820,
+											"width": 183,
 											"height": 13,
 											"text": "Gamma kódgenerálás"
 										},
@@ -2112,8 +2118,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 992,
-											"top": -64,
+											"left": 80,
+											"top": 16,
 											"width": 221.78076171875,
 											"height": 13,
 											"text": "(from Gamma műveletek értelmezése)"
@@ -2126,16 +2132,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 992,
-											"top": -64,
+											"left": 80,
+											"top": 16,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 824,
-									"top": 760,
-									"width": 161,
+									"left": 368,
+									"top": 800,
+									"width": 193,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF2FRueVg6jqiQ="
@@ -2161,8 +2167,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 496,
-									"top": -32,
+									"left": 40,
+									"top": 8,
 									"width": 10,
 									"height": 10
 								},
@@ -2177,8 +2183,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 496,
-									"top": -32,
+									"left": 40,
+									"top": 8,
 									"width": 10,
 									"height": 10
 								},
@@ -2193,8 +2199,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 496,
-									"top": -32,
+									"left": 40,
+									"top": 8,
 									"width": 10,
 									"height": 10
 								},
@@ -2209,8 +2215,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 496,
-									"top": -32,
+									"left": 40,
+									"top": 8,
 									"width": 10,
 									"height": 10
 								},
@@ -2234,9 +2240,9 @@
 												"$ref": "AAAAAAF2FRueVg6fqUg="
 											},
 											"font": "Arial;13;0",
-											"left": 829,
-											"top": 803,
-											"width": 151,
+											"left": 373,
+											"top": 843,
+											"width": 183,
 											"height": 13,
 											"text": "id = \"R1.2.2\"",
 											"horizontalAlignment": 0,
@@ -2253,9 +2259,9 @@
 												"$ref": "AAAAAAF2FRueVg6fqUg="
 											},
 											"font": "Arial;13;0",
-											"left": 829,
-											"top": 818,
-											"width": 151,
+											"left": 373,
+											"top": 858,
+											"width": 183,
 											"height": 39,
 											"text": "text = \"A rendszer támogatja a Gamma kódgenerálás műveletet\"",
 											"horizontalAlignment": 0,
@@ -2265,16 +2271,16 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 824,
-									"top": 798,
-									"width": 161,
+									"left": 368,
+									"top": 838,
+									"width": 193,
 									"height": 64
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 824,
-							"top": 760,
-							"width": 161,
+							"left": 368,
+							"top": 800,
+							"width": 193,
 							"height": 102,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2FRueVg6iyf8="
@@ -2324,9 +2330,9 @@
 												"$ref": "AAAAAAF2FRuicg7PxCE="
 											},
 											"font": "Arial;13;0",
-											"left": 653,
-											"top": 765,
-											"width": 145.5263671875,
+											"left": 373,
+											"top": 685,
+											"width": 183,
 											"height": 13,
 											"text": "«requirement»"
 										},
@@ -2337,9 +2343,9 @@
 												"$ref": "AAAAAAF2FRuicg7PxCE="
 											},
 											"font": "Arial;13;1",
-											"left": 653,
-											"top": 780,
-											"width": 145.5263671875,
+											"left": 373,
+											"top": 700,
+											"width": 183,
 											"height": 13,
 											"text": "Gamma tesztgenerálás"
 										},
@@ -2351,8 +2357,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1024,
-											"top": 16,
+											"left": 464,
+											"top": -144,
 											"width": 221.78076171875,
 											"height": 13,
 											"text": "(from Gamma műveletek értelmezése)"
@@ -2365,16 +2371,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1024,
-											"top": 16,
+											"left": 464,
+											"top": -144,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 648,
-									"top": 760,
-									"width": 155.5263671875,
+									"left": 368,
+									"top": 680,
+									"width": 193,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF2FRuicg7Q7Oc="
@@ -2400,8 +2406,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 512,
-									"top": 8,
+									"left": 232,
+									"top": -72,
 									"width": 10,
 									"height": 10
 								},
@@ -2416,8 +2422,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 512,
-									"top": 8,
+									"left": 232,
+									"top": -72,
 									"width": 10,
 									"height": 10
 								},
@@ -2432,8 +2438,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 512,
-									"top": 8,
+									"left": 232,
+									"top": -72,
 									"width": 10,
 									"height": 10
 								},
@@ -2448,8 +2454,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 512,
-									"top": 8,
+									"left": 232,
+									"top": -72,
 									"width": 10,
 									"height": 10
 								},
@@ -2473,9 +2479,9 @@
 												"$ref": "AAAAAAF2FRuicQ7M04g="
 											},
 											"font": "Arial;13;0",
-											"left": 653,
-											"top": 803,
-											"width": 145.5263671875,
+											"left": 373,
+											"top": 723,
+											"width": 183,
 											"height": 13,
 											"text": "id = \"R1.2.4\"",
 											"horizontalAlignment": 0,
@@ -2492,9 +2498,9 @@
 												"$ref": "AAAAAAF2FRuicQ7M04g="
 											},
 											"font": "Arial;13;0",
-											"left": 653,
-											"top": 818,
-											"width": 145.5263671875,
+											"left": 373,
+											"top": 738,
+											"width": 183,
 											"height": 39,
 											"text": "text = \"A rendszer támogatja a Gamma tesztgenerálásműveletet\"",
 											"horizontalAlignment": 0,
@@ -2504,16 +2510,16 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 648,
-									"top": 798,
-									"width": 155.5263671875,
+									"left": 368,
+									"top": 718,
+									"width": 193,
 									"height": 64
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 648,
-							"top": 760,
-							"width": 155.5263671875,
+							"left": 368,
+							"top": 680,
+							"width": 193,
 							"height": 102,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2FRuicg7PxCE="
@@ -2550,7 +2556,7 @@
 								"$ref": "AAAAAAF2FRuIiw5How4="
 							},
 							"lineStyle": 1,
-							"points": "457:759;542:667"
+							"points": "561:976;592:976;592:392;587:387"
 						},
 						{
 							"_type": "UMLContainmentView",
@@ -2566,7 +2572,7 @@
 								"$ref": "AAAAAAF2FRuV+w50r/4="
 							},
 							"lineStyle": 1,
-							"points": "569:759;586:667"
+							"points": "561:615;592:616;592:392;587:387"
 						},
 						{
 							"_type": "UMLContainmentView",
@@ -2582,7 +2588,7 @@
 								"$ref": "AAAAAAF2FRuicQ7Or04="
 							},
 							"lineStyle": 1,
-							"points": "692:759;633:667"
+							"points": "561:728;592:728;592:392;587:387"
 						},
 						{
 							"_type": "UMLContainmentView",
@@ -2598,7 +2604,7 @@
 								"$ref": "AAAAAAF2FRueVg6hHrc="
 							},
 							"lineStyle": 1,
-							"points": "826:759;685:667"
+							"points": "561:848;592:848;592:392;587:387"
 						},
 						{
 							"_type": "SysMLRequirementView",
@@ -2627,9 +2633,9 @@
 												"$ref": "AAAAAAF2FSUQqm6e8AU="
 											},
 											"font": "Arial;13;0",
-											"left": 893,
-											"top": 429,
-											"width": 143,
+											"left": 637,
+											"top": 565,
+											"width": 167,
 											"height": 13,
 											"text": "«requirement»"
 										},
@@ -2640,9 +2646,9 @@
 												"$ref": "AAAAAAF2FSUQqm6e8AU="
 											},
 											"font": "Arial;13;1",
-											"left": 893,
-											"top": 444,
-											"width": 143,
+											"left": 637,
+											"top": 580,
+											"width": 167,
 											"height": 13,
 											"text": "Részeredmény lekérés"
 										},
@@ -2654,8 +2660,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1248,
-											"top": -848,
+											"left": 736,
+											"top": -576,
 											"width": 174.8271484375,
 											"height": 13,
 											"text": "(from Eredmény visszaküldés)"
@@ -2668,16 +2674,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1248,
-											"top": -848,
+											"left": 736,
+											"top": -576,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 888,
-									"top": 424,
-									"width": 153,
+									"left": 632,
+									"top": 560,
+									"width": 177,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF2FSUQq26fCRE="
@@ -2703,8 +2709,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 624,
-									"top": -424,
+									"left": 368,
+									"top": -288,
 									"width": 10,
 									"height": 10
 								},
@@ -2719,8 +2725,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 624,
-									"top": -424,
+									"left": 368,
+									"top": -288,
 									"width": 10,
 									"height": 10
 								},
@@ -2735,8 +2741,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 624,
-									"top": -424,
+									"left": 368,
+									"top": -288,
 									"width": 10,
 									"height": 10
 								},
@@ -2751,8 +2757,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 624,
-									"top": -424,
+									"left": 368,
+									"top": -288,
 									"width": 10,
 									"height": 10
 								},
@@ -2776,9 +2782,9 @@
 												"$ref": "AAAAAAF2FSUQqW6bHGY="
 											},
 											"font": "Arial;13;0",
-											"left": 893,
-											"top": 467,
-											"width": 143,
+											"left": 637,
+											"top": 603,
+											"width": 167,
 											"height": 13,
 											"text": "id = \"R1.3.1\"",
 											"horizontalAlignment": 0,
@@ -2795,9 +2801,9 @@
 												"$ref": "AAAAAAF2FSUQqW6bHGY="
 											},
 											"font": "Arial;13;0",
-											"left": 893,
-											"top": 482,
-											"width": 143,
+											"left": 637,
+											"top": 618,
+											"width": 167,
 											"height": 52,
 											"text": "text = \"Felhasználónak lehetősége kell legyen egyedi fájlok/mappák lekérésére.\"",
 											"horizontalAlignment": 0,
@@ -2807,16 +2813,16 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 888,
-									"top": 462,
-									"width": 153,
+									"left": 632,
+									"top": 598,
+									"width": 177,
 									"height": 77
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 888,
-							"top": 424,
-							"width": 153,
+							"left": 632,
+							"top": 560,
+							"width": 177,
 							"height": 115,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2FSUQqm6e8AU="
@@ -2866,7 +2872,7 @@
 												"$ref": "AAAAAAF2FT60w27agSA="
 											},
 											"font": "Arial;13;0",
-											"left": 685,
+											"left": 637,
 											"top": 429,
 											"width": 168.4423828125,
 											"height": 13,
@@ -2879,7 +2885,7 @@
 												"$ref": "AAAAAAF2FT60w27agSA="
 											},
 											"font": "Arial;13;1",
-											"left": 685,
+											"left": 637,
 											"top": 444,
 											"width": 168.4423828125,
 											"height": 13,
@@ -2894,7 +2900,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -928,
+											"left": -1024,
 											"top": -832,
 											"width": 174.8271484375,
 											"height": 13,
@@ -2908,14 +2914,14 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -928,
+											"left": -1024,
 											"top": -832,
 											"horizontalAlignment": 1,
 											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 680,
+									"left": 632,
 									"top": 424,
 									"width": 178.4423828125,
 									"height": 38,
@@ -2943,7 +2949,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -464,
+									"left": -512,
 									"top": -416,
 									"width": 10,
 									"height": 10
@@ -2959,7 +2965,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -464,
+									"left": -512,
 									"top": -416,
 									"width": 10,
 									"height": 10
@@ -2975,7 +2981,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -464,
+									"left": -512,
 									"top": -416,
 									"width": 10,
 									"height": 10
@@ -2991,7 +2997,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -464,
+									"left": -512,
 									"top": -416,
 									"width": 10,
 									"height": 10
@@ -3016,7 +3022,7 @@
 												"$ref": "AAAAAAF2FT60wm7XL9E="
 											},
 											"font": "Arial;13;0",
-											"left": 685,
+											"left": 637,
 											"top": 467,
 											"width": 168.4423828125,
 											"height": 13,
@@ -3035,7 +3041,7 @@
 												"$ref": "AAAAAAF2FT60wm7XL9E="
 											},
 											"font": "Arial;13;0",
-											"left": 685,
+											"left": 637,
 											"top": 482,
 											"width": 168.4423828125,
 											"height": 52,
@@ -3047,14 +3053,14 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 680,
+									"left": 632,
 									"top": 462,
 									"width": 178.4423828125,
 									"height": 77
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 680,
+							"left": 632,
 							"top": 424,
 							"width": 178.4423828125,
 							"height": 115,
@@ -3094,7 +3100,7 @@
 								"$ref": "AAAAAAF2FT60w27Z+Ms="
 							},
 							"lineStyle": 1,
-							"points": "770:423;770:395"
+							"points": "810:480;840:480;840:392;834:387"
 						},
 						{
 							"_type": "UMLContainmentView",
@@ -3110,7 +3116,7 @@
 								"$ref": "AAAAAAF2FSUQqm6dfeo="
 							},
 							"lineStyle": 1,
-							"points": "887:423;849:395"
+							"points": "809:610;840:608;840:392;834:387"
 						},
 						{
 							"_type": "SysMLRequirementView",
@@ -3139,9 +3145,9 @@
 												"$ref": "AAAAAAF2G5mpFUCJ/mE="
 											},
 											"font": "Arial;13;0",
-											"left": 141,
-											"top": 749,
-											"width": 135,
+											"left": 373,
+											"top": 429,
+											"width": 183,
 											"height": 13,
 											"text": "«requirement»"
 										},
@@ -3152,9 +3158,9 @@
 												"$ref": "AAAAAAF2G5mpFUCJ/mE="
 											},
 											"font": "Arial;13;1",
-											"left": 141,
-											"top": 764,
-											"width": 135,
+											"left": 373,
+											"top": 444,
+											"width": 183,
 											"height": 13,
 											"text": "Művelet leállítás"
 										},
@@ -3166,8 +3172,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -176,
-											"top": 128,
+											"left": 288,
+											"top": -512,
 											"width": 221.78076171875,
 											"height": 13,
 											"text": "(from Gamma műveletek értelmezése)"
@@ -3180,16 +3186,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -176,
-											"top": 128,
+											"left": 288,
+											"top": -512,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 136,
-									"top": 744,
-									"width": 145,
+									"left": 368,
+									"top": 424,
+									"width": 193,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF2G5mpFUCKeQQ="
@@ -3215,8 +3221,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": 64,
+									"left": 144,
+									"top": -256,
 									"width": 10,
 									"height": 10
 								},
@@ -3231,8 +3237,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": 64,
+									"left": 144,
+									"top": -256,
 									"width": 10,
 									"height": 10
 								},
@@ -3247,8 +3253,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": 64,
+									"left": 144,
+									"top": -256,
 									"width": 10,
 									"height": 10
 								},
@@ -3263,8 +3269,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": 64,
+									"left": 144,
+									"top": -256,
 									"width": 10,
 									"height": 10
 								},
@@ -3288,9 +3294,9 @@
 												"$ref": "AAAAAAF2G5mpFECGODU="
 											},
 											"font": "Arial;13;0",
-											"left": 141,
-											"top": 787,
-											"width": 135,
+											"left": 373,
+											"top": 467,
+											"width": 183,
 											"height": 13,
 											"text": "id = \"R1.2.5\"",
 											"horizontalAlignment": 0,
@@ -3307,10 +3313,10 @@
 												"$ref": "AAAAAAF2G5mpFECGODU="
 											},
 											"font": "Arial;13;0",
-											"left": 141,
-											"top": 802,
-											"width": 135,
-											"height": 65,
+											"left": 373,
+											"top": 482,
+											"width": 183,
+											"height": 52,
 											"text": "text = \"A felhasználónak lehetősége kell legyen az egyes futó műveletek leállítására\"",
 											"horizontalAlignment": 0,
 											"wordWrap": true,
@@ -3319,17 +3325,17 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 136,
-									"top": 782,
-									"width": 145,
-									"height": 90
+									"left": 368,
+									"top": 462,
+									"width": 193,
+									"height": 77
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 136,
-							"top": 744,
-							"width": 145,
-							"height": 128,
+							"left": 368,
+							"top": 424,
+							"width": 193,
+							"height": 115,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2G5mpFUCJ/mE="
 							},
@@ -3365,7 +3371,7 @@
 								"$ref": "AAAAAAF2G5mpFUCI5Kk="
 							},
 							"lineStyle": 1,
-							"points": "281:770;495:661"
+							"points": "561:480;592:480;592:392;587:387"
 						}
 					]
 				},
@@ -3423,9 +3429,9 @@
 									"_parent": {
 										"$ref": "AAAAAAF2FRHH1Ayp+XY="
 									},
-									"name": "Gamma transzformáció",
+									"name": "Yakindu transzformáció",
 									"id": "R1.2.1",
-									"text": "A rendszer támogatja a Gamma transzformáció műveletet"
+									"text": "A rendszer támogatja a Yakindu transzformáció műveletet"
 								},
 								{
 									"_type": "SysMLRequirement",
