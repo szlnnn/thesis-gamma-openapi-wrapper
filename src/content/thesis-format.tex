@@ -1,330 +1,178 @@
-%--------------------------------------
-\chapter{Specifikáció és implementáció}
-%--------------------------------------
+\numberwithin{figure}{section}
 
-Ez a fejezet tartalmazza a \ref{gamma_missing} fejezetben leírt továbbfejlesztési lehetőségek specifikációját, architektúra tervét és implementációját. 
+%----------------------------------------------------------------------------
+\chapter{Háttérismeretek}
+%----------------------------------------------------------------------------
+\section{Modern technológiák}
+%----------------------------------------------------------------------------
 
-%--------------------------------------
-\section{Specifikáció} \label{specification}
-%--------------------------------------
+A munkám folyamán számos modern technológiával kellet megismerkedjek.
 
+%----------------------------------------------------------------------------
+\subsection{OSGi}
+%----------------------------------------------------------------------------
 
-A rendszerben érdekelt személyek listája (\textbf{stakeholders}), azaz olyan aktorok, akik valamilyen módon kapcsolatba léphetnek a rendszerrel:
-\begin{itemize}
-	\item Komplex modellekkel foglalkozó \textbf{mérnökök}
-	\item \textbf{Egyetemi kutatók}
-	\item Olyan \textbf{fejlesztő} aki integrálni akarja a rendszerünket egy harmadik alkalmazásba (Pl:MagicDraw)
-	\item \textbf{Gamma fejlesztő}, aki erőforrás igényes funkciót akar tesztelni
-	\item \textbf{Üzemeltető}, aki a rendszer komponenseit frissíteni tudja
-	\item \textbf{Üzleti oldalú kolléga}, aki a rendszert mint szolgáltatást hirdeti/eladja
-\end{itemize}
+Az OSGi (Open Services Gateway Initiative) \cite{alliance} egy Java keretrendszer, amely segítségével moduláris szoftvereket és könyvtárakat tudunk fejleszteni.
 
+A technológia alapvetően egy specifikáció halmazból, referencia implementációkból és minden specifikációhoz tartozó teszt halmazból áll össze, mindezek együtt leírnak egy dinamikus moduláris rendszert. A bevált szolgáltatás modellje lehetővé teszi, hogy az infrastruktúra és az alkalmazás komponensek úgy lokálisan, mint hálózaton keresztül is kommunikáljanak egymással, hogy egy koherens és konzisztens architektúrát alkossanak.
 
-A specifikálást a rendszert meghatározó követelményhalmaz kialakításával folytatjuk. A követelményeket alapvetően két csoportra lehet osztani, funkcionális és nemfunkcionális. Kulcsfontosságú absztrakt követelményeket az alábbi lista foglal össze, viszont nem tartalmazza a teljes körű követelmény hierarchiát, ezt \aref{fig:requierments_placeholder} és \aref{fig:requierements_2} ábrákon lehet megtekinteni.
+Az ipar bármely területén megtaláljuk az IoT-tól kezdve a telekommunikációs megoldásokig, viszont számos esetben nincs kiemelve, azaz ritkán van feltüntetve a használt technológiák listáján. 
 
-\begin{itemize}
-	\item A rendszer képes kell legyen a Gamma modelleket és a hozzá tartozó adatokat tartalmazó Eclipse projektek kezelésére.
-	\item A felhasználónak lehetősége kell legyen felküldeni a rendszer számára a saját Eclipse projektjeit.
-	\item A felhasználónak lehetősége kell legyen a saját felküldött projektjein Gamma műveleteket futtatni.
-	\item A felhasználónak lehetősége kell legyen a Gamma művelet eredményeit lekérni a rendszerünktől.
-	\item A rendszer képes kell legyen felhasználók azonosítására.
-	\item A rendszer képes kell legyen inaktív projektek automatizált törlésére.
-\end{itemize}
-
-\begin{figure}[!ht]
-	\includegraphics[width=\textwidth, keepaspectratio]{figures/requierments_placeholder.png}
-	\caption{Követelmény hierarchia 1}
-	\label{fig:requierments_placeholder}
-\end{figure}
-
-\begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/requierments_2.png}
-	\caption{Követelmény hierarchia 2}
-	\label{fig:requierements_2}
-\end{figure}
-
-\noindent A további nemfunkcionális követelményeket három kategóriába soroljuk:
-\begin{itemize}
-	\item \textbf{Adatbiztonság:} Minden felhasználó csak a saját projektjeit szerkesztheti. / Saját projektjein futtathat Gamma művelet halmazokat. / A rendszer képes kell legyen kiszűrni az egyes rosszindulatú felhasználók által megadott fájl elérési utakat. 
-	\item \textbf{Teljesítmény:} A rendszer képes kell legyen különböző projekteken ugyanabban az időben Gamma műveletek futtatására. / A rendszer skálázható kell legyen. / A rendszernek nem szabad fölösleges adatot tárolnia. / A rendszer muszáj töröljön minden olyan adatot, amely neki vagy a felhasználó számára nem releváns. / A rendszer képes kell legyen aszinkron módon működni. / Egy projekten nem futtathatunk két különböző Gamma művelet halmazt.
-	\item \textbf{Felhasználhatóság:} A rendszer megfelelő, HTTP szabvány által előírt válaszokat adni az egyes kérésekre. / A rendszer beszédes értesítéseket kell küldjön a projekt tulajdonosának az egyes Gamma műveletek futási állapotáról.
-\end{itemize}
-
-A fentebb leírt követelmények alapján bizonyos technológiai döntéseket kellet hozni a projekt iniciális fázisaiban. Ahhoz, hogy az alkalmazásunk interneten keresztül is elérhető legyen, egy webszervert kellet kialakítanunk, ez lesz a rendszer belépési pontja. A webszerver a REST API modern architektúrastílus szabályait betartva lett kialakítva. Mindezt az \textit{R1.*} követelmény teljesítése teszi szükségessé. 
-
-Ahhoz, hogy az \textit{R1.2.*} követelmény teljesüljön, a Gamma keretrendszert egy \textit{headless Eclipse}-be kellet becsomagolni. Ezzel meg tudjuk oldani azt a problémát, hogy a Gamma az Eclipse IDE-hez van kötve, az így becsomagolt keretrendszert parancssoron keresztül lehet elérni.
-
-Az \textit{R2.*} követelményt Eclipse munkaterek (workspace) használatával teljesítjük. A rendszerünk biztosít munkatér létrehozás funkciót a felhasználói oldalon álló kliens szoftvernek, ehhez rendel egy egyedi azonosítót amit visszaküld a kliensnek és mostantól ezzel az azonosító megadásával tud a kliens további funkciókat elérni. Mindezzel azt érjük el, hogy majdnem semmilyen információt nem kell tárolni a felhasználóról, ezt a feladatot rábízzuk a kliens szoftverre.
-
-Összefoglalva a követelményeket és a technológiai döntéseket, olyan rendszert tervezünk, amely a Gamma keretrendszert elérhetővé teszi a világ számára, oly módon, hogy közben több felhasználói rendszerlogikát támogat az adatok tárolásán és funkciók elérésén. Továbbá, olyan kiegészítő funkciókat is biztosítania kell, mint inaktív projektek automatizált törlése vagy felhasználók értesítése.
+Kompozícióilag két részből áll az OSGi. Az első egy olyan specifikáció, ami a moduláris egységeket írja le, ezeket bundle-knek vagy plug-in-eknek nevezzük. A specifikáció leírja, hogy milyen infrastruktúra szükséges az említett bundle-k számára és, hogy egyes bundle-k milyen életcikluson mennek át (Telepítve, Elindítva, Aktív, Elakadt, Felfüggesztett), továbbá meghatározza, hogy milyen kapcsolat lehet egyes bundle-k közt és ezek hogyan kommunikálhatnak egymással. A második pedig egy JVM szintű nyilvántartó, amibe minden bundle tud bejegyzéseket tenni, hogy neki milyen publikálni kívánt objektumai vannak.
 
 
-Mivel jelenleg csak egy szerveroldali komponenst tervezünk, így \aref{fig:usecase} ábrán levő használati esetek kevésbé relevánsak a felhasználó számára, viszont a klienst fejlesztő mérnököknek fontos lehet.
+Az OSGi a fejlesztési ciklus majdnem minden területén csökkenti a komplexitást. Kódírás és tesztelés jelentősen kevesebb erőforrást fog elnyelni, támogatja az újrahasznosítást (létező komponenseket egyszerűen fel lehet használni egy új modulban). Az üzemeltetési feladatokat is könnyíti, lehetővé teszi a moduláris frissítést vagy telepítést, nem kell minden funkció bevezetésekor az egész rendszert leállítani. Könnyebben lehet lokalizálni egyes hibákat, így a támogatói feladatkör is egyszerűsödik. Az alkalmazásunk moduláris függőségi fájában egyszerűbben tudunk bizonyos elemeket bevezetni, helyettesíteni vagy akár kivenni.
 
-Az alapvető elérhető funkciók közé tartozik: a munkatér létrehozás, amely egy felhasználónak dedikált Eclipse munkateret hoz létre, amin belül majd további műveleteket lehet végezni; Eclipse projekt importálása archivált forrásból egy létező munkatérbe; az importált projektben szereplő, műveleteket leíró fájlok alapján Gamma műveletek futtatása; a Gamma műveletek által generált elemek visszakérése archivált fájlként; importált Eclipse projekt törlése.
+Munkám során az Apache Felix OSGi implementációval találkoztam, amely a fentebb részletezett szolgáltatásokat és szükséges infrastruktúrát alakítja ki számunkra.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Apache Karaf}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=\textwidth ,keepaspectratio]{figures/usecase.png}
-	\caption{Használati esetek}
-	\label{fig:usecase}
-\end{figure}
+Az Eclipse egy nyílt forráskódú, platform független fejlesztői környezet (IDE). Egy alap munkaterületet (workspace) és egy plug-in rendszert tartalmaz, aminek segítségével könnyen tesztreszabhatóvá lehet tenni. Az utóbbit használja ki a Gamma is és az általa használt komponensek is. 
 
-%--------------------------------------
-\section{Architektúra}
-%--------------------------------------
+Az Eclipse IDE egy speciális Eclipse alkalmazás ami lehetővé teszi a fejlesztőknek, hogy egyedi alkalmazásokat tudjanak fejleszteni. Egy Eclipse alkalmazás egy vagy több szoftver komponensből tevődik össze ezeket nevezünk plug-in-eknek \cite{plugin}. Ezek a modulok bővíthetőek vagy felhasználhatóak más komponensek létrehozására. Összefoglalva, az Eclipse IDE egy több plug-in-ből álló Eclipse alkalmazás.
 
-Ez a fejezet részletezi a specifikált rendszer struktúráját, továbbá áttekintjük a fontosabb folyamatokat.
-%--------------------------------------
-\subsection{Struktúra}
-%--------------------------------------
+Lehetőségünk van az így létrehozott alkalmazásainkat összecsomagolni és az Eclipse IDE-től függetlenül futtatni és tesztelni (\textbf{headless Eclipse}).
+Ehhez definiálnunk kell egy termék leírást (product configuration) \cite{product}, aminek tartalmaznia kell az alkalmazásunk plug-in-jét, minden felhasznált függőséget és minden más olyan konfigurációt ami szükséges ahhoz, hogy egy külön komponenseként tudjuk hordozni a szoftverünket. Ilyen konfigurációk, az alkalmazás belépési pontja, komponensek indulási sorrendje, esetleges ikonok és függőségi fa, ami meghatározza, hogy milyen komponens mitől és hogyan (kötelező, opcionális) függ valamilyen más modultól.
 
-A rendszer felépítését \aref{fig:structure} ábra mutatja be. A továbbiakban részletezem az ábrán látható egyes komponenseket, milyen szerepük van és hogyan kommunikálnak más komponensekkel.
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[height=135mm,keepaspectratio]{figures/architecture.png}
-	\caption{Architektúra terv}
-	\label{fig:structure}
-\end{figure}
-Az ábrán látható egy nagyobb, mindent magába foglaló \textit{Gamma Wrapper} nevezetű modul, ez a rendszer, amely megvalósításra került a munkám során és amiről a dolgozat szól. A nevét a funkcionalitásáról kapta, magyarul \textit{Gamma csomag}-nak is nevezhetnénk.
+A termékleírásunk egy alkalmazás osztályra kell mutasson ami alapértelmezetten kétfajta lehet:
 
-\paragraph{REST API} Ez az alkalmazás belépési pontja, ez látható a világ számára. Önmagában egy Vert.x webszerver amely egy OpenAPI specifikációban\footnote{OpenAPI specifikáció \url{https://app.swaggerhub.com/apis/szlnnn/GAMMA_WRAPPER3.0/1.0.0}} meghatározott \textit{endpoint}-ok alapján épül fel. A rendszer az alábbi endpointokat tartalmazza, a fontosabbak működését a következő fejezet részletesen bemutatja:
-\begin{itemize}
-	\item \texttt{POST /gamma/addworkspace} Eclipse workspace létrehozásának lehetőségét kínálja fel, minden további művelethez szükséges, a kérés nem tartalmaz további információt.
-	\item \texttt{POST /gamma/addproject/{\textit{workspace}}\footnote{Minden döntött betűs rész egy URL-ben utazó paraméter}} Eclipse projekt létrehozását teszi lehetővé a {workspace} paraméterből kiolvasott munkatérben, a kérés törzsében szerepelnie kell az archivált fájlnak, ami tartalmazza az importálni kívánt projektet.
-	\item \texttt{PUT /gamma/api/{\textit{workspace}}/{\textit{projectName}}/{\textit{filePath}}} a munkatér és projekt páros alapján meghatározott Gamma műveleteket tartalmazó fájl futtatását teszi lehetővé. A {\textit{filePath}} paraméter írja le, hogy a műveleteket leíró fájl hol van, ez relatív kell legyen és a {\textit{projectName}} paraméterben tárolt projekt mappájában.
-	\item \texttt{PUT /gamma/stopprocess/{\textit{workspace}}/{\textit{projectName}}} a fentebb leírt folyamat leállítását teszi lehetővé. Mivel egy projekt-munkatér pároson egy időben csak egy Gamma művelethalmaz futhat, ezért elég csak ezt a párost megadni.
-	\item \texttt{PUT /gamma/getresult/{\textit{workspace}}/{\textit{projectName}}} a Gamma által generált fájlok visszakérését teszi lehetővé, ehhez szükséges, hogy a kérés törzsében utazzon, hogy milyen fájlokat/könyvtárakat szeretnénk visszakérni. Az itt megadott elérések a projekthez képest relatívak kell legyenek. Ha szerepel a "." elérés akkor a projekt teljes tartalmát visszaküldjük.
-	\item \texttt{DELETE /gamma/deleteproject/{\textit{workspace}}/{\textit{projectName}}} Eclipse projekt törlését teszi lehetővé.
-	\item \texttt{PUT /gamma/extendexpiration/{\textit{workspace}}/{\textit{projectName}}} Alapértelmezetten minden projekt automatikusan törlésre kerül 30 nappal a létrehozás után, ezzel az endpointal további 30 nappal lehet ezt az időtartamot meghosszabítani, az URL-ben utazó munkatér és projekt név párossal tudjuk eldönteni, hogy melyik projektet kívánja a felhasználó meghosszabbítani.
-\end{itemize}
-A komponens további feladatok is ellát, ilyenek a megfelelő HTTP válasz összeállítása, a szerverre küldött fájlok automatikus mentése vagy a más komponensek vezérlése. Egy időzítő is ide tartozik, ezzel ellenőrizzük a projektek lejárati dátumát és, ha ennek eljön az ideje akkor egy törlést fog indítani.
-
-\paragraph{UI és MagicDraw} Mivel a rendszerünk egy szerver oldali komponens, ezért önmagában nem tudja bárki használni. Az ábrán feltüntetett kliens rendszereknek kell a felhasználói felület szerepét betölteni. Ilyen lenne egy speciális UI ami az alapvető funkcióknak egy grafikus felületet biztosít és kontextust ad az alkalmazásunknak. Továbbá, tervben van a Gamma integrációja a MagicDraw\footnote{MagicDraw modellező eszköz \url{https://www.nomagic.com/products/magicdraw}} modellező eszközbe, a rendszerünk ezt az integrációt megkönnyítené. 
-
-\paragraph{Headless Generator} A Gamma önmagában nem képes Eclipse munkatér és projekt létrehozásra ezért kellet egy olyan komponens, ami előkészít egy környezetet, amiben futtathatunk Gamma műveleteket, ennek a neve \textit{Headless Generator}. Két fő funkciója van: Eclipse munkatér (workspace) létrehozás és Eclipse projekt importálás egy megadott munkatérbe. Mindkét funkcionalitást ugyanaz a folyamat valósítja meg annyi eltérésben, hogy ha a komponens kap egy archivált fájl elérést akkor tudni fogja, hogy ezt importálnia kell, mint Eclipse projekt.  Egy \textit{headless Eclipse}-ként van megvalósítva és parancssorból lehet meghívni, két paramétert lehet megadni. Az első a \textit{-data} amiben a workspace nevét kell megadni. Ha egy nem létező workspace-t adunk meg akkor a komponens ezt létrehozza, ez egy kötelező paraméter. A második argumentum pedig a projekt archivált fájl elérése, ezt fogja kicsomagolni és regisztrálni a munkatérbe, ez az argumentum opcionális. Fontos kiemelni, hogy a forrás fájl már a munkatér mappájában kell legyen, ezt viszont a REST komponens elvégzi számunkra.
-
-\paragraph{Headless Gamma} A Headless Generator-hoz hasonlóan egy headless Eclipse-ként lett kialakítva és ugyanúgy parancssorból lehet elindítani. Három kötelező paraméterre van szüksége. (1) Létező munkatér, amely tartalmazza az (2) átadott projekt állományait. Az utolsó (3) paraméter egy a projekthez relatív elérés, ami a Gamma műveleteket leíró fájlra mutat. A fájl .ggen kiterjesztésű kell legyen, és tartalmaznia kell a futtatni kívánt műveleteket és a futtatáshoz szükséges modell állományok hivatkozását, amelyek a projekten belül kell legyenek. A Gamma miután elvégezte a műveleteket tipikusan 3 mappába generálja le az eredményeket: src-gen,test-gen, trace. Ezek mind a projekt mappán belül találhatóak. 
-
-Az UPPAAL telepítése egy alapvető követelmény a Gamma megfelelő működéséhez, ennek az elérését a rendszer a környezeti változókból tudja kinyerni.
-Az OSGi előnyeit itt tudjuk kihasználni, mivel a headless Gamma több száz \textit{plug-in}-t igényel. A plug-in-ek egyesével frissíthetőek, elméletileg nem kéne nagy akadályt okozzon egy új release telepítése.
-
-\paragraph{Process Builder} A REST webszerver és a headless komponensek közé biztosítani kell egy olyan réteget, ami a webes hívások paramétereit átalakítja parancssori argumentumokká és el tud indítani egy ilyen Eclipse-t. Ezt a szerepet a \textit{Process Builder} tölti be. Négy funkció esetén jelenik meg a végrehajtási sorban, (1) munkatér létrehozás, (2) projekt importálás archív fájlból, (3) Gamma művelet futtatás és (4) Gamma műveletet futtató folyamat leállítás. Minden funkció esetén lehetőség van aszinkron működésre, viszont jelenleg csak a (3) és (4) esetén van implementálva,  a szinkron működést azzal az érvel lehet védeni, hogy csak abban az esetben küldjünk választ a kliensnek ha el tudtuk valóban a kért funkcionalitást végezni. Ez a Gamma művelet futtatáskor azért nem egy élhető koncepció, mert vannak olyan modellek, amelyek több ezer vagy akár több tízezer állapotból állnak, ezeknek a feldolgozása órákba is kerülhet, így az aszinkron működés egy szükséglet. A Gamma művelet leállítása pedig nem igényel semmilyen várakozást, nincs olyan eset amikor ez eltud akadni. A másik két esetben (1,2) viszont megvárjuk, amíg a munkatér vagy projekt létrejön, mert nem költséges műveletek -- ezt a jövőben érdemes lehet átgondolni és esetleg átalakítani.
-
-\paragraph{Validator} A valamennyi bejövő kérésnek validációs lépéseken is át kell esnie, ezt a \textit{Validator} modul biztosítja. A REST webszerver vezérli, hogy a bejövő paraméterek közül melyek azok, amelyek valamilyen validáción át kell essenek. A legfontosabb ellenőrzési lépések közé tartoznak a munkatér létezés ellenőrzése, a projekt-munkatér páros vizsgálata és az átadott projekten futó Gamma folyamat ellenőrzése. Az utóbbi kiemelkedően fontos, hiszen egy futás alatt levő projekttel nem végezhetünk semmit, csak leállíthatjuk. Ahhoz, hogy a futás állapotát nyilván tudjuk tartani, be lett vezetve egy leíró JSON fájl amit minden projekt importálásánál létrehozunk, ez a fájl többek közt tartalmazza azt is, hogy jelenleg van-e futó folyamat a projekten. Ennek az állapotát a ProcessBuilder beállítja \textit{inProgress}-be majd a HeadlessGamma futása végén frissíti \textit{idle}-re.
-\paragraph{Provider} A \textit{Provider}-nek két feladat van, az első, hogy az eredmény visszakérő endpoint-ra bejövő kérések alapján összecsomagoljon egy zip állományt, a másik pedig a projekt törlés. Az eredmény fájl összecsomagolásánál lehetőségünk van megadni egyedi fájlok elérését vagy akár teljes mappákat. Ide tartozik a teljes projekt mappa is, ezt a "." eléréssel tudjuk megadni, ha ez szerepel a kérésben akkor a többi eredmény eléréssel nem is foglalkozik a rendszer, hiszen ez mindent tartalmazni fog.
-\paragraph{Data} Az ábrán megjelenik a \textit{Data} fogalom is, ez valójában a hoszt szerveren levő fájlkezelőt jelenti. Itt tároljuk a létrehozott munkatér és projekt párosokat és ezek teljes tartalmát, továbbá a metaadatokat tároló JSON fájlokat is. Egy adatbázis réteg bevezetésével a fájlban tárolt metaadatokat könnyebben tudnánk kezelni, sajnos a projektbe ez nem fért bele.
-
-
-
-%--------------------------------------
-\subsection{Folyamatok}
-%--------------------------------------
-
-Négy alapvető funkció részletes működését fogom bemutatni ebben a fejezetben, ezek sorra: munkatér létrehozás, projekt importálás, Gamma műveletek futtatása és a futtatás eredményének lekérése. A folyamat bemutatja milyen modulokon megy végig az adat, továbbá milyen feldolgozások történnek az egyes végrehajtási lépésekben. Mindezt szekvenciadiagramokkal ábrázoltam. Az így bemutatott funkciók lefedik a rendszer legfontosabb felhasználási eseteit.
-
-
-\paragraph{Munkatér létrehozás}
-
-\begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/add_workspace_seq.png}
-	\caption{Munkatér létrehozás szekvenciadiagram}
-	\label{fig:addworkspace}
-\end{figure}
-
-A workspace létrehozás szekvenciadiagramja \aref{fig:addworkspace} ábrán látható. Első fázisban bejön egy POST HTTP metódus az \textit{addworkspace} endpointra, ennek a törzse üres és az URL-ben sem hordoz paramétereket. Látható, hogy az OpenAPIVerticle fogadja a kérést, ez lényegében a REST webszerverünk, mivel ez a legelső művelet, amit a kliens meg kell hívjon, így nem kell semmilyen ellenőrzést végezni. A végrehajtási sor következő lépése a \textit{ProcessBuilder}-ben van, itt a rendszer generál egy egyedi UID azonosítót, amit felhasznál a parancs kialakításhoz, amivel elindítja a a HeadlessGenerator-t. A parancs (command) elkészítéséhez a ProcessBuildernek szüksége van a headless Eclipse elérésére, ezt a \textit{config.properties} fájlban lehet beállítani. Amíg a generator elkészíti a workspace-t, addig a ProcessBuilder vár, ha végzett akkor visszaadja az OpenAPIVerticle-nek a generált UID-ot ami továbbítja a kliens felé. Mikor a headless Eclipse elvégezte a feladatot, akkor teljesen leáll, ezt jelzi az X a szekvenciadiagramon.
-
-
-\paragraph{Eclipse projekt importálás}
-\begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/add_eclipseproject_seq.png}
-	\caption{Eclipse projekt importálás szekvenciadiagram}
-	\label{fig:addproject}
-\end{figure}
-
-A projekt importálás funkció szekvenciadiagramját \aref{fig:addproject} ábrán lehet megtekinteni. A folyamat megint a kérés érkezésével indul, ezt minden esetben az OpenAPIVerticle dolgozza fel, ez a kérés egy POST HTTP metódus ami az \textit{addproject} endpoint-ra jön be. Ebben az esetben viszont már az URL-ben utazik egy munkatér azonosító, amit korábban adtunk vissza a workspace létrehozáskor. Továbbá, a törzsben két attribútum szerepel: (1) \textit{files}, ez tartalmazza a projekt archivált állományait és (2) \textit{contact}, ez egy email cím, ami a projekt tulajdonosáé, erre későbbiekben értesítések küldésénél lesz szükségünk. A munkatér létezését a Validator komponenssel ellenőrizzük. A kapott válasz alapján két esetet különböztetünk meg. Az első, ha nem érvényes a megadott workspace azonosító, ekkor egyből szólunk a kliensnek, hogy rossz a kérés. Viszont, ha ez helyes akkor a nyers fájlt a munkatér mappájába másoljuk és tovább adjuk a kérést a ProcessBuilder-nek, ami az előző esethez hasonlóan elindítja a HeadlessGenerator-t, de kiegészíti az argumentum listát a forrás fájl nevével. A generator elvégzi az import műveletet, majd visszaadja a futási jogot a ProcessBuildernek, ami végezetül regisztrálja a munkatér-projekt párost és létrehoz egy leíró fájlt a frissen létrehozott projektben. Ez a fájl tartalmazza, hogy mi a projekt neve, ki hozta létre (email cím), mikor hozta létre és mikor jár le, továbbá a generator  beállítja, hogy jelenleg nincs futás alatt, majd törli az eredeti forrás fájlt, hogy tárhelyet spóroljunk. Végezetül visszaadja a futási jogot a verticle-nek ami jelez a kliensnek, hogy minden rendben létrejött.
-
-
-
-\paragraph{Gamma műveletek futtatása}
-\begin{figure}[!ht]
-	\includegraphics[width=150mm, keepaspectratio]{figures/run_gamma_seq.png}
-	\caption{Gamma művelet futtatás szekvenciadiagram}
-	\label{fig:rungamma}
-\end{figure}
-A Gamma műveletek futtatását bemutató szekvenciadiagram \aref{fig:rungamma} ábrán tekinthető meg. Ebben az esetben egy PUT HTTP kérés érkezik az \textit{api} endpoint-ra, amit szintén az OpenAPI réteg dolgoz fel kezdetben. A törzsben nem szerepel semmi, viszont az URL-ben utazik a munkatér azonosító, projektnév és futtatni kívánt Gamma műveleteket leíró .ggen fájl elérése. Ez a hármas egyedileg meghatározza az erőforrást. A validációs fázis komplexebb ebben az esetben, hiszen ellenőriznünk kell a munkatér-projekt páros létezését és egyediségét, mert egy projekt egyszer szerepelhet egy munkatérben, továbbá azt is meg kell vizsgálni, hogy a projekt, amit ez a páros leír, jelenleg használva van-e valamilyen más Gamma műveletet futtató headless Eclipse által. A Validator döntése alapján megint két esetet különböztetünk meg. Ha valamiért nem felel meg akkor az OpenAPIVerticle a megfelelő hibakóddal és üzenettel visszaszól a kliensnek, hogy nem érvényes a kérés. Ha minden megfelel, akkor a futást átadjuk a ProcessBuilder-nek, ami aszinkron módon elindítja a Gamma műveletet futtató headless Eclipse. Ezek után egyből frissíti a projektet leíró fájlt, vagyis, rögzíti az így elindított folyamat operációs rendszer szintű azonosítóját (PID) és beállítja, hogy a projekt futás alatt van. Végezetül átadja a futást a verticle-nek, ami jelzi a kliens felé, hogy a kérés feldolgozása elkezdődött.
-A folyamat még nem ér véget, mivel a Gamma dolgozik a háttérben. Mikor minden művelet lefutott amit a .ggen fájlban meghatározott a felhasználó, akkor a headless Eclipse frissíti a projektet leíró állományt és beállítja, hogy a projekt már nincs futás alatt. További lezáró művelet lehet az értesítés küldés a tárolt email címre, hogy a kért kérés lefutott és az eredmény mostantól lekérhető.
-
-
-\paragraph{Eredmények lekérése}
-\begin{figure}[!ht]
-	\includegraphics[keepaspectratio]{figures/get_result_seq.png}
-	\caption{Eredmény lekérés szekvenciadiagram}
-	\label{fig:getresult}
-\end{figure}
-A Gamma által generált állományok lekérésére szolgáló funkció szekvenciadiagramját \aref{fig:getresult} ábra mutatja be. Egy PUT HTTP kérés érkezik a \textit{getresult} endpoint-ra, ennek az URL-jében szerepelnie kell a munkatér azonosítójának és a projektnévnek, amiből adatot akarunk lekérni. A kérés törzsében a \textit{resultDirs} attribútum kell szerepeljen, ami egy relatív elérésekből álló lista. A kérés feldolgozása a szokásos módon a verticle-ben kezdődik, ahol a kérésben utazó paraméterek kicsomagolásra kerülnek. A Validator ebben az esetben ugyanazokat ellenőrzi, mint a művelet futtatás folyamat esetén. Ha van futó folyamat a projekten vagy a workspace projekt páros nem megfelelő, akkor beszédes hibaüzenettel válaszolunk a kliensnek. Abban az esetben, ha minden rendben van, akkor a Provider kapja meg  a futási jogot. Itt az elérési listán iterálva összegyűjtjük a kért fájlokat és mappákat, majd archiváljuk, az így archivált fájl elérést küldjük vissza a verticle-nek, ami ennek alapján visszaküldi a fájlt.
-
-Első látszatra zavaró lehet, hogy PUT metódust használunk a kérés feldolgozásához, mikor egy GET jobb lehetne és jobban megfelelne a REST szabványnak. Ennek két oka van. Az első az, hogy annak ellenére, hogy \textit{getresult}-nak hívjuk az endpoint-ot, az erőforrás állapota módosul, hiszen a projekten belül generálunk egy archivált fájlt. A másik oka pedig az, hogy a GET kérésnél nem lehet a törzsben semmit sem küldeni -- ezt a REST szigorúan megköveteli, nekünk viszont a becsomagolni kívánt állományokat listában kell megadnunk és ezt az URL-ben kényelmetlen lenne kezelni.
-
-
-%--------------------------------------
-\section{Implementáció}
-%--------------------------------------
-
-%--------------------------------------
-\subsection{Fejlesztés folyamata}
-%--------------------------------------
-
-
-Ebben a fejezetben a fejlesztés során felmerült nehézségeket és érédességeket mutatom be. Az alábbi információk alapvetően mély technikai szintre lemennek így szárazak lehetnek, viszont a témában dolgozóknak hasznos lehet, mert egyedi hibák és jelenségek megoldását vázolom föl.
-
-\paragraph{Eclipse környezettel kapcsolatos érdekességek} Az Eclipse környezetben tapasztalt fejlesztők tudják, hogy bizonyos dolgok nem triviálisak a fejlesztés során és olyan specifikus problémák merülhetnek fel, amelyekre nagyon elrejtett internetes fórumokon lehet választ kapni. Az alábbi jelenségek és problémák a \textit{Headless Gamma} komponens fejlesztése alatt merültek föl
-
-Az Eclipse plug-in fejlesztés és termék export konfiguráció során számos függősségi problémával szembesültem. A legelső érdekesség ami felmerült az volt, hogy az Eclipse a \textit{product} konfigurációban meghatározott plug-in függőségek verzióját automatikusan felülírta a környezetbe telepített legfrissebb verzióval. Ezen plug-in-ek listáját az Eclipse IDE-n belül a \textit{Target Platform}-on lehet megtekinteni és szerkeszteni. Ilyen problémás függőségek voltak a \textit{batik.css} és \textit{batik.util} plug-in-ek. A Target Platform szerkesztésével ezt a problémát orvosolni lehet, csupán ki kell vegyük vagy hozzá kell adjuk azt a verziót amire szükségünk van és győződjünk meg, hogy az adott plug-in-ből csak egy verzió aktív.
-
-A termék konfigurációban a \textit{Content} fülön tudjuk meghatározni milyen plug-in-ekből álljon a termékünk az IDE-ben lehetőség van arra, hogy megadjuk a fejlesztett alkalmazásunkat és rányomva az \textit{Add Requiered} gombra az IDE automatikusan beállítja a termékünk összes függőségét. Ennek ellenére az osgi.extender olyan plug-in-eket igényel, amelyek az OSGi helyes működéséhez szükségesek, de nem importálja be automatikusan. A szükséges modulok:
 \begin{lstlisting}[language=]
-org.apache.felix.scr
-org.eclipse.equinox.event
-org.eclipse.compare.core
-org.eclipse.fx.osgi
-org.eclipse.team.core
+	org.eclipse.ui.ide.workbench - IDE-alapú alkalamzások
+	
+	org.eclipse.e4.ui.workbench.swt.E4Application - RCP alkalmazások, függetlenek az IDE-től
 \end{lstlisting}
 
-Olyan jelenség is előjött, ahol a függőségi fában egy plug-in kétszer szerepelt, viszont különböző verzióval. Ezt az OSGi szabvány engedi, de az Eclipse, az első jelenségben leírtak alapján, folyamatosan felülírta az elavultabb verziót. A probléma elképzelésében segít  \aref{fig:depend} ábra. Erre a megoldás az, hogy a fában felfele haladva megvizsgáljuk, hogy milyen verziókat tudunk frissíteni a Target Platformon úgy, hogy a működést megtartsuk, de az elavult verziójú plug-in-t frissíteni tudjuk. Alapvetően egyszerű feladatnak tűnik, viszont a rendszer közel 250 függőséggel rendelkezik.
+Ezektől el lehet térni és egy teljesen egyedi alkalmazást írni, ehhez a következő interfészt kell implementálni és behivatkozni a termék konfigurációnkban:
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[keepaspectratio]{figures/depend.png}
-	\caption{Egyszerűsített függőségi fa}
-	\label{fig:depend}
-\end{figure}
-
-A termék export felületen meg kell határozni, hogy az egyes Eclipse modulok milyen sorrendben induljanak el, a mi esetünkben az alábbi indulási szintek meghatározása volt fontos:
-\begin{lstlisting}[language=XML]
-<configurations>
-	<plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
-	<plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
-	<plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-	<plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
-	<plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-</configurations>
-\end{lstlisting}
-Ez a konfigurációrészlet a termék leírás XML fájlból van másolva, az IDE-ben a \textit{Configuration} fülön lehet mindezt beállítani.
-
-Egy termék konfiguráció futtatására két lehetőségünk van. Az első, hogy exportáljuk (headless Eclipse), majd parancssorból meghívjuk és átadjuk az argumentumokat; vagy az IDE-ből elindítjuk. Az utóbbi tesztelés folyamán nagyon hasznos tud lenni. Ha IDE-ből futtatjuk akkor is van lehetőségünk argumentumokat átadni, erre szintén a termék konfigurációban van lehetőség, a \textit{Launching} fülön. Arra viszont érdemes odafigyelni, hogy ezt a tesztelés után ne hagyjuk ott, mivel az export konstans argumentumoknak értelmezi és minden headless módban indulásnál átadja önmagának. A mi esetünkben ez hatványozottan fontos, mivel az átadott argumentumok minden esetben mások a munkatér és projektek számossága miatt.
-
-Minden függőség lehet opcionális vagy kötelező. Az opcionálisakat csak abban az esetben tölti be a headless Eclipse, mikor éppen szüksége van rá. A rendszerünknek a \textit{jdt} plug-in család több komponensére is szüksége van, viszont ezek a függőségi fában levő szülőjükön az \textit{xtext.ui} plug-in-en csupán opcionálisként vannak megjelölve és egy mai napig nem tisztázott ok miatt nem töltődtek be. A problémát azzal lehet orvosolni, hogy készítünk az xtext.ui plug-in-ből egy saját példányt, amin a függőségi beállításokat átírjuk opcionálisról kötelezőre. Ez sajnos nehezíti a rendszer továbbfejlesztését és a telepítési folyamat is komplexebbé válik.
-
-Egy kulcsfontosságú probléma az volt, hogy az Xtext\footnote{Xtext-ről többet: \url{https://www.eclipse.org/Xtext/}} modult eddig nem tudtuk injektálni a headless Eclipse-be. Erre az alábbi kódrészlet ad megoldást:
-\begin{lstlisting}[language=Java]
- 	Injector injector = new StatechartLanguageStandaloneSetupGenerated()
- 							.createInjectorAndDoEMFRegistration();
- 	XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
-\end{lstlisting}
-A fent definiált \textit{resourceSet}-ről tudjuk majd a headless Eclipse-nek argumentumban átadott fájlt elérni.
-\newpage
-Minden Gamma nyelv interpretálóját egyedileg meg kellet hívni az alkalmazás indulási pillanataiban:
-
-\begin{lstlisting}[language=Java]
-//Alkalmazás belépési pontja
- @Override
-public Object start(final IApplicationContext context) throws Exception {
-	ExpressionLanguageStandaloneSetup.doSetup();
-	ActionLanguageStandaloneSetup.doSetup();
-	StatechartLanguageStandaloneSetup.doSetup();
-	TraceLanguageStandaloneSetup.doSetup();
-	PropertyLanguageStandaloneSetup.doSetup();        
-	GenModelStandaloneSetup.doSetup();
-	.
-	.
-	.
-}
+\begin{lstlisting}[language=]
+	org.eclipse.equinox.app.IApplication
 \end{lstlisting}
 
-\paragraph{OpenAPI REST webszerver} Olyan fejlesztői megoldásokat mutatok be, amelyek az OpenAPI és Vert.x használata által nagyon egyszerűen megvalósíthatóak voltak. Ehhez tekintsük át \aref{fig:endpoint_example} ábrát amely az \textit{addproject} endpoint specifikációját tartalmazza.
+A dolgozatban leírt fejlesztés ezzel a megoldási opcióval lett megvalósítva.
 
-A Vert.x, mint említettem, támogatja az OpenAPI REST specifikáció integrációját, így kódból az alábbi módon tudjuk elérni a fájlban definiált \textit{endpointot} (gamma-wrapper.yaml), amit majd regisztrálunk a webszerverünkbe:
-\begin{lstlisting}[language=Java]
-@Override
-public void start(Future<Void> future) {
-        OpenAPI3RouterFactory.create(this.vertx, "gamma-wrapper.yaml", ar ->
-		{
-               	OpenAPI3RouterFactory routerFactory = ar.result();
-                routerFactory.addHandlerByOperationId("addProject", routingContext -> {	... });
-				...	
-		});
-}
-\end{lstlisting}
-A fenti kódrészletben már nagyon egyszerűen tudjuk a kérésben utazó paramétereket Java objektummá átalakítani. A példában fájlok feldolgozását is el kell végezzük, ezt a Vert.x a fenti \textit{routingContext} objektumon már eltárolja és egy egyszerű \textit{routingContext.fileUploads()} hívással már \textit{File} objektumok listáját kapjuk vissza.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{REST API}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Az internet megszületése óta számos internetalapú adatmozgatási megoldás született, ilyenek a CORBA, RPC vagy SOAP. Ezek mind nagyon komplex mechanizmusok és a mai világban elavultnak számítanak. Itt jön szóba a REST, a legújabb iteráció az internetes adatszállítási megoldások körében \cite{rest_history}.
 
-Bizonyos validációs feladatokat is elvégez helyettünk az OpenAPI definíció alapján a Vert.x. \Aref{fig:endpoint_example} ábrán látható, hogy meghatározzuk a munkatér(workspace) szintaktikáját. Ha ettől eltérő, más formátumú karakterlánc szerepel a kérésben, akkor automatikusan küldődik egy válasz a klienshez, hogy nem megfelelő a kérése.
-
-
-
-\begin{figure}[!ht]
-\begin{lstlisting}[language=Java]
- /gamma/addproject/{workspace}:
-	post:
-		operationId: addProject
-		description: Send a file that contains the Eclipse project on which the gamma operations will run
-		parameters:
-		  - in: path
-			name: workspace
-			required: true
-			description: The workspace which contains the project
-			schema:
-				type: string
-				format: uuid
-				example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
-		requestBody:
-			content:
-				multipart/form-data:
-					schema:
-						type: object
-						properties:
-							contactEmail:
-  							  type: string
-							file:
-							  type: string
-							  format: binary
-		responses:
-		  200:
-			description: Successfully uploaded the file
-		  401:
-			description: Did not provide a valid workspace
-		  403:
-			description: Project already exists under this workspace, delete it and resend this request
-
-\end{lstlisting}
-	\caption{Endpoint példa}
-	\label{fig:endpoint_example}
-\end{figure}
-
-\paragraph{ProcessBuilder fejlesztés} Alapvetően a webszerver Java 8 alapokon lett megvalósítva, majd kiderült, hogy a java 9 hasznos, új frissítéseket tartalmaz a \textit{java.lang.ProcessBuilder} komponensén. Számunkra ez azért fontos, mert bevezetésre került a \textit{pid} (process id) lekérése az éppen indított folyamatról. Ezt az azonosítót fel tudjuk használni, hogy egy Gamma műveleteket feldolgozó folyamatot leállítsunk, ha úgy gondoljuk, hogy túl sok ideig fut.
-Nagyon fontos megjegyezni azt, hogy ha folyamatot indítunk a \textit{java.lang.ProcessBuilder} segítségével és ez több ideig fut, akkor a logolási eredményét kötelezően át kell irányítsuk fájlba vagy konzolba. Ennek hiányában a folyamatunk beakad. A rendszerünk a folyamatot indító konténerre leörökölteti a logolás feladatát. A HeadlessGamma elindítására szolgáló kódrészlet:
-
-\begin{lstlisting}[language=Java]
-	ProcessBuilder pb = new ProcessBuilder(commandToBeExecuted); // ProcessBuilder inicializálás, commandToBeExecuted a futtatni kivánt parancs karakterláncát tartalmazza
-	pb.redirectErrorStream(true);
-	pb.inheritIO(); // Logolás öröklés
-	long pib =  pb.start().pid(); // Folyamat azonosító lekérése
-}
-\end{lstlisting}
-
-
-%--------------------------------------
-\subsection{Rendszer szoftverkomponensei}
-%--------------------------------------
-
-A rendszer struktúrájából kiindulva (ezt \aref{fig:structure} ábrán lehet megtekinteni) a rendszer szoftver szintű felépítése három komponensből tevődik össze, ezek vizuális reprezentációját \aref{fig:software_components} ábra mutatja be.
+REST vagy \textbf{RE}presentational \textbf{S}tate \textbf{T}ransfer egy tervezési stílus, amellyel különböző rendszerek közti kapcsolatot tudunk megvalósítani. Olyan rendszereket, amelyek megfelelnek a REST szabványnak RESTful rendszereknek is nevezünk. Alapvetően ezeket két fő jellemző írja le, az első, hogy nem tartják nyilván az egyes kérések állapotát, a második pedig az, hogy elkülönítik a kliens és szerver fogalmakat. Minden RESTful szerver endpoint-ok halmazából épül föl. Endpoint-nak hívjuk azokat az egyedi belépési pontokat, amelyek meghívhatók az alkalmazáson kívül.
 
 \begin{figure}[t]
-	\centering
-	\includegraphics[width=75mm, keepaspectratio]{figures/software_components.png}
-	\caption{Szoftver komponensek}
-	\label{fig:software_components}
+	\includegraphics[width=150mm, keepaspectratio]{figures/rest_structure.jpeg}
+	\caption{REST egyszerű architektúra \cite{kep_rest}}
+	\label{fig:rest_structure}
 \end{figure}
 
-A Webszerver tartalmazza az összes olyan komponenst, amely a webes kérések értelmezését és átalakítását végzik, itt található az OpenAPI definíció. Önmagában egy Maven\footnote{Maven-ről többet: \url{https://maven.apache.org/}} alapú InteliJ IDEA-ban fejlesztett alkalmazás. A Gamma és a Generator pedig az eddigiekben már többször említett két headless Eclipse alkalmazás. A webszerver egy master szerepet tölt be a rendszerünkben, mivel ez koordinálja a másik kettő működését.
+Ahhoz, hogy egy szolgáltatást RESTful-nak nevezzünk meg kell felelni egy szabványnak ami hat alapelvből áll \cite{rest_1,rest_3}.
+
+
+\paragraph{Szerver és Kliens szeparáció} A tervezési minta előírja, hogy a szerver és a kliens két független és önállóan egységként létező komponens kell legyen. Ez lehetővé teszi, hogy a két rendszerünket külön tudjuk fejleszteni, telepíteni, javítani, karban tartani. Bármilyen kódmódosítást kell végezni bármelyik oldalon a másikat nem befolyásolja mindaddig amíg az interfész nem módosul, ilyenkor a szerver egy master szerepet vesz át és az elvégzett módosítást kezelni kell kliens oldalon is. Ez az elv támogatja a moduláris gondolkodást, ezzel flexibilissé válik a komplex rendszerünk. Továbbá, skálázhatósági lehetőségek is felmerülnek, hiszen az erőforrásigényesebb komponens alatti erőforrásokat igény szerint bővíthetjük. A szétválasztás lehetővé teszi, hogy akár egy szerverhez több kliens is csatlakozzon, így sokszínű rendszereket tudunk létrehozni. Ennek egy vizuális reprezentációja \aref{fig:rest_structure} ábrán látható.
+\paragraph{Állapotnélküliség} Ez az alapelv annyit foglal magában, hogy a szerver semmilyen információval nem rendelkezhet a kliens állapotáról, ennek a kijelentésnek viszont fordítva is teljesülnie kell, azaz a kliens se ismerheti a szerver állapotát. Minden küldött/kapott üzenetegységként lehet kezelni, független attól, hogy a múltban milyen jellegű üzenetváltások történtek. Ennek eredménye az, hogy a csak kliens tárolja a saját adatainak az állapotát (nem a szerver adatait).
+\paragraph{Egységes interfész} Ez az alapelv négy szabályt határoz meg:
+\begin{enumerate}
+	\item A kliens által kezdeményezett kérésnek tartalmaznia kell az erőforrásnak az azonosítóját. Az erőforrást (egyed/objektum) hívhatjuk a webes kontextus alanyának is.
+	\item A szerver válasza elegendő információt kell tartalmazzon az erőforrásról, pontosabban annyit, hogy a kliens tudja majd módosítani ezt.
+	\item Minden egyes hívás az API felé részletes és tartalmilag teljes kell legyen. Továbbá a szerver válaszának is tartalmaznia kell elegendő információt, úgy, hogy a kliens értelmezni tudja ezt.
+	\item Az utolsó szabálytól gyakran eltekintenek a fejlesztők. Ez azt mondja, hogy a válasz, ami a szervertől érkezik tartalmazhat, olyan útmutatókat a kliens számára amivel az alkalmazás állapotát módosítani tudja. Például, ha egy objektumot lekér a kliens az API-tól, akkor a szerver a válaszba becsomagolhat olyan mellékes információkat amelyek azt írják le, hogy milyen módon módosítható a visszaadott objektum.
+\end{enumerate}
+Az egységes interfész lehetővé teszi, hogy a kliens típusától (böngésző, alkalmazás) el tudjunk tekinteni a szerver oldalon.
+\paragraph{Cache lehetőség} Cache támogatást úgy lehet elérni, hogy az adatokat verziózzuk, ha a kliens lekér egy adatot akkor valamilyen metaadatban tároljuk azt is, hogy ez milyen verziójú. Ha ugyanazt az objektumot szeretné lekérni, előtte tudja ellenőrizni lokálisan, hogy már a legfrissebb adattal rendelkezik és nem kell a szervert megint megszólítania. Ezzel terheléscsökkentést tudunk elérni.
+\paragraph{Rétegelt architektúra} A szerver és az erőforrást lekérő kliens között számos más rendszer helyezkedhet el. Ezek többfajták lehetnek de legtöbbször a biztonsági, cache, terhelés elosztó rétegekkel találkozhatunk.
+\paragraph{Igény szerinti kód (opcionális)} Az egyedüli elv ami opcionális, annyit von magában, hogy a kliens bármikor kérhet kódrészleteket a szervertől és ez a válaszban valamilyen HTML vagy szkript formátumba becsomagolja és elküldi ennek, amit majd a kliens futtatni tud. Az alapelv teljesülése nélkül is tud egy rendszer RESTful lenni.
+
+
+A fentebb többször említett kérés/válasz fogalmakat a REST világban HTTP kérésekbe csomagoljuk, ezek tipikusan a következőket kell tartalmazzák \cite{rest_2}:
+\begin{enumerate}
+	\item egy HTTP ige, ami leírja a művelet típusát, jelenleg használt igék:
+	\begin{enumerate}
+		\item \textbf{GET} erőforrást tudunk lekérni, nagyon fontos, hogy nem módosíthat állapotot a szerveren
+		\item \textbf{POST} erőforrás létrehozásra használják, többszörös hívás esetén különböző erőforrásokat fog létrehozni
+		\item \textbf{PUT} már létező erőforrások állapot frissítésére használják, többszörös hívás ugyanazt kell, hogy eredményezze
+		\item \textbf{DELETE} mint ahogy a neve is sugallja, erőforrás törlésre használják 
+		\item \textbf{PATCH} parciális frissítési műveletekre tudjuk használni
+		\item a maradék HTTP igéket nem szokták gyakran implementálni a REST világban
+	\end{enumerate} 
+	\item fejléc, ami metaadatokat tartalmaz az üzenetről, többek közt olyan jellegű információkat, mint az üzenet hossza, a tartalom típusa, a válasz HTTP kód száma és üzenete.
+	\item az erőforrás elérési útja
+	\item opcionális üzenettörzs, ami további adatot tartalmazhat
+\end{enumerate}
+
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{OpenAPI és Swagger}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+Az \textbf{OpenAPI Specifikáció} \cite{swagger} egy API leíró szintaktika REST API-k számára. A specifikáció YAML és JSON formátumban is írható, az így létrehozott fájl a teljes API-t meghatározza, jellemzően a következőket tartalmazza:
+\begin{itemize}
+	\item Endpointok halmazát és az ezeken meghatározott műveletek leírását, mint például \texttt{GET /api/students}, ami a tanulók listáját adja vissza vagy a \texttt{POST /api/students}, ami a kliensoldalról felküldött adatok alapján létrehoz egy tanulót a szerver oldalon;
+	\item Műveletek bemeneti és kimeneti paraméterét;
+	\item Autentikációs metódusokat;
+	\item Licenc, felhasználói feltételek vagy bármilyen adminisztratív információ ami az API-hoz tartozik.
+\end{itemize}
+
+Az OpenAPI specifikációt korábban Swagger specifikációnak hívták, amíg a SmartBear Software felajánlotta az OpenAPI iniciatívának. Azóta az OpenAPI 3.0 verziónál tartunk.
+
+\begin{figure}[!ht]
+	\includegraphics[width=150mm, keepaspectratio]{figures/swagerr_UI.png}
+	\caption{Gamma OpenAPI Specification}
+	\label{fig:openAPI_swagger}
+\end{figure}
+
+A Swagger \cite{swagger.io} egy olyan eszköztár ami az OpenAPI köré épült, hogy segítse a REST API tervezést, implementálást, tesztelést. Számos ilyen eszköz tartozik ide, ezek közül a legfontosabbak:
+\begin{itemize}
+	\item \textbf{\href{https://editor.swagger.io/?_ga=2.32011518.1535494714.1606415394-1420243541.1606415394}{Swagger Editor}} Egy böngészőből elérhető felhasználóbarát felületet biztosít, ahol lehetőségünk van megírni a specifikációnkat. Számos előnyt kínál egy hagyományos szerkesztőhöz képest, ilyenek a szintaktikai ellenőrzések, illetve bizonyos REST API szabályok betartását is megköveteli, pl: egy GET metódusnak nem lehet törzse.
+	\item  \textbf{\href{https://swagger.io/swagger-ui/}{Swagger UI}} Egy olvasható, részletes és vizuálisan látványos dokumentációt generál az Editorban elkészített API specifikációnkhoz, \aref{fig:openAPI_swagger} ábrán egy ilyent lehet megtekinteni.
+	\item  \textbf{\href{https://github.com/swagger-api/swagger-codegen}{Swagger Codegen}} Kliens oldali könyvtárakat és szerver oldali keretet tud generálni.
+\end{itemize}
+
+A specifikációnak tehát rengeteg előnye van, többek közt az egységes API leírás, ami platformfüggetlen, a kódgenerálás miatt több erőforrás marad az üzleti logika implementálásra vagy  az automatizált dokumentáció készítés.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Fontosabb Java könyvtárak}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+A Vert.x \cite{vertx} egy eszköztár, amelynek segítségével JVM-alapú alkalmazásokat tudunk készíteni. Nagyon flexibilis, azaz nagyon széles az alkalmazástípus-spektrum, ahol használni lehet. HTTP/REST mikroszolgáltatások, komplex webes alkalmazások vagy eseményvezérelt back-end fejlesztése során is használható.
+
+Flexibilitása miatt a piac számos területén használjak, például valós idejű játékokban vagy banki rendszerekben.
+
+JVM alapú programozási nyelvek bármelyikében használható (Java, Kotlin, JavaScript, Groovy, Ruby, Scala).
+
+OpenAPI specifikáció integrálását is támogatja. Nagyon egyszerűen lehetőségünk van behivatkozni az API-t leíró fájlunkat, ami alapján a Vert.x legenerál egy interfész réteget, amely mögé nagyon egyszerűen le tudjuk implementálni az üzleti logikánkat.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Gamma}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+A Gamma \cite{DBLP:journals/sosym/GraicsMVMV20}egy olyan eszközhalmaz, amely segítségével komponensalapú reaktív rendszereket tudunk modellezni. Több funkcióval rendelkezik, ezek kerülnek rövid bemutatásra ebben a fejezetben.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Gamma funkciók}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+A támogatott mérnöki modellek integrációja \textbf{modelltranszformáció}  segítségével történik. Ez a funkció egy létező mérnöki modellt fordít le a Gamma állapotgép nyelvére, ezzel a felhasználót segíti, mivel automatizálva történik a forrás nyelv és a gamma közti leképezés. Jelenleg a Yakindu modellezési nyelvet képes a Gamma transzformálni, viszont a plug-in koncepció további nyelvek leképezését is lehetővé teszi.
+
+A \textbf{validáció} egy statikus analízis technika, mely visszajelzést ad a létrehozott modellek szintaktikai helyességéről.
+
+A Gamma képes Java programozási nyelvre \textbf{automatizáltan kódot generálni}. Interfész definíciókat a Gamma interfészekből generálja a funkció, a komponens implementációkat pedig a kompozit állapotgép modellezés során definiáltak alapján készíti el.
+
+A Gamma a \textbf{verifikáció} funkcionalitást két részben valósítja meg:
+\begin{itemize}
+	\item formális verifikáció, amely formális modellezési nyelvek integrációjával valósul meg. Jelenleg a Gamma keretrendszerbe az UPPAAL van integrálva.
+	\item visszavetítés, amely felhasználja a formális verifikáció eredményét és ezt felhasználva  generál egy végrehajtási láncot amely alátámasztja vagy megcáfolja az egyes rendszer követelményt.
+\end{itemize}
+
+A Gamma az UPPAAL modellellenőrzőt felhasználva képes \textbf{teszteket generálni}.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Gamma hiányosságok} \label{gamma_missing}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+A Gamma egy Eclipse IDE-ben létező keretrendszer, így jelentős kihívást jelent, hogy egy felhasználó kipróbálja, esetleg használja. Kezdve az Eclipse világ rejtelmeitől a különböző függőségi nehézségekig számos hibalehetőség lép föl, ha használni szeretnénk az alkalmazást. Továbbá, vannak olyan modellek amelyek több ezer, akár millió nagyságrendű állapottal rendelkeznek, ilyen modelleken a fentebb leírt műveletek futtatása erőforrásigényes. Sajnos az IDE-hez kötöttség nem segít ezen problémák megoldásában, nehéz a skálázhatóság és a disztribúció kérdésekre választ kapni jelen kontextusban.
+
+
+
+
+
+
+
+
+
+
+
+
+
